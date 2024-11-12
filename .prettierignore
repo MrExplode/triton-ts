@@ -1,3 +1,4 @@
 pnpm-lock.yaml
 node-modules/
 dist/
+buf.gen.yaml

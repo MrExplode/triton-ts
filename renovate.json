@@ -8,11 +8,12 @@
         },
         {
             "groupName": "tooling",
-            "matchDepTypes": ["devDependencies"]
+            "matchDepTypes": ["devDependencies"],
+            "matchPackageNames": ["!@bufbuild/*"]
         },
         {
-            "groupName": "gRPC",
-            "matchPackageNames": ["@grpc/*"]
+            "groupName": "bufbuild libraries",
+            "matchPackageNames": ["@bufbuild/*"]
         }
     ]
 }
