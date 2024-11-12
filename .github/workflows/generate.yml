@@ -1,0 +1,64 @@
+name: Generate gRPC client
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 9
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          # cache: pnpm
+      
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Download protobuf definitions
+        run: |
+          wget -P proto/ -nv https://raw.githubusercontent.com/triton-inference-server/common/refs/heads/main/protobuf/grpc_service.proto
+          wget -P proto/ -nv https://raw.githubusercontent.com/triton-inference-server/common/refs/heads/main/protobuf/health.proto
+          wget -P proto/ -nv https://raw.githubusercontent.com/triton-inference-server/common/refs/heads/main/protobuf/model_config.proto
+
+      - name: Generate code
+        run: pnpm buf generate
+      
+      - name: Remove protobuf definitions
+        run: rm -rf proto/
+
+      - name: Format generated code
+        run: pnpm prettier --write src/gen/
+
+      - name: Check for changes
+        run: git diff --quiet || echo "changes=true" >> $GITHUB_ENV
+
+      - name: Cancel with no changes
+        uses: actions/github-script@v7
+        if: ${{ env.changes != 'true' }}
+        with:
+          script: |
+            core.warning('Protobuf definitions did not change.')
+            process.exitCode = ExitCode.Failure
+          
+
+      - name: Commit & push changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -am "Update protobuf definitions" && git push || echo "No changes to commit"
+      
+      
+
+          
