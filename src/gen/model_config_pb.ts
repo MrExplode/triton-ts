@@ -44,39 +44,39 @@ export const file_model_config: GenFile =
     )
 
 /**
- * @@
- * @@  .. cpp:var:: message ModelRateLimiter
- * @@
- * @@     The specifications required by the rate limiter to properly
- * @@     schedule the inference requests across the different models
- * @@     and their instances.
- * @@
+ *
+ *   .. cpp:var:: message ModelRateLimiter
+ *
+ *      The specifications required by the rate limiter to properly
+ *      schedule the inference requests across the different models
+ *      and their instances.
+ *
  *
  * @generated from message inference.ModelRateLimiter
  */
 export type ModelRateLimiter = Message<'inference.ModelRateLimiter'> & {
     /**
-     * @@  .. cpp:var:: Resource resources (repeated)
-     * @@
-     * @@     The resources required to execute the request on a model instance.
-     * @@     Resources are just names with a corresponding count. The execution
-     * @@     of the instance will be blocked until the specified resources are
-     * @@     available. By default an instance uses no rate-limiter resources.
-     * @@
+     *   .. cpp:var:: Resource resources (repeated)
+     *
+     *      The resources required to execute the request on a model instance.
+     *      Resources are just names with a corresponding count. The execution
+     *      of the instance will be blocked until the specified resources are
+     *      available. By default an instance uses no rate-limiter resources.
+     *
      *
      * @generated from field: repeated inference.ModelRateLimiter.Resource resources = 1;
      */
     resources: ModelRateLimiter_Resource[]
 
     /**
-     * @@  .. cpp:var:: uint32 priority
-     * @@
-     * @@     The optional weighting value to be used for prioritizing across
-     * @@     instances. An instance with priority 2 will be given 1/2 the
-     * @@     number of scheduling chances as an instance_group with priority
-     * @@     1. The default priority is 1. The priority of value 0 will be
-     * @@     treated as priority 1.
-     * @@
+     *   .. cpp:var:: uint32 priority
+     *
+     *      The optional weighting value to be used for prioritizing across
+     *      instances. An instance with priority 2 will be given 1/2 the
+     *      number of scheduling chances as an instance_group with priority
+     *      1. The default priority is 1. The priority of value 0 will be
+     *      treated as priority 1.
+     *
      *
      * @generated from field: uint32 priority = 2;
      */
@@ -92,43 +92,43 @@ export const ModelRateLimiterSchema: GenMessage<ModelRateLimiter> =
     messageDesc(file_model_config, 0)
 
 /**
- * @@  .. cpp:var:: message Resource
- * @@
- * @@     The resource property.
- * @@
+ *   .. cpp:var:: message Resource
+ *
+ *      The resource property.
+ *
  *
  * @generated from message inference.ModelRateLimiter.Resource
  */
 export type ModelRateLimiter_Resource = Message<'inference.ModelRateLimiter.Resource'> & {
     /**
-     * @@  .. cpp:var:: string name
-     * @@
-     * @@     The name associated with the resource.
-     * @@
+     *   .. cpp:var:: string name
+     *
+     *      The name associated with the resource.
+     *
      *
      * @generated from field: string name = 1;
      */
     name: string
 
     /**
-     * @@  .. cpp:var:: bool global
-     * @@
-     * @@     Whether or not the resource is global. If true then the resource
-     * @@     is assumed to be shared among the devices otherwise specified
-     * @@     count of the resource is assumed for each device associated
-     * @@     with the instance.
-     * @@
+     *   .. cpp:var:: bool global
+     *
+     *      Whether or not the resource is global. If true then the resource
+     *      is assumed to be shared among the devices otherwise specified
+     *      count of the resource is assumed for each device associated
+     *      with the instance.
+     *
      *
      * @generated from field: bool global = 2;
      */
     global: boolean
 
     /**
-     * @@  .. cpp:var:: uint32 count
-     * @@
-     * @@     The number of resources required for the execution of the model
-     * @@     instance.
-     * @@
+     *   .. cpp:var:: uint32 count
+     *
+     *      The number of resources required for the execution of the model
+     *      instance.
+     *
      *
      * @generated from field: uint32 count = 3;
      */
@@ -144,126 +144,126 @@ export const ModelRateLimiter_ResourceSchema: GenMessage<ModelRateLimiter_Resour
     messageDesc(file_model_config, 0, 0)
 
 /**
- * @@
- * @@.. cpp:var:: message ModelInstanceGroup
- * @@
- * @@   A group of one or more instances of a model and resources made
- * @@   available for those instances.
- * @@
+ *
+ * .. cpp:var:: message ModelInstanceGroup
+ *
+ *    A group of one or more instances of a model and resources made
+ *    available for those instances.
+ *
  *
  * @generated from message inference.ModelInstanceGroup
  */
 export type ModelInstanceGroup = Message<'inference.ModelInstanceGroup'> & {
     /**
-     * @@  .. cpp:var:: string name
-     * @@
-     * @@     Optional name of this group of instances. If not specified the
-     * @@     name will be formed as <model name>_<group number>. The name of
-     * @@     individual instances will be further formed by a unique instance
-     * @@     number and GPU index:
-     * @@
+     *   .. cpp:var:: string name
+     *
+     *      Optional name of this group of instances. If not specified the
+     *      name will be formed as <model name>_<group number>. The name of
+     *      individual instances will be further formed by a unique instance
+     *      number and GPU index:
+     *
      *
      * @generated from field: string name = 1;
      */
     name: string
 
     /**
-     * @@  .. cpp:var:: Kind kind
-     * @@
-     * @@     The kind of this instance group. Default is KIND_AUTO. If
-     * @@     KIND_AUTO or KIND_GPU then both 'count' and 'gpu' are valid and
-     * @@     may be specified. If KIND_CPU or KIND_MODEL only 'count' is valid
-     * @@     and 'gpu' cannot be specified.
-     * @@
+     *   .. cpp:var:: Kind kind
+     *
+     *      The kind of this instance group. Default is KIND_AUTO. If
+     *      KIND_AUTO or KIND_GPU then both 'count' and 'gpu' are valid and
+     *      may be specified. If KIND_CPU or KIND_MODEL only 'count' is valid
+     *      and 'gpu' cannot be specified.
+     *
      *
      * @generated from field: inference.ModelInstanceGroup.Kind kind = 4;
      */
     kind: ModelInstanceGroup_Kind
 
     /**
-     * @@  .. cpp:var:: int32 count
-     * @@
-     * @@     For a group assigned to GPU, the number of instances created for
-     * @@     each GPU listed in 'gpus'. For a group assigned to CPU the number
-     * @@     of instances created. Default is 1.
+     *   .. cpp:var:: int32 count
+     *
+     *      For a group assigned to GPU, the number of instances created for
+     *      each GPU listed in 'gpus'. For a group assigned to CPU the number
+     *      of instances created. Default is 1.
      *
      * @generated from field: int32 count = 2;
      */
     count: number
 
     /**
-     * @@  .. cpp:var:: ModelRateLimiter rate_limiter
-     * @@
-     * @@     The rate limiter specific settings to be associated with this
-     * @@     instance group. Optional, if not specified no rate limiting
-     * @@     will be applied to this instance group.
-     * @@
+     *   .. cpp:var:: ModelRateLimiter rate_limiter
+     *
+     *      The rate limiter specific settings to be associated with this
+     *      instance group. Optional, if not specified no rate limiting
+     *      will be applied to this instance group.
+     *
      *
      * @generated from field: inference.ModelRateLimiter rate_limiter = 6;
      */
     rateLimiter?: ModelRateLimiter
 
     /**
-     * @@  .. cpp:var:: int32 gpus (repeated)
-     * @@
-     * @@     GPU(s) where instances should be available. For each GPU listed,
-     * @@     'count' instances of the model will be available. Setting 'gpus'
-     * @@     to empty (or not specifying at all) is equivalent to listing all
-     * @@     available GPUs.
-     * @@
+     *   .. cpp:var:: int32 gpus (repeated)
+     *
+     *      GPU(s) where instances should be available. For each GPU listed,
+     *      'count' instances of the model will be available. Setting 'gpus'
+     *      to empty (or not specifying at all) is equivalent to listing all
+     *      available GPUs.
+     *
      *
      * @generated from field: repeated int32 gpus = 3;
      */
     gpus: number[]
 
     /**
-     * @@  .. cpp:var:: SecondaryDevice secondary_devices (repeated)
-     * @@
-     * @@     Secondary devices that are required by instances specified by this
-     * @@     instance group. Optional.
-     * @@
+     *   .. cpp:var:: SecondaryDevice secondary_devices (repeated)
+     *
+     *      Secondary devices that are required by instances specified by this
+     *      instance group. Optional.
+     *
      *
      * @generated from field: repeated inference.ModelInstanceGroup.SecondaryDevice secondary_devices = 8;
      */
     secondaryDevices: ModelInstanceGroup_SecondaryDevice[]
 
     /**
-     * @@  .. cpp:var:: string profile (repeated)
-     * @@
-     * @@     For TensorRT models containing multiple optimization profile, this
-     * @@     parameter specifies a set of optimization profiles available to this
-     * @@     instance group. The inference server will choose the optimal profile
-     * @@     based on the shapes of the input tensors. This field should lie
-     * @@     between 0 and <TotalNumberOfOptimizationProfilesInPlanModel> - 1
-     * @@     and be specified only for TensorRT backend, otherwise an error will
-     * @@     be generated. If not specified, the server will select the first
-     * @@     optimization profile by default.
-     * @@
+     *   .. cpp:var:: string profile (repeated)
+     *
+     *      For TensorRT models containing multiple optimization profile, this
+     *      parameter specifies a set of optimization profiles available to this
+     *      instance group. The inference server will choose the optimal profile
+     *      based on the shapes of the input tensors. This field should lie
+     *      between 0 and <TotalNumberOfOptimizationProfilesInPlanModel> - 1
+     *      and be specified only for TensorRT backend, otherwise an error will
+     *      be generated. If not specified, the server will select the first
+     *      optimization profile by default.
+     *
      *
      * @generated from field: repeated string profile = 5;
      */
     profile: string[]
 
     /**
-     * @@  .. cpp:var:: bool passive
-     * @@
-     * @@     Whether the instances within this instance group will be accepting
-     * @@     inference requests from the scheduler. If true, the instances will
-     * @@     not be added to the scheduler. Default value is false.
-     * @@
+     *   .. cpp:var:: bool passive
+     *
+     *      Whether the instances within this instance group will be accepting
+     *      inference requests from the scheduler. If true, the instances will
+     *      not be added to the scheduler. Default value is false.
+     *
      *
      * @generated from field: bool passive = 7;
      */
     passive: boolean
 
     /**
-     * @@  .. cpp:var:: string host_policy
-     * @@
-     * @@     The host policy name that the instance to be associated with.
-     * @@     The default value is set to reflect the device kind of the instance,
-     * @@     for instance, KIND_CPU is "cpu", KIND_MODEL is "model" and
-     * @@     KIND_GPU is "gpu_<gpu_id>".
-     * @@
+     *   .. cpp:var:: string host_policy
+     *
+     *      The host policy name that the instance to be associated with.
+     *      The default value is set to reflect the device kind of the instance,
+     *      for instance, KIND_CPU is "cpu", KIND_MODEL is "model" and
+     *      KIND_GPU is "gpu_<gpu_id>".
+     *
      *
      * @generated from field: string host_policy = 9;
      */
@@ -279,31 +279,31 @@ export const ModelInstanceGroupSchema: GenMessage<ModelInstanceGroup> =
     messageDesc(file_model_config, 1)
 
 /**
- * @@
- * @@  .. cpp:var:: message SecondaryDevice
- * @@
- * @@     A secondary device required for a model instance.
- * @@
+ *
+ *   .. cpp:var:: message SecondaryDevice
+ *
+ *      A secondary device required for a model instance.
+ *
  *
  * @generated from message inference.ModelInstanceGroup.SecondaryDevice
  */
 export type ModelInstanceGroup_SecondaryDevice =
     Message<'inference.ModelInstanceGroup.SecondaryDevice'> & {
         /**
-         * @@  .. cpp:var:: SecondaryDeviceKind kind
-         * @@
-         * @@     The secondary device kind.
-         * @@
+         *   .. cpp:var:: SecondaryDeviceKind kind
+         *
+         *      The secondary device kind.
+         *
          *
          * @generated from field: inference.ModelInstanceGroup.SecondaryDevice.SecondaryDeviceKind kind = 1;
          */
         kind: ModelInstanceGroup_SecondaryDevice_SecondaryDeviceKind
 
         /**
-         * @@  .. cpp:var:: int64 device_id
-         * @@
-         * @@     Identifier for the secondary device.
-         * @@
+         *   .. cpp:var:: int64 device_id
+         *
+         *      Identifier for the secondary device.
+         *
          *
          * @generated from field: int64 device_id = 2;
          */
@@ -319,21 +319,21 @@ export const ModelInstanceGroup_SecondaryDeviceSchema: GenMessage<ModelInstanceG
     messageDesc(file_model_config, 1, 0)
 
 /**
- * @@
- * @@  .. cpp:enum:: SecondaryDeviceKind
- * @@
- * @@     The kind of the secondary device.
- * @@
+ *
+ *   .. cpp:enum:: SecondaryDeviceKind
+ *
+ *      The kind of the secondary device.
+ *
  *
  * @generated from enum inference.ModelInstanceGroup.SecondaryDevice.SecondaryDeviceKind
  */
 export enum ModelInstanceGroup_SecondaryDevice_SecondaryDeviceKind {
     /**
-     * @@    .. cpp:enumerator:: SecondaryDeviceKind::KIND_NVDLA = 0
-     * @@
-     * @@       An NVDLA core. http://nvdla.org
-     * @@       Currently KIND_NVDLA is only supported by the TensorRT backend.
-     * @@
+     *     .. cpp:enumerator:: SecondaryDeviceKind::KIND_NVDLA = 0
+     *
+     *        An NVDLA core. http://nvdla.org
+     *        Currently KIND_NVDLA is only supported by the TensorRT backend.
+     *
      *
      * @generated from enum value: KIND_NVDLA = 0;
      */
@@ -348,58 +348,58 @@ export const ModelInstanceGroup_SecondaryDevice_SecondaryDeviceKindSchema: GenEn
     enumDesc(file_model_config, 1, 0, 0)
 
 /**
- * @@
- * @@  .. cpp:enum:: Kind
- * @@
- * @@     Kind of this instance group.
- * @@
+ *
+ *   .. cpp:enum:: Kind
+ *
+ *      Kind of this instance group.
+ *
  *
  * @generated from enum inference.ModelInstanceGroup.Kind
  */
 export enum ModelInstanceGroup_Kind {
     /**
-     * @@    .. cpp:enumerator:: Kind::KIND_AUTO = 0
-     * @@
-     * @@       This instance group represents instances that can run on either
-     * @@       CPU or GPU. If all GPUs listed in 'gpus' are available then
-     * @@       instances will be created on GPU(s), otherwise instances will
-     * @@       be created on CPU.
-     * @@
+     *     .. cpp:enumerator:: Kind::KIND_AUTO = 0
+     *
+     *        This instance group represents instances that can run on either
+     *        CPU or GPU. If all GPUs listed in 'gpus' are available then
+     *        instances will be created on GPU(s), otherwise instances will
+     *        be created on CPU.
+     *
      *
      * @generated from enum value: KIND_AUTO = 0;
      */
     AUTO = 0,
 
     /**
-     * @@    .. cpp:enumerator:: Kind::KIND_GPU = 1
-     * @@
-     * @@       This instance group represents instances that must run on the
-     * @@       GPU.
-     * @@
+     *     .. cpp:enumerator:: Kind::KIND_GPU = 1
+     *
+     *        This instance group represents instances that must run on the
+     *        GPU.
+     *
      *
      * @generated from enum value: KIND_GPU = 1;
      */
     GPU = 1,
 
     /**
-     * @@    .. cpp:enumerator:: Kind::KIND_CPU = 2
-     * @@
-     * @@       This instance group represents instances that must run on the
-     * @@       CPU.
-     * @@
+     *     .. cpp:enumerator:: Kind::KIND_CPU = 2
+     *
+     *        This instance group represents instances that must run on the
+     *        CPU.
+     *
      *
      * @generated from enum value: KIND_CPU = 2;
      */
     CPU = 2,
 
     /**
-     * @@    .. cpp:enumerator:: Kind::KIND_MODEL = 3
-     * @@
-     * @@       This instance group represents instances that should run on the
-     * @@       CPU and/or GPU(s) as specified by the model or backend itself.
-     * @@       The inference server will not override the model/backend
-     * @@       settings.
-     * @@
+     *     .. cpp:enumerator:: Kind::KIND_MODEL = 3
+     *
+     *        This instance group represents instances that should run on the
+     *        CPU and/or GPU(s) as specified by the model or backend itself.
+     *        The inference server will not override the model/backend
+     *        settings.
+     *
      *
      * @generated from enum value: KIND_MODEL = 3;
      */
@@ -414,20 +414,20 @@ export const ModelInstanceGroup_KindSchema: GenEnum<ModelInstanceGroup_Kind> =
     enumDesc(file_model_config, 1, 0)
 
 /**
- * @@
- * @@.. cpp:var:: message ModelTensorReshape
- * @@
- * @@   Reshape specification for input and output tensors.
- * @@
+ *
+ * .. cpp:var:: message ModelTensorReshape
+ *
+ *    Reshape specification for input and output tensors.
+ *
  *
  * @generated from message inference.ModelTensorReshape
  */
 export type ModelTensorReshape = Message<'inference.ModelTensorReshape'> & {
     /**
-     * @@  .. cpp:var:: int64 shape (repeated)
-     * @@
-     * @@     The shape to use for reshaping.
-     * @@
+     *   .. cpp:var:: int64 shape (repeated)
+     *
+     *      The shape to use for reshaping.
+     *
      *
      * @generated from field: repeated int64 shape = 1;
      */
@@ -443,116 +443,116 @@ export const ModelTensorReshapeSchema: GenMessage<ModelTensorReshape> =
     messageDesc(file_model_config, 2)
 
 /**
- * @@
- * @@.. cpp:var:: message ModelInput
- * @@
- * @@   An input required by the model.
- * @@
+ *
+ * .. cpp:var:: message ModelInput
+ *
+ *    An input required by the model.
+ *
  *
  * @generated from message inference.ModelInput
  */
 export type ModelInput = Message<'inference.ModelInput'> & {
     /**
-     * @@  .. cpp:var:: string name
-     * @@
-     * @@     The name of the input.
-     * @@
+     *   .. cpp:var:: string name
+     *
+     *      The name of the input.
+     *
      *
      * @generated from field: string name = 1;
      */
     name: string
 
     /**
-     * @@  .. cpp:var:: DataType data_type
-     * @@
-     * @@     The data-type of the input.
-     * @@
+     *   .. cpp:var:: DataType data_type
+     *
+     *      The data-type of the input.
+     *
      *
      * @generated from field: inference.DataType data_type = 2;
      */
     dataType: DataType
 
     /**
-     * @@  .. cpp:var:: Format format
-     * @@
-     * @@     The format of the input. Optional.
-     * @@
+     *   .. cpp:var:: Format format
+     *
+     *      The format of the input. Optional.
+     *
      *
      * @generated from field: inference.ModelInput.Format format = 3;
      */
     format: ModelInput_Format
 
     /**
-     * @@  .. cpp:var:: int64 dims (repeated)
-     * @@
-     * @@     The dimensions/shape of the input tensor that must be provided
-     * @@     when invoking the inference API for this model.
-     * @@
+     *   .. cpp:var:: int64 dims (repeated)
+     *
+     *      The dimensions/shape of the input tensor that must be provided
+     *      when invoking the inference API for this model.
+     *
      *
      * @generated from field: repeated int64 dims = 4;
      */
     dims: bigint[]
 
     /**
-     * @@  .. cpp:var:: ModelTensorReshape reshape
-     * @@
-     * @@     The shape expected for this input by the backend. The input will
-     * @@     be reshaped to this before being presented to the backend. The
-     * @@     reshape must have the same number of elements as the input shape
-     * @@     specified by 'dims'. Optional.
-     * @@
+     *   .. cpp:var:: ModelTensorReshape reshape
+     *
+     *      The shape expected for this input by the backend. The input will
+     *      be reshaped to this before being presented to the backend. The
+     *      reshape must have the same number of elements as the input shape
+     *      specified by 'dims'. Optional.
+     *
      *
      * @generated from field: inference.ModelTensorReshape reshape = 5;
      */
     reshape?: ModelTensorReshape
 
     /**
-     * @@  .. cpp:var:: bool is_shape_tensor
-     * @@
-     * @@     Whether or not the input is a shape tensor to the model. This field
-     * @@     is currently supported only for the TensorRT model. An error will be
-     * @@     generated if this specification does not comply with underlying
-     * @@     model.
-     * @@
+     *   .. cpp:var:: bool is_shape_tensor
+     *
+     *      Whether or not the input is a shape tensor to the model. This field
+     *      is currently supported only for the TensorRT model. An error will be
+     *      generated if this specification does not comply with underlying
+     *      model.
+     *
      *
      * @generated from field: bool is_shape_tensor = 6;
      */
     isShapeTensor: boolean
 
     /**
-     * @@  .. cpp:var:: bool allow_ragged_batch
-     * @@
-     * @@     Whether or not the input is allowed to be "ragged" in a dynamically
-     * @@     created batch. Default is false indicating that two requests will
-     * @@     only be batched if this tensor has the same shape in both requests.
-     * @@     True indicates that two requests can be batched even if this tensor
-     * @@     has a different shape in each request.
-     * @@
+     *   .. cpp:var:: bool allow_ragged_batch
+     *
+     *      Whether or not the input is allowed to be "ragged" in a dynamically
+     *      created batch. Default is false indicating that two requests will
+     *      only be batched if this tensor has the same shape in both requests.
+     *      True indicates that two requests can be batched even if this tensor
+     *      has a different shape in each request.
+     *
      *
      * @generated from field: bool allow_ragged_batch = 7;
      */
     allowRaggedBatch: boolean
 
     /**
-     * @@  .. cpp:var:: bool optional
-     * @@
-     * @@     Whether or not the input is optional for the model execution.
-     * @@     If true, the input is not required in the inference request.
-     * @@     Default value is false.
-     * @@
+     *   .. cpp:var:: bool optional
+     *
+     *      Whether or not the input is optional for the model execution.
+     *      If true, the input is not required in the inference request.
+     *      Default value is false.
+     *
      *
      * @generated from field: bool optional = 8;
      */
     optional: boolean
 
     /**
-     * @@  .. cpp:var:: bool is_non_linear_format_io
-     * @@
-     * @@     Indicates whether the input tensor uses a non-linear IO format. This
-     * @@     field is currently supported only for TensorRT models. An error will
-     * @@     be generated if this specification does not comply with the
-     * @@     underlying model.
-     * @@
+     *   .. cpp:var:: bool is_non_linear_format_io
+     *
+     *      Indicates whether the input tensor uses a non-linear IO format. This
+     *      field is currently supported only for TensorRT models. An error will
+     *      be generated if this specification does not comply with the
+     *      underlying model.
+     *
      *
      * @generated from field: bool is_non_linear_format_io = 9;
      */
@@ -568,48 +568,48 @@ export const ModelInputSchema: GenMessage<ModelInput> =
     messageDesc(file_model_config, 3)
 
 /**
- * @@
- * @@  .. cpp:enum:: Format
- * @@
- * @@     The format for the input.
- * @@
+ *
+ *   .. cpp:enum:: Format
+ *
+ *      The format for the input.
+ *
  *
  * @generated from enum inference.ModelInput.Format
  */
 export enum ModelInput_Format {
     /**
-     * @@    .. cpp:enumerator:: Format::FORMAT_NONE = 0
-     * @@
-     * @@       The input has no specific format. This is the default.
-     * @@
+     *     .. cpp:enumerator:: Format::FORMAT_NONE = 0
+     *
+     *        The input has no specific format. This is the default.
+     *
      *
      * @generated from enum value: FORMAT_NONE = 0;
      */
     NONE = 0,
 
     /**
-     * @@    .. cpp:enumerator:: Format::FORMAT_NHWC = 1
-     * @@
-     * @@       HWC image format. Tensors with this format require 3 dimensions
-     * @@       if the model does not support batching (max_batch_size = 0) or 4
-     * @@       dimensions if the model does support batching (max_batch_size
-     * @@       >= 1). In either case the 'dims' below should only specify the
-     * @@       3 non-batch dimensions (i.e. HWC or CHW).
-     * @@
+     *     .. cpp:enumerator:: Format::FORMAT_NHWC = 1
+     *
+     *        HWC image format. Tensors with this format require 3 dimensions
+     *        if the model does not support batching (max_batch_size = 0) or 4
+     *        dimensions if the model does support batching (max_batch_size
+     *        >= 1). In either case the 'dims' below should only specify the
+     *        3 non-batch dimensions (i.e. HWC or CHW).
+     *
      *
      * @generated from enum value: FORMAT_NHWC = 1;
      */
     NHWC = 1,
 
     /**
-     * @@    .. cpp:enumerator:: Format::FORMAT_NCHW = 2
-     * @@
-     * @@       CHW image format. Tensors with this format require 3 dimensions
-     * @@       if the model does not support batching (max_batch_size = 0) or 4
-     * @@       dimensions if the model does support batching (max_batch_size
-     * @@       >= 1). In either case the 'dims' below should only specify the
-     * @@       3 non-batch dimensions (i.e. HWC or CHW).
-     * @@
+     *     .. cpp:enumerator:: Format::FORMAT_NCHW = 2
+     *
+     *        CHW image format. Tensors with this format require 3 dimensions
+     *        if the model does not support batching (max_batch_size = 0) or 4
+     *        dimensions if the model does support batching (max_batch_size
+     *        >= 1). In either case the 'dims' below should only specify the
+     *        3 non-batch dimensions (i.e. HWC or CHW).
+     *
      *
      * @generated from enum value: FORMAT_NCHW = 2;
      */
@@ -624,90 +624,90 @@ export const ModelInput_FormatSchema: GenEnum<ModelInput_Format> =
     enumDesc(file_model_config, 3, 0)
 
 /**
- * @@
- * @@.. cpp:var:: message ModelOutput
- * @@
- * @@   An output produced by the model.
- * @@
+ *
+ * .. cpp:var:: message ModelOutput
+ *
+ *    An output produced by the model.
+ *
  *
  * @generated from message inference.ModelOutput
  */
 export type ModelOutput = Message<'inference.ModelOutput'> & {
     /**
-     * @@  .. cpp:var:: string name
-     * @@
-     * @@     The name of the output.
-     * @@
+     *   .. cpp:var:: string name
+     *
+     *      The name of the output.
+     *
      *
      * @generated from field: string name = 1;
      */
     name: string
 
     /**
-     * @@  .. cpp:var:: DataType data_type
-     * @@
-     * @@     The data-type of the output.
-     * @@
+     *   .. cpp:var:: DataType data_type
+     *
+     *      The data-type of the output.
+     *
      *
      * @generated from field: inference.DataType data_type = 2;
      */
     dataType: DataType
 
     /**
-     * @@  .. cpp:var:: int64 dims (repeated)
-     * @@
-     * @@     The dimensions/shape of the output tensor.
-     * @@
+     *   .. cpp:var:: int64 dims (repeated)
+     *
+     *      The dimensions/shape of the output tensor.
+     *
      *
      * @generated from field: repeated int64 dims = 3;
      */
     dims: bigint[]
 
     /**
-     * @@  .. cpp:var:: ModelTensorReshape reshape
-     * @@
-     * @@     The shape produced for this output by the backend. The output will
-     * @@     be reshaped from this to the shape specified in 'dims' before being
-     * @@     returned in the inference response. The reshape must have the same
-     * @@     number of elements as the output shape specified by 'dims'. Optional.
-     * @@
+     *   .. cpp:var:: ModelTensorReshape reshape
+     *
+     *      The shape produced for this output by the backend. The output will
+     *      be reshaped from this to the shape specified in 'dims' before being
+     *      returned in the inference response. The reshape must have the same
+     *      number of elements as the output shape specified by 'dims'. Optional.
+     *
      *
      * @generated from field: inference.ModelTensorReshape reshape = 5;
      */
     reshape?: ModelTensorReshape
 
     /**
-     * @@  .. cpp:var:: string label_filename
-     * @@
-     * @@     The label file associated with this output. Should be specified only
-     * @@     for outputs that represent classifications. Optional.
-     * @@
+     *   .. cpp:var:: string label_filename
+     *
+     *      The label file associated with this output. Should be specified only
+     *      for outputs that represent classifications. Optional.
+     *
      *
      * @generated from field: string label_filename = 4;
      */
     labelFilename: string
 
     /**
-     * @@  .. cpp:var:: bool is_shape_tensor
-     * @@
-     * @@     Whether or not the output is a shape tensor to the model. This field
-     * @@     is currently supported only for the TensorRT model. An error will be
-     * @@     generated if this specification does not comply with underlying
-     * @@     model.
-     * @@
+     *   .. cpp:var:: bool is_shape_tensor
+     *
+     *      Whether or not the output is a shape tensor to the model. This field
+     *      is currently supported only for the TensorRT model. An error will be
+     *      generated if this specification does not comply with underlying
+     *      model.
+     *
      *
      * @generated from field: bool is_shape_tensor = 6;
      */
     isShapeTensor: boolean
 
     /**
-     * @@  .. cpp:var:: bool is_non_linear_format_io
-     * @@
-     * @@     Indicates whether the output tensor uses a non-linear IO format. This
-     * @@     field is currently supported only for TensorRT models. An error will
-     * @@     be generated if this specification does not comply with the
-     * @@     underlying model.
-     * @@
+     *   .. cpp:var:: bool is_non_linear_format_io
+     *
+     *      Indicates whether the output tensor uses a non-linear IO format. This
+     *      field is currently supported only for TensorRT models. An error will
+     *      be generated if this specification does not comply with the
+     *      underlying model.
+     *
      *
      * @generated from field: bool is_non_linear_format_io = 7;
      */
@@ -723,54 +723,54 @@ export const ModelOutputSchema: GenMessage<ModelOutput> =
     messageDesc(file_model_config, 4)
 
 /**
- * @@  .. cpp:var:: message BatchInput
- * @@
- * @@     A batch input is an additional input that must be added by
- * @@     the backend based on all the requests in a batch.
- * @@
+ *   .. cpp:var:: message BatchInput
+ *
+ *      A batch input is an additional input that must be added by
+ *      the backend based on all the requests in a batch.
+ *
  *
  * @generated from message inference.BatchInput
  */
 export type BatchInput = Message<'inference.BatchInput'> & {
     /**
-     * @@    .. cpp:var:: Kind kind
-     * @@
-     * @@       The kind of this batch input.
-     * @@
+     *     .. cpp:var:: Kind kind
+     *
+     *        The kind of this batch input.
+     *
      *
      * @generated from field: inference.BatchInput.Kind kind = 1;
      */
     kind: BatchInput_Kind
 
     /**
-     * @@    .. cpp:var:: string target_name (repeated)
-     * @@
-     * @@       The name of the model inputs that the backend will create
-     * @@       for this batch input.
-     * @@
+     *     .. cpp:var:: string target_name (repeated)
+     *
+     *        The name of the model inputs that the backend will create
+     *        for this batch input.
+     *
      *
      * @generated from field: repeated string target_name = 2;
      */
     targetName: string[]
 
     /**
-     * @@    .. cpp:var:: DataType data_type
-     * @@
-     * @@       The input's datatype. The data type can be TYPE_INT32 or
-     * @@       TYPE_FP32.
-     * @@
+     *     .. cpp:var:: DataType data_type
+     *
+     *        The input's datatype. The data type can be TYPE_INT32 or
+     *        TYPE_FP32.
+     *
      *
      * @generated from field: inference.DataType data_type = 3;
      */
     dataType: DataType
 
     /**
-     * @@    .. cpp:var:: string source_input (repeated)
-     * @@
-     * @@       The backend derives the value for each batch input from one or
-     * @@       more other inputs. 'source_input' gives the names of those
-     * @@       inputs.
-     * @@
+     *     .. cpp:var:: string source_input (repeated)
+     *
+     *        The backend derives the value for each batch input from one or
+     *        more other inputs. 'source_input' gives the names of those
+     *        inputs.
+     *
      *
      * @generated from field: repeated string source_input = 4;
      */
@@ -786,93 +786,93 @@ export const BatchInputSchema: GenMessage<BatchInput> =
     messageDesc(file_model_config, 5)
 
 /**
- * @@
- * @@    .. cpp:enum:: Kind
- * @@
- * @@       The kind of the batch input.
- * @@
+ *
+ *     .. cpp:enum:: Kind
+ *
+ *        The kind of the batch input.
+ *
  *
  * @generated from enum inference.BatchInput.Kind
  */
 export enum BatchInput_Kind {
     /**
-     * @@      .. cpp:enumerator:: Kind::BATCH_ELEMENT_COUNT = 0
-     * @@
-     * @@         The element count of the 'source_input' will be added as
-     * @@         input with shape [1].
-     * @@
+     *       .. cpp:enumerator:: Kind::BATCH_ELEMENT_COUNT = 0
+     *
+     *          The element count of the 'source_input' will be added as
+     *          input with shape [1].
+     *
      *
      * @generated from enum value: BATCH_ELEMENT_COUNT = 0;
      */
     BATCH_ELEMENT_COUNT = 0,
 
     /**
-     * @@      .. cpp:enumerator:: Kind::BATCH_ACCUMULATED_ELEMENT_COUNT = 1
-     * @@
-     * @@         The accumulated element count of the 'source_input' will be
-     * @@         added as input with shape [1]. For example, if there is a
-     * @@         batch of two request, each with 2 elements, an input of value
-     * @@         2 will be added to the first request, and an input of value
-     * @@         4 will be added to the second request.
-     * @@
+     *       .. cpp:enumerator:: Kind::BATCH_ACCUMULATED_ELEMENT_COUNT = 1
+     *
+     *          The accumulated element count of the 'source_input' will be
+     *          added as input with shape [1]. For example, if there is a
+     *          batch of two request, each with 2 elements, an input of value
+     *          2 will be added to the first request, and an input of value
+     *          4 will be added to the second request.
+     *
      *
      * @generated from enum value: BATCH_ACCUMULATED_ELEMENT_COUNT = 1;
      */
     BATCH_ACCUMULATED_ELEMENT_COUNT = 1,
 
     /**
-     * @@      .. cpp:enumerator::
-     * @@         Kind::BATCH_ACCUMULATED_ELEMENT_COUNT_WITH_ZERO = 2
-     * @@
-     * @@         The accumulated element count of the 'source_input' will be
-     * @@         added as input with shape [1], except for the first request
-     * @@         in the batch. For the first request in the batch, the input
-     * @@         will have shape [2] where the first element is value 0.
-     * @@
+     *       .. cpp:enumerator::
+     *          Kind::BATCH_ACCUMULATED_ELEMENT_COUNT_WITH_ZERO = 2
+     *
+     *          The accumulated element count of the 'source_input' will be
+     *          added as input with shape [1], except for the first request
+     *          in the batch. For the first request in the batch, the input
+     *          will have shape [2] where the first element is value 0.
+     *
      *
      * @generated from enum value: BATCH_ACCUMULATED_ELEMENT_COUNT_WITH_ZERO = 2;
      */
     BATCH_ACCUMULATED_ELEMENT_COUNT_WITH_ZERO = 2,
 
     /**
-     * @@      .. cpp:enumerator:: Kind::BATCH_MAX_ELEMENT_COUNT_AS_SHAPE = 3
-     * @@
-     * @@         Among the requests in the batch, the max element count of the
-     * @@         'source_input' will be added as input with shape
-     * @@         [max_element_count] for the first request in the batch.
-     * @@         For other requests, such input will be with shape [0].
-     * @@         The data of the tensor will be uninitialized.
-     * @@
+     *       .. cpp:enumerator:: Kind::BATCH_MAX_ELEMENT_COUNT_AS_SHAPE = 3
+     *
+     *          Among the requests in the batch, the max element count of the
+     *          'source_input' will be added as input with shape
+     *          [max_element_count] for the first request in the batch.
+     *          For other requests, such input will be with shape [0].
+     *          The data of the tensor will be uninitialized.
+     *
      *
      * @generated from enum value: BATCH_MAX_ELEMENT_COUNT_AS_SHAPE = 3;
      */
     BATCH_MAX_ELEMENT_COUNT_AS_SHAPE = 3,
 
     /**
-     * @@      .. cpp:enumerator:: Kind::BATCH_ITEM_SHAPE = 4
-     * @@
-     * @@         Among the requests in the batch, the shape of the
-     * @@         'source_input' will be added as input with shape
-     * @@         [batch_size, len(input_dim)]. For example, if one
-     * @@         batch-2 input with shape [3, 1] and batch-1 input
-     * @@         with shape [2, 2] are batched, the batch input will
-     * @@         have shape [3, 2] and value [ [3, 1], [3, 1], [2, 2]].
-     * @@
+     *       .. cpp:enumerator:: Kind::BATCH_ITEM_SHAPE = 4
+     *
+     *          Among the requests in the batch, the shape of the
+     *          'source_input' will be added as input with shape
+     *          [batch_size, len(input_dim)]. For example, if one
+     *          batch-2 input with shape [3, 1] and batch-1 input
+     *          with shape [2, 2] are batched, the batch input will
+     *          have shape [3, 2] and value [ [3, 1], [3, 1], [2, 2]].
+     *
      *
      * @generated from enum value: BATCH_ITEM_SHAPE = 4;
      */
     BATCH_ITEM_SHAPE = 4,
 
     /**
-     * @@      .. cpp:enumerator:: Kind::BATCH_ITEM_SHAPE_FLATTEN = 5
-     * @@
-     * @@         Among the requests in the batch, the shape of the
-     * @@         'source_input' will be added as input with single dimensional
-     * @@         shape [batch_size * len(input_dim)]. For example, if one
-     * @@         batch-2 input with shape [3, 1] and batch-1 input
-     * @@         with shape [2, 2] are batched, the batch input will
-     * @@         have shape [6] and value [3, 1, 3, 1, 2, 2].
-     * @@
+     *       .. cpp:enumerator:: Kind::BATCH_ITEM_SHAPE_FLATTEN = 5
+     *
+     *          Among the requests in the batch, the shape of the
+     *          'source_input' will be added as input with single dimensional
+     *          shape [batch_size * len(input_dim)]. For example, if one
+     *          batch-2 input with shape [3, 1] and batch-1 input
+     *          with shape [2, 2] are batched, the batch input will
+     *          have shape [6] and value [3, 1, 3, 1, 2, 2].
+     *
      *
      * @generated from enum value: BATCH_ITEM_SHAPE_FLATTEN = 5;
      */
@@ -887,42 +887,42 @@ export const BatchInput_KindSchema: GenEnum<BatchInput_Kind> =
     enumDesc(file_model_config, 5, 0)
 
 /**
- * @@.. cpp:var:: message BatchOutput
- * @@
- * @@   A batch output is an output produced by the model that must be handled
- * @@   differently by the backend based on all the requests in a batch.
- * @@
+ * .. cpp:var:: message BatchOutput
+ *
+ *    A batch output is an output produced by the model that must be handled
+ *    differently by the backend based on all the requests in a batch.
+ *
  *
  * @generated from message inference.BatchOutput
  */
 export type BatchOutput = Message<'inference.BatchOutput'> & {
     /**
-     * @@  .. cpp:var:: string target_name (repeated)
-     * @@
-     * @@     The name of the outputs to be produced by this batch output
-     * @@     specification.
-     * @@
+     *   .. cpp:var:: string target_name (repeated)
+     *
+     *      The name of the outputs to be produced by this batch output
+     *      specification.
+     *
      *
      * @generated from field: repeated string target_name = 1;
      */
     targetName: string[]
 
     /**
-     * @@  .. cpp:var:: Kind kind
-     * @@
-     * @@     The kind of this batch output.
-     * @@
+     *   .. cpp:var:: Kind kind
+     *
+     *      The kind of this batch output.
+     *
      *
      * @generated from field: inference.BatchOutput.Kind kind = 2;
      */
     kind: BatchOutput_Kind
 
     /**
-     * @@  .. cpp:var:: string source_input (repeated)
-     * @@
-     * @@     The backend derives each batch output from one or more inputs.
-     * @@     'source_input' gives the names of those inputs.
-     * @@
+     *   .. cpp:var:: string source_input (repeated)
+     *
+     *      The backend derives each batch output from one or more inputs.
+     *      'source_input' gives the names of those inputs.
+     *
      *
      * @generated from field: repeated string source_input = 3;
      */
@@ -938,22 +938,22 @@ export const BatchOutputSchema: GenMessage<BatchOutput> =
     messageDesc(file_model_config, 6)
 
 /**
- * @@
- * @@  .. cpp:enum:: Kind
- * @@
- * @@     The kind of the batch output.
- * @@
+ *
+ *   .. cpp:enum:: Kind
+ *
+ *      The kind of the batch output.
+ *
  *
  * @generated from enum inference.BatchOutput.Kind
  */
 export enum BatchOutput_Kind {
     /**
-     * @@    .. cpp:enumerator:: Kind::BATCH_SCATTER_WITH_INPUT_SHAPE = 0
-     * @@
-     * @@       The output should be scattered according to the shape of
-     * @@       'source_input'. The dynamic dimension of the output will
-     * @@       be set to the value of the same dimension in the input.
-     * @@
+     *     .. cpp:enumerator:: Kind::BATCH_SCATTER_WITH_INPUT_SHAPE = 0
+     *
+     *        The output should be scattered according to the shape of
+     *        'source_input'. The dynamic dimension of the output will
+     *        be set to the value of the same dimension in the input.
+     *
      *
      * @generated from enum value: BATCH_SCATTER_WITH_INPUT_SHAPE = 0;
      */
@@ -968,32 +968,32 @@ export const BatchOutput_KindSchema: GenEnum<BatchOutput_Kind> =
     enumDesc(file_model_config, 6, 0)
 
 /**
- * @@
- * @@.. cpp:var:: message ModelVersionPolicy
- * @@
- * @@   Policy indicating which versions of a model should be made
- * @@   available by the inference server.
- * @@
+ *
+ * .. cpp:var:: message ModelVersionPolicy
+ *
+ *    Policy indicating which versions of a model should be made
+ *    available by the inference server.
+ *
  *
  * @generated from message inference.ModelVersionPolicy
  */
 export type ModelVersionPolicy = Message<'inference.ModelVersionPolicy'> & {
     /**
-     * @@  .. cpp:var:: oneof policy_choice
-     * @@
-     * @@     Each model must implement only a single version policy. The
-     * @@     default policy is 'Latest'.
-     * @@
+     *   .. cpp:var:: oneof policy_choice
+     *
+     *      Each model must implement only a single version policy. The
+     *      default policy is 'Latest'.
+     *
      *
      * @generated from oneof inference.ModelVersionPolicy.policy_choice
      */
     policyChoice:
         | {
               /**
-               * @@    .. cpp:var:: Latest latest
-               * @@
-               * @@       Serve only latest version(s) of the model.
-               * @@
+               *     .. cpp:var:: Latest latest
+               *
+               *        Serve only latest version(s) of the model.
+               *
                *
                * @generated from field: inference.ModelVersionPolicy.Latest latest = 1;
                */
@@ -1002,10 +1002,10 @@ export type ModelVersionPolicy = Message<'inference.ModelVersionPolicy'> & {
           }
         | {
               /**
-               * @@    .. cpp:var:: All all
-               * @@
-               * @@       Serve all versions of the model.
-               * @@
+               *     .. cpp:var:: All all
+               *
+               *        Serve all versions of the model.
+               *
                *
                * @generated from field: inference.ModelVersionPolicy.All all = 2;
                */
@@ -1014,10 +1014,10 @@ export type ModelVersionPolicy = Message<'inference.ModelVersionPolicy'> & {
           }
         | {
               /**
-               * @@    .. cpp:var:: Specific specific
-               * @@
-               * @@       Serve only specific version(s) of the model.
-               * @@
+               *     .. cpp:var:: Specific specific
+               *
+               *        Serve only specific version(s) of the model.
+               *
                *
                * @generated from field: inference.ModelVersionPolicy.Specific specific = 3;
                */
@@ -1036,23 +1036,23 @@ export const ModelVersionPolicySchema: GenMessage<ModelVersionPolicy> =
     messageDesc(file_model_config, 7)
 
 /**
- * @@  .. cpp:var:: message Latest
- * @@
- * @@     Serve only the latest version(s) of a model. This is
- * @@     the default policy.
- * @@
+ *   .. cpp:var:: message Latest
+ *
+ *      Serve only the latest version(s) of a model. This is
+ *      the default policy.
+ *
  *
  * @generated from message inference.ModelVersionPolicy.Latest
  */
 export type ModelVersionPolicy_Latest = Message<'inference.ModelVersionPolicy.Latest'> & {
     /**
-     * @@    .. cpp:var:: uint32 num_versions
-     * @@
-     * @@       Serve only the 'num_versions' highest-numbered versions. T
-     * @@       The default value of 'num_versions' is 1, indicating that by
-     * @@       default only the single highest-number version of a
-     * @@       model will be served.
-     * @@
+     *     .. cpp:var:: uint32 num_versions
+     *
+     *        Serve only the 'num_versions' highest-numbered versions. T
+     *        The default value of 'num_versions' is 1, indicating that by
+     *        default only the single highest-number version of a
+     *        model will be served.
+     *
      *
      * @generated from field: uint32 num_versions = 1;
      */
@@ -1068,10 +1068,10 @@ export const ModelVersionPolicy_LatestSchema: GenMessage<ModelVersionPolicy_Late
     messageDesc(file_model_config, 7, 0)
 
 /**
- * @@  .. cpp:var:: message All
- * @@
- * @@     Serve all versions of the model.
- * @@
+ *   .. cpp:var:: message All
+ *
+ *      Serve all versions of the model.
+ *
  *
  * @generated from message inference.ModelVersionPolicy.All
  */
@@ -1086,19 +1086,19 @@ export const ModelVersionPolicy_AllSchema: GenMessage<ModelVersionPolicy_All> =
     messageDesc(file_model_config, 7, 1)
 
 /**
- * @@  .. cpp:var:: message Specific
- * @@
- * @@     Serve only specific versions of the model.
- * @@
+ *   .. cpp:var:: message Specific
+ *
+ *      Serve only specific versions of the model.
+ *
  *
  * @generated from message inference.ModelVersionPolicy.Specific
  */
 export type ModelVersionPolicy_Specific = Message<'inference.ModelVersionPolicy.Specific'> & {
     /**
-     * @@    .. cpp:var:: int64 versions (repeated)
-     * @@
-     * @@       The specific versions of the model that will be served.
-     * @@
+     *     .. cpp:var:: int64 versions (repeated)
+     *
+     *        The specific versions of the model that will be served.
+     *
      *
      * @generated from field: repeated int64 versions = 1;
      */
@@ -1114,107 +1114,107 @@ export const ModelVersionPolicy_SpecificSchema: GenMessage<ModelVersionPolicy_Sp
     messageDesc(file_model_config, 7, 2)
 
 /**
- * @@
- * @@.. cpp:var:: message ModelOptimizationPolicy
- * @@
- * @@   Optimization settings for a model. These settings control if/how a
- * @@   model is optimized and prioritized by the backend framework when
- * @@   it is loaded.
- * @@
+ *
+ * .. cpp:var:: message ModelOptimizationPolicy
+ *
+ *    Optimization settings for a model. These settings control if/how a
+ *    model is optimized and prioritized by the backend framework when
+ *    it is loaded.
+ *
  *
  * @generated from message inference.ModelOptimizationPolicy
  */
 export type ModelOptimizationPolicy = Message<'inference.ModelOptimizationPolicy'> & {
     /**
-     * @@  .. cpp:var:: Graph graph
-     * @@
-     * @@     The graph optimization setting for the model. Optional.
-     * @@
+     *   .. cpp:var:: Graph graph
+     *
+     *      The graph optimization setting for the model. Optional.
+     *
      *
      * @generated from field: inference.ModelOptimizationPolicy.Graph graph = 1;
      */
     graph?: ModelOptimizationPolicy_Graph
 
     /**
-     * @@  .. cpp:var:: ModelPriority priority
-     * @@
-     * @@     The priority setting for the model. Optional.
-     * @@
+     *   .. cpp:var:: ModelPriority priority
+     *
+     *      The priority setting for the model. Optional.
+     *
      *
      * @generated from field: inference.ModelOptimizationPolicy.ModelPriority priority = 2;
      */
     priority: ModelOptimizationPolicy_ModelPriority
 
     /**
-     * @@  .. cpp:var:: Cuda cuda
-     * @@
-     * @@     CUDA-specific optimization settings. Optional.
-     * @@
+     *   .. cpp:var:: Cuda cuda
+     *
+     *      CUDA-specific optimization settings. Optional.
+     *
      *
      * @generated from field: inference.ModelOptimizationPolicy.Cuda cuda = 3;
      */
     cuda?: ModelOptimizationPolicy_Cuda
 
     /**
-     * @@  .. cpp:var:: ExecutionAccelerators execution_accelerators
-     * @@
-     * @@     The accelerators used for the model. Optional.
-     * @@
+     *   .. cpp:var:: ExecutionAccelerators execution_accelerators
+     *
+     *      The accelerators used for the model. Optional.
+     *
      *
      * @generated from field: inference.ModelOptimizationPolicy.ExecutionAccelerators execution_accelerators = 4;
      */
     executionAccelerators?: ModelOptimizationPolicy_ExecutionAccelerators
 
     /**
-     * @@  .. cpp:var:: PinnedMemoryBuffer input_pinned_memory
-     * @@
-     * @@     Use pinned memory buffer when the data transfer for inputs
-     * @@     is between GPU memory and non-pinned system memory.
-     * @@     Default is true.
-     * @@
+     *   .. cpp:var:: PinnedMemoryBuffer input_pinned_memory
+     *
+     *      Use pinned memory buffer when the data transfer for inputs
+     *      is between GPU memory and non-pinned system memory.
+     *      Default is true.
+     *
      *
      * @generated from field: inference.ModelOptimizationPolicy.PinnedMemoryBuffer input_pinned_memory = 5;
      */
     inputPinnedMemory?: ModelOptimizationPolicy_PinnedMemoryBuffer
 
     /**
-     * @@  .. cpp:var:: PinnedMemoryBuffer output_pinned_memory
-     * @@
-     * @@     Use pinned memory buffer when the data transfer for outputs
-     * @@     is between GPU memory and non-pinned system memory.
-     * @@     Default is true.
-     * @@
+     *   .. cpp:var:: PinnedMemoryBuffer output_pinned_memory
+     *
+     *      Use pinned memory buffer when the data transfer for outputs
+     *      is between GPU memory and non-pinned system memory.
+     *      Default is true.
+     *
      *
      * @generated from field: inference.ModelOptimizationPolicy.PinnedMemoryBuffer output_pinned_memory = 6;
      */
     outputPinnedMemory?: ModelOptimizationPolicy_PinnedMemoryBuffer
 
     /**
-     * @@  .. cpp:var:: uint32 gather_kernel_buffer_threshold
-     * @@
-     * @@     The backend may use a gather kernel to gather input data if the
-     * @@     device has direct access to the source buffer and the destination
-     * @@     buffer. In such case, the gather kernel will be used only if the
-     * @@     number of buffers to be gathered is greater or equal to
-     * @@     the specified value. If 0, the gather kernel will be disabled.
-     * @@     Default value is 0.
-     * @@     Currently only recognized by TensorRT backend.
-     * @@
+     *   .. cpp:var:: uint32 gather_kernel_buffer_threshold
+     *
+     *      The backend may use a gather kernel to gather input data if the
+     *      device has direct access to the source buffer and the destination
+     *      buffer. In such case, the gather kernel will be used only if the
+     *      number of buffers to be gathered is greater or equal to
+     *      the specified value. If 0, the gather kernel will be disabled.
+     *      Default value is 0.
+     *      Currently only recognized by TensorRT backend.
+     *
      *
      * @generated from field: uint32 gather_kernel_buffer_threshold = 7;
      */
     gatherKernelBufferThreshold: number
 
     /**
-     * @@  .. cpp:var:: bool eager_batching
-     * @@
-     * @@     Start preparing the next batch before the model instance is ready
-     * @@     for the next inference. This option can be used to overlap the
-     * @@     batch preparation with model execution, with the trade-off that
-     * @@     the next batch might be smaller than what it could have been.
-     * @@     Default value is false.
-     * @@     Currently only recognized by TensorRT backend.
-     * @@
+     *   .. cpp:var:: bool eager_batching
+     *
+     *      Start preparing the next batch before the model instance is ready
+     *      for the next inference. This option can be used to overlap the
+     *      batch preparation with model execution, with the trade-off that
+     *      the next batch might be smaller than what it could have been.
+     *      Default value is false.
+     *      Currently only recognized by TensorRT backend.
+     *
      *
      * @generated from field: bool eager_batching = 8;
      */
@@ -1230,30 +1230,30 @@ export const ModelOptimizationPolicySchema: GenMessage<ModelOptimizationPolicy> 
     messageDesc(file_model_config, 8)
 
 /**
- * @@
- * @@  .. cpp:var:: message Graph
- * @@
- * @@     Enable generic graph optimization of the model. If not specified
- * @@     the framework's default level of optimization is used. Supports
- * @@     TensorFlow graphdef and savedmodel and Onnx models. For TensorFlow
- * @@     causes XLA to be enabled/disabled for the model. For Onnx defaults
- * @@     to enabling all optimizations, -1 enables only basic optimizations,
- * @@     +1 enables only basic and extended optimizations.
- * @@
+ *
+ *   .. cpp:var:: message Graph
+ *
+ *      Enable generic graph optimization of the model. If not specified
+ *      the framework's default level of optimization is used. Supports
+ *      TensorFlow graphdef and savedmodel and Onnx models. For TensorFlow
+ *      causes XLA to be enabled/disabled for the model. For Onnx defaults
+ *      to enabling all optimizations, -1 enables only basic optimizations,
+ *      +1 enables only basic and extended optimizations.
+ *
  *
  * @generated from message inference.ModelOptimizationPolicy.Graph
  */
 export type ModelOptimizationPolicy_Graph = Message<'inference.ModelOptimizationPolicy.Graph'> & {
     /**
-     * @@    .. cpp:var:: int32 level
-     * @@
-     * @@       The optimization level. Defaults to 0 (zero) if not specified.
-     * @@
-     * @@         - -1: Disabled
-     * @@         -  0: Framework default
-     * @@         -  1+: Enable optimization level (greater values indicate
-     * @@            higher optimization levels)
-     * @@
+     *     .. cpp:var:: int32 level
+     *
+     *        The optimization level. Defaults to 0 (zero) if not specified.
+     *
+     *          - -1: Disabled
+     *          -  0: Framework default
+     *          -  1+: Enable optimization level (greater values indicate
+     *             higher optimization levels)
+     *
      *
      * @generated from field: int32 level = 1;
      */
@@ -1269,63 +1269,63 @@ export const ModelOptimizationPolicy_GraphSchema: GenMessage<ModelOptimizationPo
     messageDesc(file_model_config, 8, 0)
 
 /**
- * @@
- * @@  .. cpp:var:: message Cuda
- * @@
- * @@     CUDA-specific optimization settings.
- * @@
+ *
+ *   .. cpp:var:: message Cuda
+ *
+ *      CUDA-specific optimization settings.
+ *
  *
  * @generated from message inference.ModelOptimizationPolicy.Cuda
  */
 export type ModelOptimizationPolicy_Cuda = Message<'inference.ModelOptimizationPolicy.Cuda'> & {
     /**
-     * @@    .. cpp:var:: bool graphs
-     * @@
-     * @@       Use CUDA graphs API to capture model operations and execute
-     * @@       them more efficiently. Default value is false.
-     * @@       Currently only recognized by TensorRT backend.
-     * @@
+     *     .. cpp:var:: bool graphs
+     *
+     *        Use CUDA graphs API to capture model operations and execute
+     *        them more efficiently. Default value is false.
+     *        Currently only recognized by TensorRT backend.
+     *
      *
      * @generated from field: bool graphs = 1;
      */
     graphs: boolean
 
     /**
-     * @@    .. cpp:var:: bool busy_wait_events
-     * @@
-     * @@       Use busy-waiting to synchronize CUDA events to achieve minimum
-     * @@       latency from event complete to host thread to be notified, with
-     * @@       the cost of high CPU load. Default value is false.
-     * @@       Currently only recognized by TensorRT backend.
-     * @@
+     *     .. cpp:var:: bool busy_wait_events
+     *
+     *        Use busy-waiting to synchronize CUDA events to achieve minimum
+     *        latency from event complete to host thread to be notified, with
+     *        the cost of high CPU load. Default value is false.
+     *        Currently only recognized by TensorRT backend.
+     *
      *
      * @generated from field: bool busy_wait_events = 2;
      */
     busyWaitEvents: boolean
 
     /**
-     * @@    .. cpp:var:: GraphSpec graph_spec (repeated)
-     * @@
-     * @@       Specification of the CUDA graph to be captured. If not specified
-     * @@       and 'graphs' is true, the default CUDA graphs will be captured
-     * @@       based on model settings.
-     * @@       Currently only recognized by TensorRT backend.
-     * @@
+     *     .. cpp:var:: GraphSpec graph_spec (repeated)
+     *
+     *        Specification of the CUDA graph to be captured. If not specified
+     *        and 'graphs' is true, the default CUDA graphs will be captured
+     *        based on model settings.
+     *        Currently only recognized by TensorRT backend.
+     *
      *
      * @generated from field: repeated inference.ModelOptimizationPolicy.Cuda.GraphSpec graph_spec = 3;
      */
     graphSpec: ModelOptimizationPolicy_Cuda_GraphSpec[]
 
     /**
-     * @@    .. cpp:var:: bool output_copy_stream
-     * @@
-     * @@       Uses a CUDA stream separate from the inference stream to copy the
-     * @@       output to host. However, be aware that setting this option to
-     * @@       true will lead to an increase in the memory consumption of the
-     * @@       model as Triton will allocate twice as much GPU memory for its
-     * @@       I/O tensor buffers. Default value is false.
-     * @@       Currently only recognized by TensorRT backend.
-     * @@
+     *     .. cpp:var:: bool output_copy_stream
+     *
+     *        Uses a CUDA stream separate from the inference stream to copy the
+     *        output to host. However, be aware that setting this option to
+     *        true will lead to an increase in the memory consumption of the
+     *        model as Triton will allocate twice as much GPU memory for its
+     *        I/O tensor buffers. Default value is false.
+     *        Currently only recognized by TensorRT backend.
+     *
      *
      * @generated from field: bool output_copy_stream = 4;
      */
@@ -1341,52 +1341,52 @@ export const ModelOptimizationPolicy_CudaSchema: GenMessage<ModelOptimizationPol
     messageDesc(file_model_config, 8, 1)
 
 /**
- * @@    .. cpp:var:: message GraphSpec
- * @@
- * @@       Specification of the CUDA graph to be captured.
- * @@
+ *     .. cpp:var:: message GraphSpec
+ *
+ *        Specification of the CUDA graph to be captured.
+ *
  *
  * @generated from message inference.ModelOptimizationPolicy.Cuda.GraphSpec
  */
 export type ModelOptimizationPolicy_Cuda_GraphSpec =
     Message<'inference.ModelOptimizationPolicy.Cuda.GraphSpec'> & {
         /**
-         * @@      .. cpp:var:: int32 batch_size
-         * @@
-         * @@         The batch size of the CUDA graph. If 'max_batch_size' is 0,
-         * @@         'batch_size' must be set to 0. Otherwise, 'batch_size' must
-         * @@         be set to value between 1 and 'max_batch_size'.
-         * @@
+         *       .. cpp:var:: int32 batch_size
+         *
+         *          The batch size of the CUDA graph. If 'max_batch_size' is 0,
+         *          'batch_size' must be set to 0. Otherwise, 'batch_size' must
+         *          be set to value between 1 and 'max_batch_size'.
+         *
          *
          * @generated from field: int32 batch_size = 1;
          */
         batchSize: number
 
         /**
-         * @@      .. cpp:var:: map<string, Shape> input
-         * @@
-         * @@         The specification of the inputs. 'Shape' is the shape of the
-         * @@         input without batching dimension.
-         * @@
+         *       .. cpp:var:: map<string, Shape> input
+         *
+         *          The specification of the inputs. 'Shape' is the shape of the
+         *          input without batching dimension.
+         *
          *
          * @generated from field: map<string, inference.ModelOptimizationPolicy.Cuda.GraphSpec.Shape> input = 2;
          */
         input: { [key: string]: ModelOptimizationPolicy_Cuda_GraphSpec_Shape }
 
         /**
-         * @@      .. cpp:var:: LowerBound graph_lower_bound
-         * @@
-         * @@         Specify the lower bound of the CUDA graph. Optional.
-         * @@         If specified, the graph can be used for input shapes and
-         * @@         batch sizes that are in closed interval between the lower
-         * @@         bound specification and graph specification. For dynamic
-         * @@         shape model, this allows CUDA graphs to be launched
-         * @@         frequently without capturing all possible shape combinations.
-         * @@         However, using graph for shape combinations different from
-         * @@         the one used for capturing introduces uninitialized data for
-         * @@         execution and it may distort the inference result if
-         * @@         the model is sensitive to uninitialized data.
-         * @@
+         *       .. cpp:var:: LowerBound graph_lower_bound
+         *
+         *          Specify the lower bound of the CUDA graph. Optional.
+         *          If specified, the graph can be used for input shapes and
+         *          batch sizes that are in closed interval between the lower
+         *          bound specification and graph specification. For dynamic
+         *          shape model, this allows CUDA graphs to be launched
+         *          frequently without capturing all possible shape combinations.
+         *          However, using graph for shape combinations different from
+         *          the one used for capturing introduces uninitialized data for
+         *          execution and it may distort the inference result if
+         *          the model is sensitive to uninitialized data.
+         *
          *
          * @generated from field: inference.ModelOptimizationPolicy.Cuda.GraphSpec.LowerBound graph_lower_bound = 3;
          */
@@ -1402,20 +1402,20 @@ export const ModelOptimizationPolicy_Cuda_GraphSpecSchema: GenMessage<ModelOptim
     messageDesc(file_model_config, 8, 1, 0)
 
 /**
- * @@      .. cpp:var:: message Dims
- * @@
- * @@         Specification of tensor dimension.
- * @@
+ *       .. cpp:var:: message Dims
+ *
+ *          Specification of tensor dimension.
+ *
  *
  * @generated from message inference.ModelOptimizationPolicy.Cuda.GraphSpec.Shape
  */
 export type ModelOptimizationPolicy_Cuda_GraphSpec_Shape =
     Message<'inference.ModelOptimizationPolicy.Cuda.GraphSpec.Shape'> & {
         /**
-         * @@        .. cpp:var:: int64 dim (repeated)
-         * @@
-         * @@           The dimension.
-         * @@
+         *         .. cpp:var:: int64 dim (repeated)
+         *
+         *            The dimension.
+         *
          *
          * @generated from field: repeated int64 dim = 1;
          */
@@ -1436,23 +1436,23 @@ export const ModelOptimizationPolicy_Cuda_GraphSpec_ShapeSchema: GenMessage<Mode
 export type ModelOptimizationPolicy_Cuda_GraphSpec_LowerBound =
     Message<'inference.ModelOptimizationPolicy.Cuda.GraphSpec.LowerBound'> & {
         /**
-         * @@      .. cpp:var:: int32 batch_size
-         * @@
-         * @@         The batch size of the CUDA graph. If 'max_batch_size' is 0,
-         * @@         'batch_size' must be set to 0. Otherwise, 'batch_size' must
-         * @@         be set to value between 1 and 'max_batch_size'.
-         * @@
+         *       .. cpp:var:: int32 batch_size
+         *
+         *          The batch size of the CUDA graph. If 'max_batch_size' is 0,
+         *          'batch_size' must be set to 0. Otherwise, 'batch_size' must
+         *          be set to value between 1 and 'max_batch_size'.
+         *
          *
          * @generated from field: int32 batch_size = 1;
          */
         batchSize: number
 
         /**
-         * @@      .. cpp:var:: map<string, Shape> input
-         * @@
-         * @@         The specification of the inputs. 'Shape' is the shape of
-         * @@         the input without batching dimension.
-         * @@
+         *       .. cpp:var:: map<string, Shape> input
+         *
+         *          The specification of the inputs. 'Shape' is the shape of
+         *          the input without batching dimension.
+         *
          *
          * @generated from field: map<string, inference.ModelOptimizationPolicy.Cuda.GraphSpec.Shape> input = 2;
          */
@@ -1468,80 +1468,80 @@ export const ModelOptimizationPolicy_Cuda_GraphSpec_LowerBoundSchema: GenMessage
     messageDesc(file_model_config, 8, 1, 0, 1)
 
 /**
- * @@
- * @@  .. cpp:var:: message ExecutionAccelerators
- * @@
- * @@     Specify the preferred execution accelerators to be used to execute
- * @@     the model. Currently only recognized by ONNX Runtime backend and
- * @@     TensorFlow backend.
- * @@
- * @@     For ONNX Runtime backend, it will deploy the model with the execution
- * @@     accelerators by priority, the priority is determined based on the
- * @@     order that they are set, i.e. the provider at the front has highest
- * @@     priority. Overall, the priority will be in the following order:
- * @@         <gpu_execution_accelerator> (if instance is on GPU)
- * @@         CUDA Execution Provider     (if instance is on GPU)
- * @@         <cpu_execution_accelerator>
- * @@         Default CPU Execution Provider
- * @@
+ *
+ *   .. cpp:var:: message ExecutionAccelerators
+ *
+ *      Specify the preferred execution accelerators to be used to execute
+ *      the model. Currently only recognized by ONNX Runtime backend and
+ *      TensorFlow backend.
+ *
+ *      For ONNX Runtime backend, it will deploy the model with the execution
+ *      accelerators by priority, the priority is determined based on the
+ *      order that they are set, i.e. the provider at the front has highest
+ *      priority. Overall, the priority will be in the following order:
+ *          <gpu_execution_accelerator> (if instance is on GPU)
+ *          CUDA Execution Provider     (if instance is on GPU)
+ *          <cpu_execution_accelerator>
+ *          Default CPU Execution Provider
+ *
  *
  * @generated from message inference.ModelOptimizationPolicy.ExecutionAccelerators
  */
 export type ModelOptimizationPolicy_ExecutionAccelerators =
     Message<'inference.ModelOptimizationPolicy.ExecutionAccelerators'> & {
         /**
-         * @@    .. cpp:var:: Accelerator gpu_execution_accelerator (repeated)
-         * @@
-         * @@       The preferred execution provider to be used if the model instance
-         * @@       is deployed on GPU.
-         * @@
-         * @@       For ONNX Runtime backend, possible value is "tensorrt" as name,
-         * @@       and no parameters are required.
-         * @@
-         * @@       For TensorFlow backend, possible values are "tensorrt",
-         * @@       "auto_mixed_precision", "gpu_io".
-         * @@
-         * @@       For "tensorrt", the following parameters can be specified:
-         * @@         "precision_mode": The precision used for optimization.
-         * @@         Allowed values are "FP32" and "FP16". Default value is "FP32".
-         * @@
-         * @@         "max_cached_engines": The maximum number of cached TensorRT
-         * @@         engines in dynamic TensorRT ops. Default value is 100.
-         * @@
-         * @@         "minimum_segment_size": The smallest model subgraph that will
-         * @@         be considered for optimization by TensorRT. Default value is 3.
-         * @@
-         * @@         "max_workspace_size_bytes": The maximum GPU memory the model
-         * @@         can use temporarily during execution. Default value is 1GB.
-         * @@
-         * @@       For "auto_mixed_precision", no parameters are required. If set,
-         * @@       the model will try to use FP16 for better performance.
-         * @@       This optimization can not be set with "tensorrt".
-         * @@
-         * @@       For "gpu_io", no parameters are required. If set, the model will
-         * @@       be executed using TensorFlow Callable API to set input and output
-         * @@       tensors in GPU memory if possible, which can reduce data transfer
-         * @@       overhead if the model is used in ensemble. However, the Callable
-         * @@       object will be created on model creation and it will request all
-         * @@       outputs for every model execution, which may impact the
-         * @@       performance if a request does not require all outputs. This
-         * @@       optimization will only take affect if the model instance is
-         * @@       created with KIND_GPU.
-         * @@
+         *     .. cpp:var:: Accelerator gpu_execution_accelerator (repeated)
+         *
+         *        The preferred execution provider to be used if the model instance
+         *        is deployed on GPU.
+         *
+         *        For ONNX Runtime backend, possible value is "tensorrt" as name,
+         *        and no parameters are required.
+         *
+         *        For TensorFlow backend, possible values are "tensorrt",
+         *        "auto_mixed_precision", "gpu_io".
+         *
+         *        For "tensorrt", the following parameters can be specified:
+         *          "precision_mode": The precision used for optimization.
+         *          Allowed values are "FP32" and "FP16". Default value is "FP32".
+         *
+         *          "max_cached_engines": The maximum number of cached TensorRT
+         *          engines in dynamic TensorRT ops. Default value is 100.
+         *
+         *          "minimum_segment_size": The smallest model subgraph that will
+         *          be considered for optimization by TensorRT. Default value is 3.
+         *
+         *          "max_workspace_size_bytes": The maximum GPU memory the model
+         *          can use temporarily during execution. Default value is 1GB.
+         *
+         *        For "auto_mixed_precision", no parameters are required. If set,
+         *        the model will try to use FP16 for better performance.
+         *        This optimization can not be set with "tensorrt".
+         *
+         *        For "gpu_io", no parameters are required. If set, the model will
+         *        be executed using TensorFlow Callable API to set input and output
+         *        tensors in GPU memory if possible, which can reduce data transfer
+         *        overhead if the model is used in ensemble. However, the Callable
+         *        object will be created on model creation and it will request all
+         *        outputs for every model execution, which may impact the
+         *        performance if a request does not require all outputs. This
+         *        optimization will only take affect if the model instance is
+         *        created with KIND_GPU.
+         *
          *
          * @generated from field: repeated inference.ModelOptimizationPolicy.ExecutionAccelerators.Accelerator gpu_execution_accelerator = 1;
          */
         gpuExecutionAccelerator: ModelOptimizationPolicy_ExecutionAccelerators_Accelerator[]
 
         /**
-         * @@    .. cpp:var:: Accelerator cpu_execution_accelerator (repeated)
-         * @@
-         * @@       The preferred execution provider to be used if the model instance
-         * @@       is deployed on CPU.
-         * @@
-         * @@       For ONNX Runtime backend, possible value is "openvino" as name,
-         * @@       and no parameters are required.
-         * @@
+         *     .. cpp:var:: Accelerator cpu_execution_accelerator (repeated)
+         *
+         *        The preferred execution provider to be used if the model instance
+         *        is deployed on CPU.
+         *
+         *        For ONNX Runtime backend, possible value is "openvino" as name,
+         *        and no parameters are required.
+         *
          *
          * @generated from field: repeated inference.ModelOptimizationPolicy.ExecutionAccelerators.Accelerator cpu_execution_accelerator = 2;
          */
@@ -1557,33 +1557,33 @@ export const ModelOptimizationPolicy_ExecutionAcceleratorsSchema: GenMessage<Mod
     messageDesc(file_model_config, 8, 2)
 
 /**
- * @@
- * @@  .. cpp:var:: message Accelerator
- * @@
- * @@     Specify the accelerator to be used to execute the model.
- * @@     Accelerator with the same name may accept different parameters
- * @@     depending on the backends.
- * @@
+ *
+ *   .. cpp:var:: message Accelerator
+ *
+ *      Specify the accelerator to be used to execute the model.
+ *      Accelerator with the same name may accept different parameters
+ *      depending on the backends.
+ *
  *
  * @generated from message inference.ModelOptimizationPolicy.ExecutionAccelerators.Accelerator
  */
 export type ModelOptimizationPolicy_ExecutionAccelerators_Accelerator =
     Message<'inference.ModelOptimizationPolicy.ExecutionAccelerators.Accelerator'> & {
         /**
-         * @@    .. cpp:var:: string name
-         * @@
-         * @@       The name of the execution accelerator.
-         * @@
+         *     .. cpp:var:: string name
+         *
+         *        The name of the execution accelerator.
+         *
          *
          * @generated from field: string name = 1;
          */
         name: string
 
         /**
-         * @@    .. cpp:var:: map<string, string> parameters
-         * @@
-         * @@       Additional parameters used to configure the accelerator.
-         * @@
+         *     .. cpp:var:: map<string, string> parameters
+         *
+         *        Additional parameters used to configure the accelerator.
+         *
          *
          * @generated from field: map<string, string> parameters = 2;
          */
@@ -1599,29 +1599,29 @@ export const ModelOptimizationPolicy_ExecutionAccelerators_AcceleratorSchema: Ge
     messageDesc(file_model_config, 8, 2, 0)
 
 /**
- * @@
- * @@  .. cpp:var:: message PinnedMemoryBuffer
- * @@
- * @@     Specify whether to use a pinned memory buffer when transferring data
- * @@     between non-pinned system memory and GPU memory. Using a pinned
- * @@     memory buffer for system from/to GPU transfers will typically provide
- * @@     increased performance. For example, in the common use case where the
- * @@     request provides inputs and delivers outputs via non-pinned system
- * @@     memory, if the model instance accepts GPU IOs, the inputs will be
- * @@     processed by two copies: from non-pinned system memory to pinned
- * @@     memory, and from pinned memory to GPU memory. Similarly, pinned
- * @@     memory will be used for delivering the outputs.
- * @@
+ *
+ *   .. cpp:var:: message PinnedMemoryBuffer
+ *
+ *      Specify whether to use a pinned memory buffer when transferring data
+ *      between non-pinned system memory and GPU memory. Using a pinned
+ *      memory buffer for system from/to GPU transfers will typically provide
+ *      increased performance. For example, in the common use case where the
+ *      request provides inputs and delivers outputs via non-pinned system
+ *      memory, if the model instance accepts GPU IOs, the inputs will be
+ *      processed by two copies: from non-pinned system memory to pinned
+ *      memory, and from pinned memory to GPU memory. Similarly, pinned
+ *      memory will be used for delivering the outputs.
+ *
  *
  * @generated from message inference.ModelOptimizationPolicy.PinnedMemoryBuffer
  */
 export type ModelOptimizationPolicy_PinnedMemoryBuffer =
     Message<'inference.ModelOptimizationPolicy.PinnedMemoryBuffer'> & {
         /**
-         * @@    .. cpp:var:: bool enable
-         * @@
-         * @@       Use pinned memory buffer. Default is true.
-         * @@
+         *     .. cpp:var:: bool enable
+         *
+         *        Use pinned memory buffer. Default is true.
+         *
          *
          * @generated from field: bool enable = 1;
          */
@@ -1637,42 +1637,42 @@ export const ModelOptimizationPolicy_PinnedMemoryBufferSchema: GenMessage<ModelO
     messageDesc(file_model_config, 8, 3)
 
 /**
- * @@
- * @@  .. cpp:enum:: ModelPriority
- * @@
- * @@     Model priorities. A model will be given scheduling and execution
- * @@     preference over models at lower priorities. Current model
- * @@     priorities only work for TensorRT models.
- * @@
+ *
+ *   .. cpp:enum:: ModelPriority
+ *
+ *      Model priorities. A model will be given scheduling and execution
+ *      preference over models at lower priorities. Current model
+ *      priorities only work for TensorRT models.
+ *
  *
  * @generated from enum inference.ModelOptimizationPolicy.ModelPriority
  */
 export enum ModelOptimizationPolicy_ModelPriority {
     /**
-     * @@    .. cpp:enumerator:: ModelPriority::PRIORITY_DEFAULT = 0
-     * @@
-     * @@       The default model priority.
-     * @@
+     *     .. cpp:enumerator:: ModelPriority::PRIORITY_DEFAULT = 0
+     *
+     *        The default model priority.
+     *
      *
      * @generated from enum value: PRIORITY_DEFAULT = 0;
      */
     PRIORITY_DEFAULT = 0,
 
     /**
-     * @@    .. cpp:enumerator:: ModelPriority::PRIORITY_MAX = 1
-     * @@
-     * @@       The maximum model priority.
-     * @@
+     *     .. cpp:enumerator:: ModelPriority::PRIORITY_MAX = 1
+     *
+     *        The maximum model priority.
+     *
      *
      * @generated from enum value: PRIORITY_MAX = 1;
      */
     PRIORITY_MAX = 1,
 
     /**
-     * @@    .. cpp:enumerator:: ModelPriority::PRIORITY_MIN = 2
-     * @@
-     * @@       The minimum model priority.
-     * @@
+     *     .. cpp:enumerator:: ModelPriority::PRIORITY_MIN = 2
+     *
+     *        The minimum model priority.
+     *
      *
      * @generated from enum value: PRIORITY_MIN = 2;
      */
@@ -1687,62 +1687,62 @@ export const ModelOptimizationPolicy_ModelPrioritySchema: GenEnum<ModelOptimizat
     enumDesc(file_model_config, 8, 0)
 
 /**
- * @@
- * @@.. cpp:var:: message ModelQueuePolicy
- * @@
- * @@   Queue policy for inference requests.
- * @@
+ *
+ * .. cpp:var:: message ModelQueuePolicy
+ *
+ *    Queue policy for inference requests.
+ *
  *
  * @generated from message inference.ModelQueuePolicy
  */
 export type ModelQueuePolicy = Message<'inference.ModelQueuePolicy'> & {
     /**
-     * @@
-     * @@  .. cpp:var:: TimeoutAction timeout_action
-     * @@
-     * @@     The action applied to timed-out request.
-     * @@     The default action is REJECT.
-     * @@
+     *
+     *   .. cpp:var:: TimeoutAction timeout_action
+     *
+     *      The action applied to timed-out request.
+     *      The default action is REJECT.
+     *
      *
      * @generated from field: inference.ModelQueuePolicy.TimeoutAction timeout_action = 1;
      */
     timeoutAction: ModelQueuePolicy_TimeoutAction
 
     /**
-     * @@
-     * @@  .. cpp:var:: uint64 default_timeout_microseconds
-     * @@
-     * @@     The default timeout for every request, in microseconds.
-     * @@     The default value is 0 which indicates that no timeout is set.
-     * @@
+     *
+     *   .. cpp:var:: uint64 default_timeout_microseconds
+     *
+     *      The default timeout for every request, in microseconds.
+     *      The default value is 0 which indicates that no timeout is set.
+     *
      *
      * @generated from field: uint64 default_timeout_microseconds = 2;
      */
     defaultTimeoutMicroseconds: bigint
 
     /**
-     * @@
-     * @@  .. cpp:var:: bool allow_timeout_override
-     * @@
-     * @@     Whether individual request can override the default timeout value.
-     * @@     When true, individual requests can set a timeout that is less than
-     * @@     the default timeout value but may not increase the timeout.
-     * @@     The default value is false.
-     * @@
+     *
+     *   .. cpp:var:: bool allow_timeout_override
+     *
+     *      Whether individual request can override the default timeout value.
+     *      When true, individual requests can set a timeout that is less than
+     *      the default timeout value but may not increase the timeout.
+     *      The default value is false.
+     *
      *
      * @generated from field: bool allow_timeout_override = 3;
      */
     allowTimeoutOverride: boolean
 
     /**
-     * @@
-     * @@  .. cpp:var:: uint32 max_queue_size
-     * @@
-     * @@     The maximum queue size for holding requests. A request will be
-     * @@     rejected immediately if it can't be enqueued because the queue is
-     * @@     full. The default value is 0 which indicates that no maximum
-     * @@     queue size is enforced.
-     * @@
+     *
+     *   .. cpp:var:: uint32 max_queue_size
+     *
+     *      The maximum queue size for holding requests. A request will be
+     *      rejected immediately if it can't be enqueued because the queue is
+     *      full. The default value is 0 which indicates that no maximum
+     *      queue size is enforced.
+     *
      *
      * @generated from field: uint32 max_queue_size = 4;
      */
@@ -1758,33 +1758,33 @@ export const ModelQueuePolicySchema: GenMessage<ModelQueuePolicy> =
     messageDesc(file_model_config, 9)
 
 /**
- * @@
- * @@  .. cpp:enum:: TimeoutAction
- * @@
- * @@     The action applied to timed-out requests.
- * @@
+ *
+ *   .. cpp:enum:: TimeoutAction
+ *
+ *      The action applied to timed-out requests.
+ *
  *
  * @generated from enum inference.ModelQueuePolicy.TimeoutAction
  */
 export enum ModelQueuePolicy_TimeoutAction {
     /**
-     * @@    .. cpp:enumerator:: Action::REJECT = 0
-     * @@
-     * @@       Reject the request and return error message accordingly.
-     * @@
+     *     .. cpp:enumerator:: Action::REJECT = 0
+     *
+     *        Reject the request and return error message accordingly.
+     *
      *
      * @generated from enum value: REJECT = 0;
      */
     REJECT = 0,
 
     /**
-     * @@    .. cpp:enumerator:: Action::DELAY = 1
-     * @@
-     * @@       Delay the request until all other requests at the same
-     * @@       (or higher) priority levels that have not reached their timeouts
-     * @@       are processed. A delayed request will eventually be processed,
-     * @@       but may be delayed indefinitely due to newly arriving requests.
-     * @@
+     *     .. cpp:enumerator:: Action::DELAY = 1
+     *
+     *        Delay the request until all other requests at the same
+     *        (or higher) priority levels that have not reached their timeouts
+     *        are processed. A delayed request will eventually be processed,
+     *        but may be delayed indefinitely due to newly arriving requests.
+     *
      *
      * @generated from enum value: DELAY = 1;
      */
@@ -1799,105 +1799,105 @@ export const ModelQueuePolicy_TimeoutActionSchema: GenEnum<ModelQueuePolicy_Time
     enumDesc(file_model_config, 9, 0)
 
 /**
- * @@
- * @@.. cpp:var:: message ModelDynamicBatching
- * @@
- * @@   Dynamic batching configuration. These settings control how dynamic
- * @@   batching operates for the model.
- * @@
+ *
+ * .. cpp:var:: message ModelDynamicBatching
+ *
+ *    Dynamic batching configuration. These settings control how dynamic
+ *    batching operates for the model.
+ *
  *
  * @generated from message inference.ModelDynamicBatching
  */
 export type ModelDynamicBatching = Message<'inference.ModelDynamicBatching'> & {
     /**
-     * @@  .. cpp:var:: int32 preferred_batch_size (repeated)
-     * @@
-     * @@     Preferred batch sizes for dynamic batching. If a batch of one of
-     * @@     these sizes can be formed it will be executed immediately.  If
-     * @@     not specified a preferred batch size will be chosen automatically
-     * @@     based on model and GPU characteristics.
-     * @@
+     *   .. cpp:var:: int32 preferred_batch_size (repeated)
+     *
+     *      Preferred batch sizes for dynamic batching. If a batch of one of
+     *      these sizes can be formed it will be executed immediately.  If
+     *      not specified a preferred batch size will be chosen automatically
+     *      based on model and GPU characteristics.
+     *
      *
      * @generated from field: repeated int32 preferred_batch_size = 1;
      */
     preferredBatchSize: number[]
 
     /**
-     * @@  .. cpp:var:: uint64 max_queue_delay_microseconds
-     * @@
-     * @@     The maximum time, in microseconds, a request will be delayed in
-     * @@     the scheduling queue to wait for additional requests for
-     * @@     batching. Default is 0.
-     * @@
+     *   .. cpp:var:: uint64 max_queue_delay_microseconds
+     *
+     *      The maximum time, in microseconds, a request will be delayed in
+     *      the scheduling queue to wait for additional requests for
+     *      batching. Default is 0.
+     *
      *
      * @generated from field: uint64 max_queue_delay_microseconds = 2;
      */
     maxQueueDelayMicroseconds: bigint
 
     /**
-     * @@  .. cpp:var:: bool preserve_ordering
-     * @@
-     * @@     Should the dynamic batcher preserve the ordering of responses to
-     * @@     match the order of requests received by the scheduler. Default is
-     * @@     false. If true, the responses will be returned in the same order as
-     * @@     the order of requests sent to the scheduler. If false, the responses
-     * @@     may be returned in arbitrary order. This option is specifically
-     * @@     needed when a sequence of related inference requests (i.e. inference
-     * @@     requests with the same correlation ID) are sent to the dynamic
-     * @@     batcher to ensure that the sequence responses are in the correct
-     * @@     order.
-     * @@
+     *   .. cpp:var:: bool preserve_ordering
+     *
+     *      Should the dynamic batcher preserve the ordering of responses to
+     *      match the order of requests received by the scheduler. Default is
+     *      false. If true, the responses will be returned in the same order as
+     *      the order of requests sent to the scheduler. If false, the responses
+     *      may be returned in arbitrary order. This option is specifically
+     *      needed when a sequence of related inference requests (i.e. inference
+     *      requests with the same correlation ID) are sent to the dynamic
+     *      batcher to ensure that the sequence responses are in the correct
+     *      order.
+     *
      *
      * @generated from field: bool preserve_ordering = 3;
      */
     preserveOrdering: boolean
 
     /**
-     * @@  .. cpp:var:: uint64 priority_levels
-     * @@
-     * @@     The number of priority levels to be enabled for the model,
-     * @@     the priority level starts from 1 and 1 is the highest priority.
-     * @@     Requests are handled in priority order with all priority 1 requests
-     * @@     processed before priority 2, all priority 2 requests processed before
-     * @@     priority 3, etc. Requests with the same priority level will be
-     * @@     handled in the order that they are received.
-     * @@
+     *   .. cpp:var:: uint64 priority_levels
+     *
+     *      The number of priority levels to be enabled for the model,
+     *      the priority level starts from 1 and 1 is the highest priority.
+     *      Requests are handled in priority order with all priority 1 requests
+     *      processed before priority 2, all priority 2 requests processed before
+     *      priority 3, etc. Requests with the same priority level will be
+     *      handled in the order that they are received.
+     *
      *
      * @generated from field: uint64 priority_levels = 4;
      */
     priorityLevels: bigint
 
     /**
-     * @@  .. cpp:var:: uint64 default_priority_level
-     * @@
-     * @@     The priority level used for requests that don't specify their
-     * @@     priority. The value must be in the range [ 1, 'priority_levels' ].
-     * @@
+     *   .. cpp:var:: uint64 default_priority_level
+     *
+     *      The priority level used for requests that don't specify their
+     *      priority. The value must be in the range [ 1, 'priority_levels' ].
+     *
      *
      * @generated from field: uint64 default_priority_level = 5;
      */
     defaultPriorityLevel: bigint
 
     /**
-     * @@  .. cpp:var:: ModelQueuePolicy default_queue_policy
-     * @@
-     * @@     The default queue policy used for requests that don't require
-     * @@     priority handling and requests that specify priority levels where
-     * @@     there is no specific policy given. If not specified, a policy with
-     * @@     default field values will be used.
-     * @@
+     *   .. cpp:var:: ModelQueuePolicy default_queue_policy
+     *
+     *      The default queue policy used for requests that don't require
+     *      priority handling and requests that specify priority levels where
+     *      there is no specific policy given. If not specified, a policy with
+     *      default field values will be used.
+     *
      *
      * @generated from field: inference.ModelQueuePolicy default_queue_policy = 6;
      */
     defaultQueuePolicy?: ModelQueuePolicy
 
     /**
-     * @@  .. cpp:var:: map<uint64, ModelQueuePolicy> priority_queue_policy
-     * @@
-     * @@     Specify the queue policy for the priority level. The default queue
-     * @@     policy will be used if a priority level doesn't specify a queue
-     * @@     policy.
-     * @@
+     *   .. cpp:var:: map<uint64, ModelQueuePolicy> priority_queue_policy
+     *
+     *      Specify the queue policy for the priority level. The default queue
+     *      policy will be used if a priority level doesn't specify a queue
+     *      policy.
+     *
      *
      * @generated from field: map<uint64, inference.ModelQueuePolicy> priority_queue_policy = 7;
      */
@@ -1913,32 +1913,32 @@ export const ModelDynamicBatchingSchema: GenMessage<ModelDynamicBatching> =
     messageDesc(file_model_config, 10)
 
 /**
- * @@
- * @@.. cpp:var:: message ModelSequenceBatching
- * @@
- * @@   Sequence batching configuration. These settings control how sequence
- * @@   batching operates for the model.
- * @@
+ *
+ * .. cpp:var:: message ModelSequenceBatching
+ *
+ *    Sequence batching configuration. These settings control how sequence
+ *    batching operates for the model.
+ *
  *
  * @generated from message inference.ModelSequenceBatching
  */
 export type ModelSequenceBatching = Message<'inference.ModelSequenceBatching'> & {
     /**
-     * @@  .. cpp:var:: oneof strategy_choice
-     * @@
-     * @@     The strategy used by the sequence batcher. Default strategy
-     * @@     is 'direct'.
-     * @@
+     *   .. cpp:var:: oneof strategy_choice
+     *
+     *      The strategy used by the sequence batcher. Default strategy
+     *      is 'direct'.
+     *
      *
      * @generated from oneof inference.ModelSequenceBatching.strategy_choice
      */
     strategyChoice:
         | {
               /**
-               * @@    .. cpp:var:: StrategyDirect direct
-               * @@
-               * @@       StrategyDirect scheduling strategy.
-               * @@
+               *     .. cpp:var:: StrategyDirect direct
+               *
+               *        StrategyDirect scheduling strategy.
+               *
                *
                * @generated from field: inference.ModelSequenceBatching.StrategyDirect direct = 3;
                */
@@ -1947,10 +1947,10 @@ export type ModelSequenceBatching = Message<'inference.ModelSequenceBatching'> &
           }
         | {
               /**
-               * @@    .. cpp:var:: StrategyOldest oldest
-               * @@
-               * @@       StrategyOldest scheduling strategy.
-               * @@
+               *     .. cpp:var:: StrategyOldest oldest
+               *
+               *        StrategyOldest scheduling strategy.
+               *
                *
                * @generated from field: inference.ModelSequenceBatching.StrategyOldest oldest = 4;
                */
@@ -1960,58 +1960,58 @@ export type ModelSequenceBatching = Message<'inference.ModelSequenceBatching'> &
         | { case: undefined; value?: undefined }
 
     /**
-     * @@  .. cpp:var:: uint64 max_sequence_idle_microseconds
-     * @@
-     * @@     The maximum time, in microseconds, that a sequence is allowed to
-     * @@     be idle before it is aborted. The inference server considers a
-     * @@     sequence idle when it does not have any inference request queued
-     * @@     for the sequence. If this limit is exceeded, the inference server
-     * @@     will free the sequence slot allocated by the sequence and make it
-     * @@     available for another sequence. If not specified (or specified as
-     * @@     zero) a default value of 1000000 (1 second) is used.
-     * @@
+     *   .. cpp:var:: uint64 max_sequence_idle_microseconds
+     *
+     *      The maximum time, in microseconds, that a sequence is allowed to
+     *      be idle before it is aborted. The inference server considers a
+     *      sequence idle when it does not have any inference request queued
+     *      for the sequence. If this limit is exceeded, the inference server
+     *      will free the sequence slot allocated by the sequence and make it
+     *      available for another sequence. If not specified (or specified as
+     *      zero) a default value of 1000000 (1 second) is used.
+     *
      *
      * @generated from field: uint64 max_sequence_idle_microseconds = 1;
      */
     maxSequenceIdleMicroseconds: bigint
 
     /**
-     * @@  .. cpp:var:: ControlInput control_input (repeated)
-     * @@
-     * @@     The model input(s) that the server should use to communicate
-     * @@     sequence start, stop, ready and similar control values to the
-     * @@     model.
-     * @@
+     *   .. cpp:var:: ControlInput control_input (repeated)
+     *
+     *      The model input(s) that the server should use to communicate
+     *      sequence start, stop, ready and similar control values to the
+     *      model.
+     *
      *
      * @generated from field: repeated inference.ModelSequenceBatching.ControlInput control_input = 2;
      */
     controlInput: ModelSequenceBatching_ControlInput[]
 
     /**
-     * @@  .. cpp:var:: State state (repeated)
-     * @@
-     * @@     The optional state that can be stored in Triton for performing
-     * @@     inference requests on a sequence. Each sequence holds an implicit
-     * @@     state local to itself. The output state tensor provided by the
-     * @@     model in 'output_name' field of the current inference request will
-     * @@     be transferred as an input tensor named 'input_name' in the next
-     * @@     request of the same sequence. The input state of the first request
-     * @@     in the sequence contains garbage data.
-     * @@
+     *   .. cpp:var:: State state (repeated)
+     *
+     *      The optional state that can be stored in Triton for performing
+     *      inference requests on a sequence. Each sequence holds an implicit
+     *      state local to itself. The output state tensor provided by the
+     *      model in 'output_name' field of the current inference request will
+     *      be transferred as an input tensor named 'input_name' in the next
+     *      request of the same sequence. The input state of the first request
+     *      in the sequence contains garbage data.
+     *
      *
      * @generated from field: repeated inference.ModelSequenceBatching.State state = 5;
      */
     state: ModelSequenceBatching_State[]
 
     /**
-     * @@  .. cpp:var:: bool iterative_sequence
-     * @@
-     * @@     Requests for iterative sequences are processed over a number
-     * @@     of iterations. An iterative sequence is initiated by a single
-     * @@     request and is "rescheduled" by the model until completion.
-     * @@     Requests for inflight requests will be batched together
-     * @@     and can complete independently. Note this feature
-     * @@     requires backend support. Default value is false.
+     *   .. cpp:var:: bool iterative_sequence
+     *
+     *      Requests for iterative sequences are processed over a number
+     *      of iterations. An iterative sequence is initiated by a single
+     *      request and is "rescheduled" by the model until completion.
+     *      Requests for inflight requests will be batched together
+     *      and can complete independently. Note this feature
+     *      requires backend support. Default value is false.
      *
      * @generated from field: bool iterative_sequence = 6;
      */
@@ -2027,72 +2027,72 @@ export const ModelSequenceBatchingSchema: GenMessage<ModelSequenceBatching> =
     messageDesc(file_model_config, 11)
 
 /**
- * @@  .. cpp:var:: message Control
- * @@
- * @@     A control is a signal that the sequence batcher uses to
- * @@     communicate with a backend.
- * @@
+ *   .. cpp:var:: message Control
+ *
+ *      A control is a signal that the sequence batcher uses to
+ *      communicate with a backend.
+ *
  *
  * @generated from message inference.ModelSequenceBatching.Control
  */
 export type ModelSequenceBatching_Control = Message<'inference.ModelSequenceBatching.Control'> & {
     /**
-     * @@    .. cpp:var:: Kind kind
-     * @@
-     * @@       The kind of this control.
-     * @@
+     *     .. cpp:var:: Kind kind
+     *
+     *        The kind of this control.
+     *
      *
      * @generated from field: inference.ModelSequenceBatching.Control.Kind kind = 1;
      */
     kind: ModelSequenceBatching_Control_Kind
 
     /**
-     * @@    .. cpp:var:: int32 int32_false_true (repeated)
-     * @@
-     * @@       The control's true and false setting is indicated by setting
-     * @@       a value in an int32 tensor. The tensor must be a
-     * @@       1-dimensional tensor with size equal to the batch size of
-     * @@       the request. 'int32_false_true' must have two entries: the
-     * @@       first the false value and the second the true value.
-     * @@
+     *     .. cpp:var:: int32 int32_false_true (repeated)
+     *
+     *        The control's true and false setting is indicated by setting
+     *        a value in an int32 tensor. The tensor must be a
+     *        1-dimensional tensor with size equal to the batch size of
+     *        the request. 'int32_false_true' must have two entries: the
+     *        first the false value and the second the true value.
+     *
      *
      * @generated from field: repeated int32 int32_false_true = 2;
      */
     int32FalseTrue: number[]
 
     /**
-     * @@    .. cpp:var:: float fp32_false_true (repeated)
-     * @@
-     * @@       The control's true and false setting is indicated by setting
-     * @@       a value in a fp32 tensor. The tensor must be a
-     * @@       1-dimensional tensor with size equal to the batch size of
-     * @@       the request. 'fp32_false_true' must have two entries: the
-     * @@       first the false value and the second the true value.
-     * @@
+     *     .. cpp:var:: float fp32_false_true (repeated)
+     *
+     *        The control's true and false setting is indicated by setting
+     *        a value in a fp32 tensor. The tensor must be a
+     *        1-dimensional tensor with size equal to the batch size of
+     *        the request. 'fp32_false_true' must have two entries: the
+     *        first the false value and the second the true value.
+     *
      *
      * @generated from field: repeated float fp32_false_true = 3;
      */
     fp32FalseTrue: number[]
 
     /**
-     * @@    .. cpp:var:: bool bool_false_true (repeated)
-     * @@
-     * @@       The control's true and false setting is indicated by setting
-     * @@       a value in a bool tensor. The tensor must be a
-     * @@       1-dimensional tensor with size equal to the batch size of
-     * @@       the request. 'bool_false_true' must have two entries: the
-     * @@       first the false value and the second the true value.
-     * @@
+     *     .. cpp:var:: bool bool_false_true (repeated)
+     *
+     *        The control's true and false setting is indicated by setting
+     *        a value in a bool tensor. The tensor must be a
+     *        1-dimensional tensor with size equal to the batch size of
+     *        the request. 'bool_false_true' must have two entries: the
+     *        first the false value and the second the true value.
+     *
      *
      * @generated from field: repeated bool bool_false_true = 5;
      */
     boolFalseTrue: boolean[]
 
     /**
-     * @@    .. cpp:var:: DataType data_type
-     * @@
-     * @@       The control's datatype.
-     * @@
+     *     .. cpp:var:: DataType data_type
+     *
+     *        The control's datatype.
+     *
      *
      * @generated from field: inference.DataType data_type = 4;
      */
@@ -2108,67 +2108,67 @@ export const ModelSequenceBatching_ControlSchema: GenMessage<ModelSequenceBatchi
     messageDesc(file_model_config, 11, 0)
 
 /**
- * @@
- * @@    .. cpp:enum:: Kind
- * @@
- * @@       The kind of the control.
- * @@
+ *
+ *     .. cpp:enum:: Kind
+ *
+ *        The kind of the control.
+ *
  *
  * @generated from enum inference.ModelSequenceBatching.Control.Kind
  */
 export enum ModelSequenceBatching_Control_Kind {
     /**
-     * @@      .. cpp:enumerator:: Kind::CONTROL_SEQUENCE_START = 0
-     * @@
-     * @@         A new sequence is/is-not starting. If true a sequence is
-     * @@         starting, if false a sequence is continuing. Must
-     * @@         specify either int32_false_true, fp32_false_true or
-     * @@         bool_false_true for this control. This control is optional.
-     * @@
+     *       .. cpp:enumerator:: Kind::CONTROL_SEQUENCE_START = 0
+     *
+     *          A new sequence is/is-not starting. If true a sequence is
+     *          starting, if false a sequence is continuing. Must
+     *          specify either int32_false_true, fp32_false_true or
+     *          bool_false_true for this control. This control is optional.
+     *
      *
      * @generated from enum value: CONTROL_SEQUENCE_START = 0;
      */
     CONTROL_SEQUENCE_START = 0,
 
     /**
-     * @@      .. cpp:enumerator:: Kind::CONTROL_SEQUENCE_READY = 1
-     * @@
-     * @@         A sequence is/is-not ready for inference. If true the
-     * @@         input tensor data is valid and should be used. If false
-     * @@         the input tensor data is invalid and inferencing should
-     * @@         be "skipped". Must specify either int32_false_true,
-     * @@         fp32_false_true or bool_false_true for this control. This
-     * @@         control is optional.
-     * @@
+     *       .. cpp:enumerator:: Kind::CONTROL_SEQUENCE_READY = 1
+     *
+     *          A sequence is/is-not ready for inference. If true the
+     *          input tensor data is valid and should be used. If false
+     *          the input tensor data is invalid and inferencing should
+     *          be "skipped". Must specify either int32_false_true,
+     *          fp32_false_true or bool_false_true for this control. This
+     *          control is optional.
+     *
      *
      * @generated from enum value: CONTROL_SEQUENCE_READY = 1;
      */
     CONTROL_SEQUENCE_READY = 1,
 
     /**
-     * @@      .. cpp:enumerator:: Kind::CONTROL_SEQUENCE_END = 2
-     * @@
-     * @@         A sequence is/is-not ending. If true a sequence is
-     * @@         ending, if false a sequence is continuing. Must specify
-     * @@         either int32_false_true, fp32_false_true or bool_false_true
-     * @@         for this control. This control is optional.
-     * @@
+     *       .. cpp:enumerator:: Kind::CONTROL_SEQUENCE_END = 2
+     *
+     *          A sequence is/is-not ending. If true a sequence is
+     *          ending, if false a sequence is continuing. Must specify
+     *          either int32_false_true, fp32_false_true or bool_false_true
+     *          for this control. This control is optional.
+     *
      *
      * @generated from enum value: CONTROL_SEQUENCE_END = 2;
      */
     CONTROL_SEQUENCE_END = 2,
 
     /**
-     * @@      .. cpp:enumerator:: Kind::CONTROL_SEQUENCE_CORRID = 3
-     * @@
-     * @@         The correlation ID of the sequence. The correlation ID
-     * @@         is an uint64_t value that is communicated in whole or
-     * @@         in part by the tensor. The tensor's datatype must be
-     * @@         specified by data_type and must be TYPE_UINT64, TYPE_INT64,
-     * @@         TYPE_UINT32 or TYPE_INT32. If a 32-bit datatype is specified
-     * @@         the correlation ID will be truncated to the low-order 32
-     * @@         bits. This control is optional.
-     * @@
+     *       .. cpp:enumerator:: Kind::CONTROL_SEQUENCE_CORRID = 3
+     *
+     *          The correlation ID of the sequence. The correlation ID
+     *          is an uint64_t value that is communicated in whole or
+     *          in part by the tensor. The tensor's datatype must be
+     *          specified by data_type and must be TYPE_UINT64, TYPE_INT64,
+     *          TYPE_UINT32 or TYPE_INT32. If a 32-bit datatype is specified
+     *          the correlation ID will be truncated to the low-order 32
+     *          bits. This control is optional.
+     *
      *
      * @generated from enum value: CONTROL_SEQUENCE_CORRID = 3;
      */
@@ -2183,31 +2183,31 @@ export const ModelSequenceBatching_Control_KindSchema: GenEnum<ModelSequenceBatc
     enumDesc(file_model_config, 11, 0, 0)
 
 /**
- * @@  .. cpp:var:: message ControlInput
- * @@
- * @@     The sequence control values to communicate by a model input.
- * @@
+ *   .. cpp:var:: message ControlInput
+ *
+ *      The sequence control values to communicate by a model input.
+ *
  *
  * @generated from message inference.ModelSequenceBatching.ControlInput
  */
 export type ModelSequenceBatching_ControlInput =
     Message<'inference.ModelSequenceBatching.ControlInput'> & {
         /**
-         * @@    .. cpp:var:: string name
-         * @@
-         * @@       The name of the model input.
-         * @@
+         *     .. cpp:var:: string name
+         *
+         *        The name of the model input.
+         *
          *
          * @generated from field: string name = 1;
          */
         name: string
 
         /**
-         * @@    .. cpp:var:: Control control (repeated)
-         * @@
-         * @@       The control value(s) that should be communicated to the
-         * @@       model using this model input.
-         * @@
+         *     .. cpp:var:: Control control (repeated)
+         *
+         *        The control value(s) that should be communicated to the
+         *        model using this model input.
+         *
          *
          * @generated from field: repeated inference.ModelSequenceBatching.Control control = 2;
          */
@@ -2223,55 +2223,55 @@ export const ModelSequenceBatching_ControlInputSchema: GenMessage<ModelSequenceB
     messageDesc(file_model_config, 11, 1)
 
 /**
- * @@
- * @@  .. cpp:var:: message InitialState
- * @@
- * @@     Settings used to initialize data for implicit state.
- * @@
+ *
+ *   .. cpp:var:: message InitialState
+ *
+ *      Settings used to initialize data for implicit state.
+ *
  *
  * @generated from message inference.ModelSequenceBatching.InitialState
  */
 export type ModelSequenceBatching_InitialState =
     Message<'inference.ModelSequenceBatching.InitialState'> & {
         /**
-         * @@      .. cpp:var:: DataType data_type
-         * @@
-         * @@         The data-type of the state.
-         * @@
+         *       .. cpp:var:: DataType data_type
+         *
+         *          The data-type of the state.
+         *
          *
          * @generated from field: inference.DataType data_type = 1;
          */
         dataType: DataType
 
         /**
-         * @@      .. cpp:var:: int64 dims (repeated)
-         * @@
-         * @@         The shape of the state tensor, not including the batch
-         * @@         dimension.
-         * @@
+         *       .. cpp:var:: int64 dims (repeated)
+         *
+         *          The shape of the state tensor, not including the batch
+         *          dimension.
+         *
          *
          * @generated from field: repeated int64 dims = 2;
          */
         dims: bigint[]
 
         /**
-         * @@      .. cpp:var:: oneof state_data
-         * @@
-         * @@         Specify how the initial state data is generated.
-         * @@
+         *       .. cpp:var:: oneof state_data
+         *
+         *          Specify how the initial state data is generated.
+         *
          *
          * @generated from oneof inference.ModelSequenceBatching.InitialState.state_data
          */
         stateData:
             | {
                   /**
-                   * @@
-                   * @@      .. cpp:var:: bool zero_data
-                   * @@
-                   * @@         The identifier for using zeros as initial state data.
-                   * @@         Note that the value of 'zero_data' will not be checked,
-                   * @@         instead, zero data will be used as long as the field is set.
-                   * @@
+                   *
+                   *       .. cpp:var:: bool zero_data
+                   *
+                   *          The identifier for using zeros as initial state data.
+                   *          Note that the value of 'zero_data' will not be checked,
+                   *          instead, zero data will be used as long as the field is set.
+                   *
                    *
                    * @generated from field: bool zero_data = 3;
                    */
@@ -2280,12 +2280,12 @@ export type ModelSequenceBatching_InitialState =
               }
             | {
                   /**
-                   * @@      .. cpp:var:: string data_file
-                   * @@
-                   * @@         The file whose content will be used as the initial data for
-                   * @@         the state in row-major order. The file must be provided in
-                   * @@         sub-directory 'initial_state' under the model directory.
-                   * @@
+                   *       .. cpp:var:: string data_file
+                   *
+                   *          The file whose content will be used as the initial data for
+                   *          the state in row-major order. The file must be provided in
+                   *          sub-directory 'initial_state' under the model directory.
+                   *
                    *
                    * @generated from field: string data_file = 4;
                    */
@@ -2295,10 +2295,10 @@ export type ModelSequenceBatching_InitialState =
             | { case: undefined; value?: undefined }
 
         /**
-         * @@  .. cpp:var:: string name
-         * @@
-         * @@     The name of the state initialization.
-         * @@
+         *   .. cpp:var:: string name
+         *
+         *      The name of the state initialization.
+         *
          *
          * @generated from field: string name = 5;
          */
@@ -2314,101 +2314,101 @@ export const ModelSequenceBatching_InitialStateSchema: GenMessage<ModelSequenceB
     messageDesc(file_model_config, 11, 2)
 
 /**
- * @@  .. cpp:var:: message State
- * @@
- * @@     An input / output pair of tensors that carry state for the sequence.
- * @@
+ *   .. cpp:var:: message State
+ *
+ *      An input / output pair of tensors that carry state for the sequence.
+ *
  *
  * @generated from message inference.ModelSequenceBatching.State
  */
 export type ModelSequenceBatching_State = Message<'inference.ModelSequenceBatching.State'> & {
     /**
-     * @@    .. cpp:var:: string input_name
-     * @@
-     * @@       The name of the model state input.
-     * @@
+     *     .. cpp:var:: string input_name
+     *
+     *        The name of the model state input.
+     *
      *
      * @generated from field: string input_name = 1;
      */
     inputName: string
 
     /**
-     * @@    .. cpp:var:: string output_name
-     * @@
-     * @@       The name of the model state output.
-     * @@
+     *     .. cpp:var:: string output_name
+     *
+     *        The name of the model state output.
+     *
      *
      * @generated from field: string output_name = 2;
      */
     outputName: string
 
     /**
-     * @@    .. cpp:var:: DataType data_type
-     * @@
-     * @@       The data-type of the state.
-     * @@
+     *     .. cpp:var:: DataType data_type
+     *
+     *        The data-type of the state.
+     *
      *
      * @generated from field: inference.DataType data_type = 3;
      */
     dataType: DataType
 
     /**
-     * @@    .. cpp:var:: int64 dim (repeated)
-     * @@
-     * @@       The dimension.
-     * @@
+     *     .. cpp:var:: int64 dim (repeated)
+     *
+     *        The dimension.
+     *
      *
      * @generated from field: repeated int64 dims = 4;
      */
     dims: bigint[]
 
     /**
-     * @@  .. cpp:var:: InitialState initial_state (repeated)
-     * @@
-     * @@     The optional field to specify the initial state for the model.
-     * @@
+     *   .. cpp:var:: InitialState initial_state (repeated)
+     *
+     *      The optional field to specify the initial state for the model.
+     *
      *
      * @generated from field: repeated inference.ModelSequenceBatching.InitialState initial_state = 5;
      */
     initialState: ModelSequenceBatching_InitialState[]
 
     /**
-     * @@  .. cpp:var:: bool use_same_buffer_for_input_output
-     * @@
-     * @@     The optional field to use a single buffer for both input and output
-     * @@     state. Without this option, Triton allocates separate buffers
-     * @@     for input and output state
-     * @@     which can be problematic if the state size is
-     * @@     large. This option reduces the memory usage by allocating a single
-     * @@     buffer. Enabling this option is recommended whenever
-     * @@     the input state is processed before the output state is written.
-     * @@     When enabled the state
-     * @@     will always be updated independent of whether
-     * @@     TRITONBACKEND_StateUpdate is called
-     * @@     (however TRITONBACKEND_StateUpdate should still be called for
-     * @@     completeness).
-     * @@
-     * @@     The default value is false.
-     * @@
+     *   .. cpp:var:: bool use_same_buffer_for_input_output
+     *
+     *      The optional field to use a single buffer for both input and output
+     *      state. Without this option, Triton allocates separate buffers
+     *      for input and output state
+     *      which can be problematic if the state size is
+     *      large. This option reduces the memory usage by allocating a single
+     *      buffer. Enabling this option is recommended whenever
+     *      the input state is processed before the output state is written.
+     *      When enabled the state
+     *      will always be updated independent of whether
+     *      TRITONBACKEND_StateUpdate is called
+     *      (however TRITONBACKEND_StateUpdate should still be called for
+     *      completeness).
+     *
+     *      The default value is false.
+     *
      *
      * @generated from field: bool use_same_buffer_for_input_output = 6;
      */
     useSameBufferForInputOutput: boolean
 
     /**
-     * @@  .. cpp:var:: bool use_growable_memory
-     * @@
-     * @@     The optional field to enable an implicit state buffer to grow
-     * @@     without reallocating or copying existing memory.
-     * @@     Additional memory will be appended to the end of the buffer and
-     * @@     existing data will be preserved.
-     * @@     This option is only available for CUDA memory and requires enabling
-     * @@     use_same_buffer_for_input_output. When using this option,
-     * @@     StateBuffer call will always return CUDA memory even if CPU memory
-     * @@     is requested.
-     * @@
-     * @@     The default value is false.
-     * @@
+     *   .. cpp:var:: bool use_growable_memory
+     *
+     *      The optional field to enable an implicit state buffer to grow
+     *      without reallocating or copying existing memory.
+     *      Additional memory will be appended to the end of the buffer and
+     *      existing data will be preserved.
+     *      This option is only available for CUDA memory and requires enabling
+     *      use_same_buffer_for_input_output. When using this option,
+     *      StateBuffer call will always return CUDA memory even if CPU memory
+     *      is requested.
+     *
+     *      The default value is false.
+     *
      *
      * @generated from field: bool use_growable_memory = 7;
      */
@@ -2424,45 +2424,45 @@ export const ModelSequenceBatching_StateSchema: GenMessage<ModelSequenceBatching
     messageDesc(file_model_config, 11, 3)
 
 /**
- * @@  .. cpp:var:: message StrategyDirect
- * @@
- * @@     The sequence batcher uses a specific, unique batch
- * @@     slot for each sequence. All inference requests in a
- * @@     sequence are directed to the same batch slot in the same
- * @@     model instance over the lifetime of the sequence. This
- * @@     is the default strategy.
- * @@
+ *   .. cpp:var:: message StrategyDirect
+ *
+ *      The sequence batcher uses a specific, unique batch
+ *      slot for each sequence. All inference requests in a
+ *      sequence are directed to the same batch slot in the same
+ *      model instance over the lifetime of the sequence. This
+ *      is the default strategy.
+ *
  *
  * @generated from message inference.ModelSequenceBatching.StrategyDirect
  */
 export type ModelSequenceBatching_StrategyDirect =
     Message<'inference.ModelSequenceBatching.StrategyDirect'> & {
         /**
-         * @@    .. cpp:var:: uint64 max_queue_delay_microseconds
-         * @@
-         * @@       The maximum time, in microseconds, a candidate request
-         * @@       will be delayed in the sequence batch scheduling queue to
-         * @@       wait for additional requests for batching. Default is 0.
-         * @@
+         *     .. cpp:var:: uint64 max_queue_delay_microseconds
+         *
+         *        The maximum time, in microseconds, a candidate request
+         *        will be delayed in the sequence batch scheduling queue to
+         *        wait for additional requests for batching. Default is 0.
+         *
          *
          * @generated from field: uint64 max_queue_delay_microseconds = 1;
          */
         maxQueueDelayMicroseconds: bigint
 
         /**
-         * @@    .. cpp:var:: float minimum_slot_utilization
-         * @@
-         * @@       The minimum slot utilization that must be satisfied to
-         * @@       execute the batch before 'max_queue_delay_microseconds' expires.
-         * @@       For example, a value of 0.5 indicates that the batch should be
-         * @@       executed as soon as 50% or more of the slots are ready even if
-         * @@       the 'max_queue_delay_microseconds' timeout has not expired.
-         * @@       The default is 0.0, indicating that a batch will be executed
-         * @@       before 'max_queue_delay_microseconds' timeout expires if at least
-         * @@       one batch slot is ready. 'max_queue_delay_microseconds' will be
-         * @@       ignored unless minimum_slot_utilization is set to a non-zero
-         * @@       value.
-         * @@
+         *     .. cpp:var:: float minimum_slot_utilization
+         *
+         *        The minimum slot utilization that must be satisfied to
+         *        execute the batch before 'max_queue_delay_microseconds' expires.
+         *        For example, a value of 0.5 indicates that the batch should be
+         *        executed as soon as 50% or more of the slots are ready even if
+         *        the 'max_queue_delay_microseconds' timeout has not expired.
+         *        The default is 0.0, indicating that a batch will be executed
+         *        before 'max_queue_delay_microseconds' timeout expires if at least
+         *        one batch slot is ready. 'max_queue_delay_microseconds' will be
+         *        ignored unless minimum_slot_utilization is set to a non-zero
+         *        value.
+         *
          *
          * @generated from field: float minimum_slot_utilization = 2;
          */
@@ -2478,83 +2478,83 @@ export const ModelSequenceBatching_StrategyDirectSchema: GenMessage<ModelSequenc
     messageDesc(file_model_config, 11, 4)
 
 /**
- * @@  .. cpp:var:: message StrategyOldest
- * @@
- * @@     The sequence batcher maintains up to 'max_candidate_sequences'
- * @@     candidate sequences. 'max_candidate_sequences' can be greater
- * @@     than the model's 'max_batch_size'. For inferencing the batcher
- * @@     chooses from the candidate sequences up to 'max_batch_size'
- * @@     inference requests. Requests are chosen in an oldest-first
- * @@     manner across all candidate sequences. A given sequence is
- * @@     not guaranteed to be assigned to the same batch slot for
- * @@     all inference requests of that sequence.
- * @@
+ *   .. cpp:var:: message StrategyOldest
+ *
+ *      The sequence batcher maintains up to 'max_candidate_sequences'
+ *      candidate sequences. 'max_candidate_sequences' can be greater
+ *      than the model's 'max_batch_size'. For inferencing the batcher
+ *      chooses from the candidate sequences up to 'max_batch_size'
+ *      inference requests. Requests are chosen in an oldest-first
+ *      manner across all candidate sequences. A given sequence is
+ *      not guaranteed to be assigned to the same batch slot for
+ *      all inference requests of that sequence.
+ *
  *
  * @generated from message inference.ModelSequenceBatching.StrategyOldest
  */
 export type ModelSequenceBatching_StrategyOldest =
     Message<'inference.ModelSequenceBatching.StrategyOldest'> & {
         /**
-         * @@    .. cpp:var:: int32 max_candidate_sequences
-         * @@
-         * @@       Maximum number of candidate sequences that the batcher
-         * @@       maintains. Excess sequences are kept in an ordered backlog
-         * @@       and become candidates when existing candidate sequences
-         * @@       complete.
-         * @@
+         *     .. cpp:var:: int32 max_candidate_sequences
+         *
+         *        Maximum number of candidate sequences that the batcher
+         *        maintains. Excess sequences are kept in an ordered backlog
+         *        and become candidates when existing candidate sequences
+         *        complete.
+         *
          *
          * @generated from field: int32 max_candidate_sequences = 1;
          */
         maxCandidateSequences: number
 
         /**
-         * @@    .. cpp:var:: int32 preferred_batch_size (repeated)
-         * @@
-         * @@       Preferred batch sizes for dynamic batching of candidate
-         * @@       sequences. If a batch of one of these sizes can be formed
-         * @@       it will be executed immediately. If not specified a
-         * @@       preferred batch size will be chosen automatically
-         * @@       based on model and GPU characteristics.
-         * @@
+         *     .. cpp:var:: int32 preferred_batch_size (repeated)
+         *
+         *        Preferred batch sizes for dynamic batching of candidate
+         *        sequences. If a batch of one of these sizes can be formed
+         *        it will be executed immediately. If not specified a
+         *        preferred batch size will be chosen automatically
+         *        based on model and GPU characteristics.
+         *
          *
          * @generated from field: repeated int32 preferred_batch_size = 2;
          */
         preferredBatchSize: number[]
 
         /**
-         * @@    .. cpp:var:: uint64 max_queue_delay_microseconds
-         * @@
-         * @@       The maximum time, in microseconds, a candidate request
-         * @@       will be delayed in the dynamic batch scheduling queue to
-         * @@       wait for additional requests for batching. Default is 0.
-         * @@
+         *     .. cpp:var:: uint64 max_queue_delay_microseconds
+         *
+         *        The maximum time, in microseconds, a candidate request
+         *        will be delayed in the dynamic batch scheduling queue to
+         *        wait for additional requests for batching. Default is 0.
+         *
          *
          * @generated from field: uint64 max_queue_delay_microseconds = 3;
          */
         maxQueueDelayMicroseconds: bigint
 
         /**
-         * @@    .. cpp:var:: bool preserve_ordering
-         * @@
-         * @@       Should the dynamic batcher preserve the ordering of responses to
-         * @@       match the order of requests received by the scheduler. Default is
-         * @@       false. If true, the responses will be returned in the same order
-         * @@       as the order of requests sent to the scheduler. If false, the
-         * @@       responses may be returned in arbitrary order. This option is
-         * @@       specifically needed when a sequence of related inference requests
-         * @@       (i.e. inference requests with the same correlation ID) are sent
-         * @@       to the dynamic batcher to ensure that the sequence responses are
-         * @@       in the correct order.
-         * @@
-         * @@       When using decoupled models, setting this to true may block the
-         * @@       responses from independent sequences from being returned to the
-         * @@       client until the previous request completes, hurting overall
-         * @@       performance. If using GRPC streaming protocol, the stream
-         * @@       ordering guarantee may be sufficient alone to ensure the
-         * @@       responses for each sequence are returned in sequence-order
-         * @@       without blocking based on independent requests, depending on the
-         * @@       use case.
-         * @@
+         *     .. cpp:var:: bool preserve_ordering
+         *
+         *        Should the dynamic batcher preserve the ordering of responses to
+         *        match the order of requests received by the scheduler. Default is
+         *        false. If true, the responses will be returned in the same order
+         *        as the order of requests sent to the scheduler. If false, the
+         *        responses may be returned in arbitrary order. This option is
+         *        specifically needed when a sequence of related inference requests
+         *        (i.e. inference requests with the same correlation ID) are sent
+         *        to the dynamic batcher to ensure that the sequence responses are
+         *        in the correct order.
+         *
+         *        When using decoupled models, setting this to true may block the
+         *        responses from independent sequences from being returned to the
+         *        client until the previous request completes, hurting overall
+         *        performance. If using GRPC streaming protocol, the stream
+         *        ordering guarantee may be sufficient alone to ensure the
+         *        responses for each sequence are returned in sequence-order
+         *        without blocking based on independent requests, depending on the
+         *        use case.
+         *
          *
          * @generated from field: bool preserve_ordering = 4;
          */
@@ -2570,21 +2570,21 @@ export const ModelSequenceBatching_StrategyOldestSchema: GenMessage<ModelSequenc
     messageDesc(file_model_config, 11, 5)
 
 /**
- * @@
- * @@.. cpp:var:: message ModelEnsembling
- * @@
- * @@   Model ensembling configuration. These settings specify the models that
- * @@   compose the ensemble and how data flows between the models.
- * @@
+ *
+ * .. cpp:var:: message ModelEnsembling
+ *
+ *    Model ensembling configuration. These settings specify the models that
+ *    compose the ensemble and how data flows between the models.
+ *
  *
  * @generated from message inference.ModelEnsembling
  */
 export type ModelEnsembling = Message<'inference.ModelEnsembling'> & {
     /**
-     * @@  .. cpp:var:: Step step (repeated)
-     * @@
-     * @@     The models and the input / output mappings used within the ensemble.
-     * @@
+     *   .. cpp:var:: Step step (repeated)
+     *
+     *      The models and the input / output mappings used within the ensemble.
+     *
      *
      * @generated from field: repeated inference.ModelEnsembling.Step step = 1;
      */
@@ -2600,71 +2600,71 @@ export const ModelEnsemblingSchema: GenMessage<ModelEnsembling> =
     messageDesc(file_model_config, 12)
 
 /**
- * @@  .. cpp:var:: message Step
- * @@
- * @@     Each step specifies a model included in the ensemble,
- * @@     maps ensemble tensor names to the model input tensors,
- * @@     and maps model output tensors to ensemble tensor names
- * @@
+ *   .. cpp:var:: message Step
+ *
+ *      Each step specifies a model included in the ensemble,
+ *      maps ensemble tensor names to the model input tensors,
+ *      and maps model output tensors to ensemble tensor names
+ *
  *
  * @generated from message inference.ModelEnsembling.Step
  */
 export type ModelEnsembling_Step = Message<'inference.ModelEnsembling.Step'> & {
     /**
-     * @@  .. cpp:var:: string model_name
-     * @@
-     * @@     The name of the model to execute for this step of the ensemble.
-     * @@
+     *   .. cpp:var:: string model_name
+     *
+     *      The name of the model to execute for this step of the ensemble.
+     *
      *
      * @generated from field: string model_name = 1;
      */
     modelName: string
 
     /**
-     * @@  .. cpp:var:: int64 model_version
-     * @@
-     * @@     The version of the model to use for inference. If -1
-     * @@     the latest/most-recent version of the model is used.
-     * @@
+     *   .. cpp:var:: int64 model_version
+     *
+     *      The version of the model to use for inference. If -1
+     *      the latest/most-recent version of the model is used.
+     *
      *
      * @generated from field: int64 model_version = 2;
      */
     modelVersion: bigint
 
     /**
-     * @@  .. cpp:var:: map<string,string> input_map
-     * @@
-     * @@     Map from name of an input tensor on this step's model to ensemble
-     * @@     tensor name. The ensemble tensor must have the same data type and
-     * @@     shape as the model input. Each model input must be assigned to
-     * @@     one ensemble tensor, but the same ensemble tensor can be assigned
-     * @@     to multiple model inputs.
-     * @@
+     *   .. cpp:var:: map<string,string> input_map
+     *
+     *      Map from name of an input tensor on this step's model to ensemble
+     *      tensor name. The ensemble tensor must have the same data type and
+     *      shape as the model input. Each model input must be assigned to
+     *      one ensemble tensor, but the same ensemble tensor can be assigned
+     *      to multiple model inputs.
+     *
      *
      * @generated from field: map<string, string> input_map = 3;
      */
     inputMap: { [key: string]: string }
 
     /**
-     * @@  .. cpp:var:: map<string,string> output_map
-     * @@
-     * @@     Map from name of an output tensor on this step's model to ensemble
-     * @@     tensor name. The data type and shape of the ensemble tensor will
-     * @@     be inferred from the model output. It is optional to assign all
-     * @@     model outputs to ensemble tensors. One ensemble tensor name
-     * @@     can appear in an output map only once.
-     * @@
+     *   .. cpp:var:: map<string,string> output_map
+     *
+     *      Map from name of an output tensor on this step's model to ensemble
+     *      tensor name. The data type and shape of the ensemble tensor will
+     *      be inferred from the model output. It is optional to assign all
+     *      model outputs to ensemble tensors. One ensemble tensor name
+     *      can appear in an output map only once.
+     *
      *
      * @generated from field: map<string, string> output_map = 4;
      */
     outputMap: { [key: string]: string }
 
     /**
-     * @@  .. cpp:var:: string model_namespace
-     * @@
-     * @@     [RESERVED] currently this field is reserved for internal use, users
-     * @@     must not set any value to this field to avoid unexpected behavior.
-     * @@
+     *   .. cpp:var:: string model_namespace
+     *
+     *      [RESERVED] currently this field is reserved for internal use, users
+     *      must not set any value to this field to avoid unexpected behavior.
+     *
      *
      * @generated from field: string model_namespace = 5;
      */
@@ -2680,20 +2680,20 @@ export const ModelEnsembling_StepSchema: GenMessage<ModelEnsembling_Step> =
     messageDesc(file_model_config, 12, 0)
 
 /**
- * @@
- * @@.. cpp:var:: message ModelParameter
- * @@
- * @@   A model parameter.
- * @@
+ *
+ * .. cpp:var:: message ModelParameter
+ *
+ *    A model parameter.
+ *
  *
  * @generated from message inference.ModelParameter
  */
 export type ModelParameter = Message<'inference.ModelParameter'> & {
     /**
-     * @@  .. cpp:var:: string string_value
-     * @@
-     * @@     The string value of the parameter.
-     * @@
+     *   .. cpp:var:: string string_value
+     *
+     *      The string value of the parameter.
+     *
      *
      * @generated from field: string string_value = 1;
      */
@@ -2709,62 +2709,62 @@ export const ModelParameterSchema: GenMessage<ModelParameter> =
     messageDesc(file_model_config, 13)
 
 /**
- * @@
- * @@.. cpp:var:: message ModelWarmup
- * @@
- * @@   Settings used to construct the request sample for model warmup.
- * @@
+ *
+ * .. cpp:var:: message ModelWarmup
+ *
+ *    Settings used to construct the request sample for model warmup.
+ *
  *
  * @generated from message inference.ModelWarmup
  */
 export type ModelWarmup = Message<'inference.ModelWarmup'> & {
     /**
-     * @@  .. cpp:var:: string name
-     * @@
-     * @@     The name of the request sample.
-     * @@
+     *   .. cpp:var:: string name
+     *
+     *      The name of the request sample.
+     *
      *
      * @generated from field: string name = 1;
      */
     name: string
 
     /**
-     * @@  .. cpp:var:: uint32 batch_size
-     * @@
-     * @@     The batch size of the inference request. This must be >= 1. For
-     * @@     models that don't support batching, batch_size must be 1. If
-     * @@     batch_size > 1, the 'inputs' specified below will be duplicated to
-     * @@     match the batch size requested.
-     * @@
+     *   .. cpp:var:: uint32 batch_size
+     *
+     *      The batch size of the inference request. This must be >= 1. For
+     *      models that don't support batching, batch_size must be 1. If
+     *      batch_size > 1, the 'inputs' specified below will be duplicated to
+     *      match the batch size requested.
+     *
      *
      * @generated from field: uint32 batch_size = 2;
      */
     batchSize: number
 
     /**
-     * @@  .. cpp:var:: map<string, Input> inputs
-     * @@
-     * @@     The warmup meta data associated with every model input, including
-     * @@     control tensors.
-     * @@
+     *   .. cpp:var:: map<string, Input> inputs
+     *
+     *      The warmup meta data associated with every model input, including
+     *      control tensors.
+     *
      *
      * @generated from field: map<string, inference.ModelWarmup.Input> inputs = 3;
      */
     inputs: { [key: string]: ModelWarmup_Input }
 
     /**
-     * @@  .. cpp:var:: uint32 count
-     * @@
-     * @@     The number of iterations that this warmup sample will be executed.
-     * @@     For example, if this field is set to 2, 2 model executions using this
-     * @@     sample will be scheduled for warmup. Default value is 0 which
-     * @@     indicates that this sample will be used only once.
-     * @@     Note that for sequence model, 'count' may not work well
-     * @@     because the model often expect a valid sequence of requests which
-     * @@     should be represented by a series of warmup samples. 'count > 1'
-     * @@     essentially "resends" one of the sample, which may invalidate the
-     * @@     sequence and result in unexpected warmup failure.
-     * @@
+     *   .. cpp:var:: uint32 count
+     *
+     *      The number of iterations that this warmup sample will be executed.
+     *      For example, if this field is set to 2, 2 model executions using this
+     *      sample will be scheduled for warmup. Default value is 0 which
+     *      indicates that this sample will be used only once.
+     *      Note that for sequence model, 'count' may not work well
+     *      because the model often expect a valid sequence of requests which
+     *      should be represented by a series of warmup samples. 'count > 1'
+     *      essentially "resends" one of the sample, which may invalidate the
+     *      sequence and result in unexpected warmup failure.
+     *
      *
      * @generated from field: uint32 count = 4;
      */
@@ -2780,55 +2780,55 @@ export const ModelWarmupSchema: GenMessage<ModelWarmup> =
     messageDesc(file_model_config, 14)
 
 /**
- * @@
- * @@  .. cpp:var:: message Input
- * @@
- * @@     Meta data associated with an input.
- * @@
+ *
+ *   .. cpp:var:: message Input
+ *
+ *      Meta data associated with an input.
+ *
  *
  * @generated from message inference.ModelWarmup.Input
  */
 export type ModelWarmup_Input = Message<'inference.ModelWarmup.Input'> & {
     /**
-     * @@    .. cpp:var:: DataType data_type
-     * @@
-     * @@       The data-type of the input.
-     * @@
+     *     .. cpp:var:: DataType data_type
+     *
+     *        The data-type of the input.
+     *
      *
      * @generated from field: inference.DataType data_type = 1;
      */
     dataType: DataType
 
     /**
-     * @@    .. cpp:var:: int64 dims (repeated)
-     * @@
-     * @@       The shape of the input tensor, not including the batch dimension.
-     * @@
+     *     .. cpp:var:: int64 dims (repeated)
+     *
+     *        The shape of the input tensor, not including the batch dimension.
+     *
      *
      * @generated from field: repeated int64 dims = 2;
      */
     dims: bigint[]
 
     /**
-     * @@    .. cpp:var:: oneof input_data_type
-     * @@
-     * @@       Specify how the input data is generated. If the input has STRING
-     * @@       data type and 'random_data' is set, the data generation will fall
-     * @@       back to 'zero_data'.
-     * @@
+     *     .. cpp:var:: oneof input_data_type
+     *
+     *        Specify how the input data is generated. If the input has STRING
+     *        data type and 'random_data' is set, the data generation will fall
+     *        back to 'zero_data'.
+     *
      *
      * @generated from oneof inference.ModelWarmup.Input.input_data_type
      */
     inputDataType:
         | {
               /**
-               * @@
-               * @@    .. cpp:var:: bool zero_data
-               * @@
-               * @@       The identifier for using zeros as input data. Note that the
-               * @@       value of 'zero_data' will not be checked, instead, zero data
-               * @@       will be used as long as the field is set.
-               * @@
+               *
+               *     .. cpp:var:: bool zero_data
+               *
+               *        The identifier for using zeros as input data. Note that the
+               *        value of 'zero_data' will not be checked, instead, zero data
+               *        will be used as long as the field is set.
+               *
                *
                * @generated from field: bool zero_data = 3;
                */
@@ -2837,13 +2837,13 @@ export type ModelWarmup_Input = Message<'inference.ModelWarmup.Input'> & {
           }
         | {
               /**
-               * @@
-               * @@    .. cpp:var:: bool random_data
-               * @@
-               * @@       The identifier for using random data as input data. Note that
-               * @@       the value of 'random_data' will not be checked, instead,
-               * @@       random data will be used as long as the field is set.
-               * @@
+               *
+               *     .. cpp:var:: bool random_data
+               *
+               *        The identifier for using random data as input data. Note that
+               *        the value of 'random_data' will not be checked, instead,
+               *        random data will be used as long as the field is set.
+               *
                *
                * @generated from field: bool random_data = 4;
                */
@@ -2852,15 +2852,15 @@ export type ModelWarmup_Input = Message<'inference.ModelWarmup.Input'> & {
           }
         | {
               /**
-               * @@    .. cpp:var:: string input_data_file
-               * @@
-               * @@       The file whose content will be used as raw input data in
-               * @@       row-major order. The file must be provided in a sub-directory
-               * @@       'warmup' under the model directory. The file contents should be
-               * @@       in binary format. For TYPE_STRING data-type, an element is
-               * @@       represented by a 4-byte unsigned integer giving the length
-               * @@       followed by the actual bytes.
-               * @@
+               *     .. cpp:var:: string input_data_file
+               *
+               *        The file whose content will be used as raw input data in
+               *        row-major order. The file must be provided in a sub-directory
+               *        'warmup' under the model directory. The file contents should be
+               *        in binary format. For TYPE_STRING data-type, an element is
+               *        represented by a 4-byte unsigned integer giving the length
+               *        followed by the actual bytes.
+               *
                *
                * @generated from field: string input_data_file = 5;
                */
@@ -2879,21 +2879,21 @@ export const ModelWarmup_InputSchema: GenMessage<ModelWarmup_Input> =
     messageDesc(file_model_config, 14, 0)
 
 /**
- * @@
- * @@ .. cpp:var:: message ModelOperations
- * @@
- * @@    The metadata of libraries providing custom operations for this model.
- * @@
+ *
+ *  .. cpp:var:: message ModelOperations
+ *
+ *     The metadata of libraries providing custom operations for this model.
+ *
  *
  * @generated from message inference.ModelOperations
  */
 export type ModelOperations = Message<'inference.ModelOperations'> & {
     /**
-     * @@  .. cpp:var:: string op_library_filename (repeated)
-     * @@
-     * @@     Optional paths of the libraries providing custom operations for
-     * @@     this model. Valid only for ONNX models.
-     * @@
+     *   .. cpp:var:: string op_library_filename (repeated)
+     *
+     *      Optional paths of the libraries providing custom operations for
+     *      this model. Valid only for ONNX models.
+     *
      *
      * @generated from field: repeated string op_library_filename = 1;
      */
@@ -2909,26 +2909,26 @@ export const ModelOperationsSchema: GenMessage<ModelOperations> =
     messageDesc(file_model_config, 15)
 
 /**
- * @@
- * @@ .. cpp:var:: message ModelTransactionPolicy
- * @@
- * @@    The specification that describes the nature of transactions
- * @@    to be expected from the model.
- * @@
+ *
+ *  .. cpp:var:: message ModelTransactionPolicy
+ *
+ *     The specification that describes the nature of transactions
+ *     to be expected from the model.
+ *
  *
  * @generated from message inference.ModelTransactionPolicy
  */
 export type ModelTransactionPolicy = Message<'inference.ModelTransactionPolicy'> & {
     /**
-     * @@  .. cpp:var:: bool decoupled
-     * @@
-     * @@     Indicates whether responses generated by the model are decoupled with
-     * @@     the requests issued to it, which means the number of responses
-     * @@     generated by model may differ from number of requests issued, and
-     * @@     that the responses may be out of order relative to the order of
-     * @@     requests. The default is false, which means the model will generate
-     * @@     exactly one response for each request.
-     * @@
+     *   .. cpp:var:: bool decoupled
+     *
+     *      Indicates whether responses generated by the model are decoupled with
+     *      the requests issued to it, which means the number of responses
+     *      generated by model may differ from number of requests issued, and
+     *      that the responses may be out of order relative to the order of
+     *      requests. The default is false, which means the model will generate
+     *      exactly one response for each request.
+     *
      *
      * @generated from field: bool decoupled = 1;
      */
@@ -2944,23 +2944,23 @@ export const ModelTransactionPolicySchema: GenMessage<ModelTransactionPolicy> =
     messageDesc(file_model_config, 16)
 
 /**
- * @@
- * @@.. cpp:var:: message ModelRepositoryAgents
- * @@
- * @@   The repository agents for the model.
- * @@
+ *
+ * .. cpp:var:: message ModelRepositoryAgents
+ *
+ *    The repository agents for the model.
+ *
  *
  * @generated from message inference.ModelRepositoryAgents
  */
 export type ModelRepositoryAgents = Message<'inference.ModelRepositoryAgents'> & {
     /**
-     * @@
-     * @@  .. cpp:var:: Agent agents (repeated)
-     * @@
-     * @@     The ordered list of agents for the model. These agents will be
-     * @@     invoked in order to respond to repository actions occurring for the
-     * @@     model.
-     * @@
+     *
+     *   .. cpp:var:: Agent agents (repeated)
+     *
+     *      The ordered list of agents for the model. These agents will be
+     *      invoked in order to respond to repository actions occurring for the
+     *      model.
+     *
      *
      * @generated from field: repeated inference.ModelRepositoryAgents.Agent agents = 1;
      */
@@ -2976,31 +2976,31 @@ export const ModelRepositoryAgentsSchema: GenMessage<ModelRepositoryAgents> =
     messageDesc(file_model_config, 17)
 
 /**
- * @@
- * @@  .. cpp:var:: message Agent
- * @@
- * @@     A repository agent that should be invoked for the specified
- * @@     repository actions for this model.
- * @@
+ *
+ *   .. cpp:var:: message Agent
+ *
+ *      A repository agent that should be invoked for the specified
+ *      repository actions for this model.
+ *
  *
  * @generated from message inference.ModelRepositoryAgents.Agent
  */
 export type ModelRepositoryAgents_Agent = Message<'inference.ModelRepositoryAgents.Agent'> & {
     /**
-     * @@    .. cpp:var:: string name
-     * @@
-     * @@       The name of the agent.
-     * @@
+     *     .. cpp:var:: string name
+     *
+     *        The name of the agent.
+     *
      *
      * @generated from field: string name = 1;
      */
     name: string
 
     /**
-     * @@    .. cpp:var:: map<string, string> parameters
-     * @@
-     * @@       The parameters for the agent.
-     * @@
+     *     .. cpp:var:: map<string, string> parameters
+     *
+     *        The parameters for the agent.
+     *
      *
      * @generated from field: map<string, string> parameters = 2;
      */
@@ -3016,25 +3016,25 @@ export const ModelRepositoryAgents_AgentSchema: GenMessage<ModelRepositoryAgents
     messageDesc(file_model_config, 17, 0)
 
 /**
- * @@
- * @@.. cpp:var:: message ModelResponseCache
- * @@
- * @@   The response cache setting for the model.
- * @@
+ *
+ * .. cpp:var:: message ModelResponseCache
+ *
+ *    The response cache setting for the model.
+ *
  *
  * @generated from message inference.ModelResponseCache
  */
 export type ModelResponseCache = Message<'inference.ModelResponseCache'> & {
     /**
-     * @@
-     * @@  .. cpp::var:: bool enable
-     * @@
-     * @@     Whether or not to use response cache for the model. If True, the
-     * @@     responses from the model are cached and when identical request
-     * @@     is encountered, instead of going through the model execution,
-     * @@     the response from the cache is utilized. By default, response
-     * @@     cache is disabled for the models.
-     * @@
+     *
+     *   .. cpp::var:: bool enable
+     *
+     *      Whether or not to use response cache for the model. If True, the
+     *      responses from the model are cached and when identical request
+     *      is encountered, instead of going through the model execution,
+     *      the response from the cache is utilized. By default, response
+     *      cache is disabled for the models.
+     *
      *
      * @generated from field: bool enable = 1;
      */
@@ -3050,23 +3050,23 @@ export const ModelResponseCacheSchema: GenMessage<ModelResponseCache> =
     messageDesc(file_model_config, 18)
 
 /**
- * @@
- * @@  .. cpp:var:: message ModelMetrics
- * @@
- * @@     The metrics setting of this model.
- * @@     NOTE: Consider reusing this message body for backend metric custom
- * @@     configuration.
- * @@
+ *
+ *   .. cpp:var:: message ModelMetrics
+ *
+ *      The metrics setting of this model.
+ *      NOTE: Consider reusing this message body for backend metric custom
+ *      configuration.
+ *
  *
  * @generated from message inference.ModelMetrics
  */
 export type ModelMetrics = Message<'inference.ModelMetrics'> & {
     /**
-     * @@
-     * @@  .. cpp::var:: MetricControl metric_control (repeated)
-     * @@
-     * @@     Optional custom configuration for selected metrics.
-     * @@
+     *
+     *   .. cpp::var:: MetricControl metric_control (repeated)
+     *
+     *      Optional custom configuration for selected metrics.
+     *
      *
      * @generated from field: repeated inference.ModelMetrics.MetricControl metric_control = 1;
      */
@@ -3082,41 +3082,41 @@ export const ModelMetricsSchema: GenMessage<ModelMetrics> =
     messageDesc(file_model_config, 19)
 
 /**
- * @@
- * @@  .. cpp:var:: message MetricControl
- * @@
- * @@     Override metrics settings of this model.
- * @@
+ *
+ *   .. cpp:var:: message MetricControl
+ *
+ *      Override metrics settings of this model.
+ *
  *
  * @generated from message inference.ModelMetrics.MetricControl
  */
 export type ModelMetrics_MetricControl = Message<'inference.ModelMetrics.MetricControl'> & {
     /**
-     * @@  .. cpp:var:: MetricIdentifier metric_identifier
-     * @@
-     * @@     The identifier defining metrics to be overridden with the
-     * @@     metric_options.
-     * @@
+     *   .. cpp:var:: MetricIdentifier metric_identifier
+     *
+     *      The identifier defining metrics to be overridden with the
+     *      metric_options.
+     *
      *
      * @generated from field: inference.ModelMetrics.MetricControl.MetricIdentifier metric_identifier = 1;
      */
     metricIdentifier?: ModelMetrics_MetricControl_MetricIdentifier
 
     /**
-     * @@  .. cpp:var:: oneof metric_options
-     * @@
-     * @@     The value to override the metrics defined in metric_identifier.
-     * @@
+     *   .. cpp:var:: oneof metric_options
+     *
+     *      The value to override the metrics defined in metric_identifier.
+     *
      *
      * @generated from oneof inference.ModelMetrics.MetricControl.metric_options
      */
     metricOptions:
         | {
               /**
-               * @@  .. cpp:var:: HistogramOptions histogram_options
-               * @@
-               * @@     Histogram options.
-               * @@
+               *   .. cpp:var:: HistogramOptions histogram_options
+               *
+               *      Histogram options.
+               *
                *
                * @generated from field: inference.ModelMetrics.MetricControl.HistogramOptions histogram_options = 2;
                */
@@ -3135,24 +3135,24 @@ export const ModelMetrics_MetricControlSchema: GenMessage<ModelMetrics_MetricCon
     messageDesc(file_model_config, 19, 0)
 
 /**
- * @@
- * @@  .. cpp:var:: message MetricIdentifier
- * @@
- * @@     Specify metrics to be overridden with metric_option.
- * @@
+ *
+ *   .. cpp:var:: message MetricIdentifier
+ *
+ *      Specify metrics to be overridden with metric_option.
+ *
  *
  * @generated from message inference.ModelMetrics.MetricControl.MetricIdentifier
  */
 export type ModelMetrics_MetricControl_MetricIdentifier =
     Message<'inference.ModelMetrics.MetricControl.MetricIdentifier'> & {
         /**
-         * @@  .. cpp:var:: string family
-         * @@
-         * @@     The name of the metric family to override with the custom value.
-         * @@     All core histogram metrics reported by Triton are customizable.
-         * @@
+         *   .. cpp:var:: string family
+         *
+         *      The name of the metric family to override with the custom value.
+         *      All core histogram metrics reported by Triton are customizable.
+         *
          * https://github.com/triton-inference-server/server/blob/main/docs/user_guide/metrics.md#histograms
-         * @@
+         *
          *
          * @generated from field: string family = 1;
          */
@@ -3168,24 +3168,24 @@ export const ModelMetrics_MetricControl_MetricIdentifierSchema: GenMessage<Model
     messageDesc(file_model_config, 19, 0, 0)
 
 /**
- * @@  .. cpp:var:: message HistogramOptions
- * @@
- * @@     Histogram metrics options.
- * @@
+ *   .. cpp:var:: message HistogramOptions
+ *
+ *      Histogram metrics options.
+ *
  *
  * @generated from message inference.ModelMetrics.MetricControl.HistogramOptions
  */
 export type ModelMetrics_MetricControl_HistogramOptions =
     Message<'inference.ModelMetrics.MetricControl.HistogramOptions'> & {
         /**
-         * @@  .. cpp:var:: double buckets (repeated)
-         * @@
-         * @@     Repeated double type in ascending order for histogram bucket
-         * @@     boundaries. Each bucket value represents a range less than or
-         * @@     equal to itself. The range greater than the largest bucket value
-         * @@     is allocated implicitly.
-         * @@     For example, [ -5.0, -2, 0, 3.5, 5 ].
-         * @@
+         *   .. cpp:var:: double buckets (repeated)
+         *
+         *      Repeated double type in ascending order for histogram bucket
+         *      boundaries. Each bucket value represents a range less than or
+         *      equal to itself. The range greater than the largest bucket value
+         *      is allocated implicitly.
+         *      For example, [ -5.0, -2, 0, 3.5, 5 ].
+         *
          *
          * @generated from field: repeated double buckets = 1;
          */
@@ -3201,163 +3201,163 @@ export const ModelMetrics_MetricControl_HistogramOptionsSchema: GenMessage<Model
     messageDesc(file_model_config, 19, 0, 1)
 
 /**
- * @@
- * @@.. cpp:var:: message ModelConfig
- * @@
- * @@   A model configuration.
- * @@
+ *
+ * .. cpp:var:: message ModelConfig
+ *
+ *    A model configuration.
+ *
  *
  * @generated from message inference.ModelConfig
  */
 export type ModelConfig = Message<'inference.ModelConfig'> & {
     /**
-     * @@  .. cpp:var:: string name
-     * @@
-     * @@     The name of the model.
-     * @@
+     *   .. cpp:var:: string name
+     *
+     *      The name of the model.
+     *
      *
      * @generated from field: string name = 1;
      */
     name: string
 
     /**
-     * @@  .. cpp:var:: string platform
-     * @@
-     * @@     Additional backend-specific configuration for the model.
-     * @@     Please refer to the backend documentation on whether this field
-     * @@     should be specified.
-     * @@
+     *   .. cpp:var:: string platform
+     *
+     *      Additional backend-specific configuration for the model.
+     *      Please refer to the backend documentation on whether this field
+     *      should be specified.
+     *
      *
      * @generated from field: string platform = 2;
      */
     platform: string
 
     /**
-     * @@  .. cpp:var:: string backend
-     * @@
-     * @@     The backend used by the model.
-     * @@
+     *   .. cpp:var:: string backend
+     *
+     *      The backend used by the model.
+     *
      *
      * @generated from field: string backend = 17;
      */
     backend: string
 
     /**
-     * @@  .. cpp:var:: string runtime
-     * @@
-     * @@     The name of the backend library file used by the model.
-     * @@
+     *   .. cpp:var:: string runtime
+     *
+     *      The name of the backend library file used by the model.
+     *
      *
      * @generated from field: string runtime = 25;
      */
     runtime: string
 
     /**
-     * @@  .. cpp:var:: ModelVersionPolicy version_policy
-     * @@
-     * @@     Policy indicating which version(s) of the model will be served.
-     * @@
+     *   .. cpp:var:: ModelVersionPolicy version_policy
+     *
+     *      Policy indicating which version(s) of the model will be served.
+     *
      *
      * @generated from field: inference.ModelVersionPolicy version_policy = 3;
      */
     versionPolicy?: ModelVersionPolicy
 
     /**
-     * @@  .. cpp:var:: int32 max_batch_size
-     * @@
-     * @@     Maximum batch size allowed for inference. This can only decrease
-     * @@     what is allowed by the model itself. A max_batch_size value of 0
-     * @@     indicates that batching is not allowed for the model and the
-     * @@     dimension/shape of the input and output tensors must exactly
-     * @@     match what is specified in the input and output configuration. A
-     * @@     max_batch_size value > 0 indicates that batching is allowed and
-     * @@     so the model expects the input tensors to have an additional
-     * @@     initial dimension for the batching that is not specified in the
-     * @@     input (for example, if the model supports batched inputs of
-     * @@     2-dimensional tensors then the model configuration will specify
-     * @@     the input shape as [ X, Y ] but the model will expect the actual
-     * @@     input tensors to have shape [ N, X, Y ]). For max_batch_size > 0
-     * @@     returned outputs will also have an additional initial dimension
-     * @@     for the batch.
-     * @@
+     *   .. cpp:var:: int32 max_batch_size
+     *
+     *      Maximum batch size allowed for inference. This can only decrease
+     *      what is allowed by the model itself. A max_batch_size value of 0
+     *      indicates that batching is not allowed for the model and the
+     *      dimension/shape of the input and output tensors must exactly
+     *      match what is specified in the input and output configuration. A
+     *      max_batch_size value > 0 indicates that batching is allowed and
+     *      so the model expects the input tensors to have an additional
+     *      initial dimension for the batching that is not specified in the
+     *      input (for example, if the model supports batched inputs of
+     *      2-dimensional tensors then the model configuration will specify
+     *      the input shape as [ X, Y ] but the model will expect the actual
+     *      input tensors to have shape [ N, X, Y ]). For max_batch_size > 0
+     *      returned outputs will also have an additional initial dimension
+     *      for the batch.
+     *
      *
      * @generated from field: int32 max_batch_size = 4;
      */
     maxBatchSize: number
 
     /**
-     * @@  .. cpp:var:: ModelInput input (repeated)
-     * @@
-     * @@     The inputs request by the model.
-     * @@
+     *   .. cpp:var:: ModelInput input (repeated)
+     *
+     *      The inputs request by the model.
+     *
      *
      * @generated from field: repeated inference.ModelInput input = 5;
      */
     input: ModelInput[]
 
     /**
-     * @@  .. cpp:var:: ModelOutput output (repeated)
-     * @@
-     * @@     The outputs produced by the model.
-     * @@
+     *   .. cpp:var:: ModelOutput output (repeated)
+     *
+     *      The outputs produced by the model.
+     *
      *
      * @generated from field: repeated inference.ModelOutput output = 6;
      */
     output: ModelOutput[]
 
     /**
-     * @@  .. cpp:var:: BatchInput batch_input (repeated)
-     * @@
-     * @@     The model input(s) that the server should use to communicate
-     * @@     batch related values to the model.
-     * @@
+     *   .. cpp:var:: BatchInput batch_input (repeated)
+     *
+     *      The model input(s) that the server should use to communicate
+     *      batch related values to the model.
+     *
      *
      * @generated from field: repeated inference.BatchInput batch_input = 20;
      */
     batchInput: BatchInput[]
 
     /**
-     * @@  .. cpp:var:: BatchOutput batch_output (repeated)
-     * @@
-     * @@     The outputs produced by the model that requires special handling
-     * @@     by the model backend.
-     * @@
+     *   .. cpp:var:: BatchOutput batch_output (repeated)
+     *
+     *      The outputs produced by the model that requires special handling
+     *      by the model backend.
+     *
      *
      * @generated from field: repeated inference.BatchOutput batch_output = 21;
      */
     batchOutput: BatchOutput[]
 
     /**
-     * @@  .. cpp:var:: ModelOptimizationPolicy optimization
-     * @@
-     * @@     Optimization configuration for the model. If not specified
-     * @@     then default optimization policy is used.
-     * @@
+     *   .. cpp:var:: ModelOptimizationPolicy optimization
+     *
+     *      Optimization configuration for the model. If not specified
+     *      then default optimization policy is used.
+     *
      *
      * @generated from field: inference.ModelOptimizationPolicy optimization = 12;
      */
     optimization?: ModelOptimizationPolicy
 
     /**
-     * @@  .. cpp:var:: oneof scheduling_choice
-     * @@
-     * @@     The scheduling policy for the model. If not specified the
-     * @@     default scheduling policy is used for the model. The default
-     * @@     policy is to execute each inference request independently.
-     * @@
+     *   .. cpp:var:: oneof scheduling_choice
+     *
+     *      The scheduling policy for the model. If not specified the
+     *      default scheduling policy is used for the model. The default
+     *      policy is to execute each inference request independently.
+     *
      *
      * @generated from oneof inference.ModelConfig.scheduling_choice
      */
     schedulingChoice:
         | {
               /**
-               * @@    .. cpp:var:: ModelDynamicBatching dynamic_batching
-               * @@
-               * @@       If specified, enables the dynamic-batching scheduling
-               * @@       policy. With dynamic-batching the scheduler may group
-               * @@       together independent requests into a single batch to
-               * @@       improve inference throughput.
-               * @@
+               *     .. cpp:var:: ModelDynamicBatching dynamic_batching
+               *
+               *        If specified, enables the dynamic-batching scheduling
+               *        policy. With dynamic-batching the scheduler may group
+               *        together independent requests into a single batch to
+               *        improve inference throughput.
+               *
                *
                * @generated from field: inference.ModelDynamicBatching dynamic_batching = 11;
                */
@@ -3366,15 +3366,15 @@ export type ModelConfig = Message<'inference.ModelConfig'> & {
           }
         | {
               /**
-               * @@    .. cpp:var:: ModelSequenceBatching sequence_batching
-               * @@
-               * @@       If specified, enables the sequence-batching scheduling
-               * @@       policy. With sequence-batching, inference requests
-               * @@       with the same correlation ID are routed to the same
-               * @@       model instance. Multiple sequences of inference requests
-               * @@       may be batched together into a single batch to
-               * @@       improve inference throughput.
-               * @@
+               *     .. cpp:var:: ModelSequenceBatching sequence_batching
+               *
+               *        If specified, enables the sequence-batching scheduling
+               *        policy. With sequence-batching, inference requests
+               *        with the same correlation ID are routed to the same
+               *        model instance. Multiple sequences of inference requests
+               *        may be batched together into a single batch to
+               *        improve inference throughput.
+               *
                *
                * @generated from field: inference.ModelSequenceBatching sequence_batching = 13;
                */
@@ -3383,15 +3383,15 @@ export type ModelConfig = Message<'inference.ModelConfig'> & {
           }
         | {
               /**
-               * @@    .. cpp:var:: ModelEnsembling ensemble_scheduling
-               * @@
-               * @@       If specified, enables the model-ensembling scheduling
-               * @@       policy. With model-ensembling, inference requests
-               * @@       will be processed according to the specification, such as an
-               * @@       execution sequence of models. The input specified in this model
-               * @@       config will be the input for the ensemble, and the output
-               * @@       specified will be the output of the ensemble.
-               * @@
+               *     .. cpp:var:: ModelEnsembling ensemble_scheduling
+               *
+               *        If specified, enables the model-ensembling scheduling
+               *        policy. With model-ensembling, inference requests
+               *        will be processed according to the specification, such as an
+               *        execution sequence of models. The input specified in this model
+               *        config will be the input for the ensemble, and the output
+               *        specified will be the output of the ensemble.
+               *
                *
                * @generated from field: inference.ModelEnsembling ensemble_scheduling = 15;
                */
@@ -3401,128 +3401,128 @@ export type ModelConfig = Message<'inference.ModelConfig'> & {
         | { case: undefined; value?: undefined }
 
     /**
-     * @@  .. cpp:var:: ModelInstanceGroup instance_group (repeated)
-     * @@
-     * @@     Instances of this model. If not specified, one instance
-     * @@     of the model will be instantiated on each available GPU.
-     * @@
+     *   .. cpp:var:: ModelInstanceGroup instance_group (repeated)
+     *
+     *      Instances of this model. If not specified, one instance
+     *      of the model will be instantiated on each available GPU.
+     *
      *
      * @generated from field: repeated inference.ModelInstanceGroup instance_group = 7;
      */
     instanceGroup: ModelInstanceGroup[]
 
     /**
-     * @@  .. cpp:var:: string default_model_filename
-     * @@
-     * @@     Optional filename of the model file to use if a
-     * @@     compute-capability specific model is not specified in
-     * @@     :cpp:var:`cc_model_filenames`. If not specified the default name
-     * @@     is 'model.graphdef', 'model.savedmodel', 'model.plan' or
-     * @@     'model.pt' depending on the model type.
-     * @@
+     *   .. cpp:var:: string default_model_filename
+     *
+     *      Optional filename of the model file to use if a
+     *      compute-capability specific model is not specified in
+     *      :cpp:var:`cc_model_filenames`. If not specified the default name
+     *      is 'model.graphdef', 'model.savedmodel', 'model.plan' or
+     *      'model.pt' depending on the model type.
+     *
      *
      * @generated from field: string default_model_filename = 8;
      */
     defaultModelFilename: string
 
     /**
-     * @@  .. cpp:var:: map<string,string> cc_model_filenames
-     * @@
-     * @@     Optional map from CUDA compute capability to the filename of
-     * @@     the model that supports that compute capability. The filename
-     * @@     refers to a file within the model version directory.
-     * @@
+     *   .. cpp:var:: map<string,string> cc_model_filenames
+     *
+     *      Optional map from CUDA compute capability to the filename of
+     *      the model that supports that compute capability. The filename
+     *      refers to a file within the model version directory.
+     *
      *
      * @generated from field: map<string, string> cc_model_filenames = 9;
      */
     ccModelFilenames: { [key: string]: string }
 
     /**
-     * @@  .. cpp:var:: map<string,string> metric_tags
-     * @@
-     * @@     Optional metric tags. User-specific key-value pairs for metrics
-     * @@     reported for this model. These tags are applied to the metrics
-     * @@     reported on the HTTP metrics port.
-     * @@
+     *   .. cpp:var:: map<string,string> metric_tags
+     *
+     *      Optional metric tags. User-specific key-value pairs for metrics
+     *      reported for this model. These tags are applied to the metrics
+     *      reported on the HTTP metrics port.
+     *
      *
      * @generated from field: map<string, string> metric_tags = 10;
      */
     metricTags: { [key: string]: string }
 
     /**
-     * @@  .. cpp:var:: map<string,ModelParameter> parameters
-     * @@
-     * @@     Optional model parameters. User-specified parameter values.
-     * @@
+     *   .. cpp:var:: map<string,ModelParameter> parameters
+     *
+     *      Optional model parameters. User-specified parameter values.
+     *
      *
      * @generated from field: map<string, inference.ModelParameter> parameters = 14;
      */
     parameters: { [key: string]: ModelParameter }
 
     /**
-     * @@  .. cpp:var:: ModelWarmup model_warmup (repeated)
-     * @@
-     * @@     Warmup setting of this model. If specified, all instances
-     * @@     will be run with the request samples in sequence before
-     * @@     serving the model.
-     * @@     This field can only be specified if the model is not an ensemble
-     * @@     model.
-     * @@
+     *   .. cpp:var:: ModelWarmup model_warmup (repeated)
+     *
+     *      Warmup setting of this model. If specified, all instances
+     *      will be run with the request samples in sequence before
+     *      serving the model.
+     *      This field can only be specified if the model is not an ensemble
+     *      model.
+     *
      *
      * @generated from field: repeated inference.ModelWarmup model_warmup = 16;
      */
     modelWarmup: ModelWarmup[]
 
     /**
-     * @@  .. cpp:var:: ModelOperations model_operations
-     * @@
-     * @@     Optional metadata of the libraries providing custom operations for
-     * @@     this model.
-     * @@
+     *   .. cpp:var:: ModelOperations model_operations
+     *
+     *      Optional metadata of the libraries providing custom operations for
+     *      this model.
+     *
      *
      * @generated from field: inference.ModelOperations model_operations = 18;
      */
     modelOperations?: ModelOperations
 
     /**
-     * @@  .. cpp:var:: ModelTransactionPolicy model_transaction_policy
-     * @@
-     * @@     Optional specification that describes the nature of transactions
-     * @@     to be expected from the model.
-     * @@
+     *   .. cpp:var:: ModelTransactionPolicy model_transaction_policy
+     *
+     *      Optional specification that describes the nature of transactions
+     *      to be expected from the model.
+     *
      *
      * @generated from field: inference.ModelTransactionPolicy model_transaction_policy = 19;
      */
     modelTransactionPolicy?: ModelTransactionPolicy
 
     /**
-     * @@  .. cpp:var:: ModelRepositoryAgents model_repository_agents
-     * @@
-     * @@     Optional specification of the agent(s) that should be invoked
-     * @@     with repository actions are performed for this model.
-     * @@
+     *   .. cpp:var:: ModelRepositoryAgents model_repository_agents
+     *
+     *      Optional specification of the agent(s) that should be invoked
+     *      with repository actions are performed for this model.
+     *
      *
      * @generated from field: inference.ModelRepositoryAgents model_repository_agents = 23;
      */
     modelRepositoryAgents?: ModelRepositoryAgents
 
     /**
-     * @@  .. cpp:var:: ModelResponseCache response_cache
-     * @@
-     * @@     Optional setting for utilizing the response cache for this
-     * @@     model.
-     * @@
+     *   .. cpp:var:: ModelResponseCache response_cache
+     *
+     *      Optional setting for utilizing the response cache for this
+     *      model.
+     *
      *
      * @generated from field: inference.ModelResponseCache response_cache = 24;
      */
     responseCache?: ModelResponseCache
 
     /**
-     * @@  .. cpp:var:: ModelMetrics model_metrics
-     * @@
-     * @@     Optional setting for custom metrics configuration for this model.
-     * @@     Application default is applied to metrics that are not specified.
-     * @@
+     *   .. cpp:var:: ModelMetrics model_metrics
+     *
+     *      Optional setting for custom metrics configuration for this model.
+     *      Application default is applied to metrics that are not specified.
+     *
      *
      * @generated from field: inference.ModelMetrics model_metrics = 26;
      */
@@ -3538,115 +3538,115 @@ export const ModelConfigSchema: GenMessage<ModelConfig> =
     messageDesc(file_model_config, 20)
 
 /**
- * @@
- * @@.. cpp:enum:: DataType
- * @@
- * @@   Data types supported for input and output tensors.
- * @@
+ *
+ * .. cpp:enum:: DataType
+ *
+ *    Data types supported for input and output tensors.
+ *
  *
  * @generated from enum inference.DataType
  */
 export enum DataType {
     /**
-     * @@  .. cpp:enumerator:: DataType::INVALID = 0
+     *   .. cpp:enumerator:: DataType::INVALID = 0
      *
      * @generated from enum value: TYPE_INVALID = 0;
      */
     TYPE_INVALID = 0,
 
     /**
-     * @@  .. cpp:enumerator:: DataType::BOOL = 1
+     *   .. cpp:enumerator:: DataType::BOOL = 1
      *
      * @generated from enum value: TYPE_BOOL = 1;
      */
     TYPE_BOOL = 1,
 
     /**
-     * @@  .. cpp:enumerator:: DataType::UINT8 = 2
+     *   .. cpp:enumerator:: DataType::UINT8 = 2
      *
      * @generated from enum value: TYPE_UINT8 = 2;
      */
     TYPE_UINT8 = 2,
 
     /**
-     * @@  .. cpp:enumerator:: DataType::UINT16 = 3
+     *   .. cpp:enumerator:: DataType::UINT16 = 3
      *
      * @generated from enum value: TYPE_UINT16 = 3;
      */
     TYPE_UINT16 = 3,
 
     /**
-     * @@  .. cpp:enumerator:: DataType::UINT32 = 4
+     *   .. cpp:enumerator:: DataType::UINT32 = 4
      *
      * @generated from enum value: TYPE_UINT32 = 4;
      */
     TYPE_UINT32 = 4,
 
     /**
-     * @@  .. cpp:enumerator:: DataType::UINT64 = 5
+     *   .. cpp:enumerator:: DataType::UINT64 = 5
      *
      * @generated from enum value: TYPE_UINT64 = 5;
      */
     TYPE_UINT64 = 5,
 
     /**
-     * @@  .. cpp:enumerator:: DataType::INT8 = 6
+     *   .. cpp:enumerator:: DataType::INT8 = 6
      *
      * @generated from enum value: TYPE_INT8 = 6;
      */
     TYPE_INT8 = 6,
 
     /**
-     * @@  .. cpp:enumerator:: DataType::INT16 = 7
+     *   .. cpp:enumerator:: DataType::INT16 = 7
      *
      * @generated from enum value: TYPE_INT16 = 7;
      */
     TYPE_INT16 = 7,
 
     /**
-     * @@  .. cpp:enumerator:: DataType::INT32 = 8
+     *   .. cpp:enumerator:: DataType::INT32 = 8
      *
      * @generated from enum value: TYPE_INT32 = 8;
      */
     TYPE_INT32 = 8,
 
     /**
-     * @@  .. cpp:enumerator:: DataType::INT64 = 9
+     *   .. cpp:enumerator:: DataType::INT64 = 9
      *
      * @generated from enum value: TYPE_INT64 = 9;
      */
     TYPE_INT64 = 9,
 
     /**
-     * @@  .. cpp:enumerator:: DataType::FP16 = 10
+     *   .. cpp:enumerator:: DataType::FP16 = 10
      *
      * @generated from enum value: TYPE_FP16 = 10;
      */
     TYPE_FP16 = 10,
 
     /**
-     * @@  .. cpp:enumerator:: DataType::FP32 = 11
+     *   .. cpp:enumerator:: DataType::FP32 = 11
      *
      * @generated from enum value: TYPE_FP32 = 11;
      */
     TYPE_FP32 = 11,
 
     /**
-     * @@  .. cpp:enumerator:: DataType::FP64 = 12
+     *   .. cpp:enumerator:: DataType::FP64 = 12
      *
      * @generated from enum value: TYPE_FP64 = 12;
      */
     TYPE_FP64 = 12,
 
     /**
-     * @@  .. cpp:enumerator:: DataType::STRING = 13
+     *   .. cpp:enumerator:: DataType::STRING = 13
      *
      * @generated from enum value: TYPE_STRING = 13;
      */
     TYPE_STRING = 13,
 
     /**
-     * @@  .. cpp:enumerator:: DataType::BF16 = 14
+     *   .. cpp:enumerator:: DataType::BF16 = 14
      *
      * @generated from enum value: TYPE_BF16 = 14;
      */

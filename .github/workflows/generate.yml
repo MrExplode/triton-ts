@@ -38,6 +38,9 @@ jobs:
       - name: Remove protobuf definitions
         run: rm -rf proto/
 
+      - name: Format comments
+        run: find ./src/gen -type f -name '*.ts' -exec sed -i 's/@@//g' {} \;
+
       - name: Format generated code
         run: pnpm prettier --write src/gen/
 

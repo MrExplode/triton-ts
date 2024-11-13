@@ -42,11 +42,11 @@ export const file_health: GenFile =
     )
 
 /**
- * @@
- * @@.. cpp:var:: message HealthCheckRequest
- * @@
- * @@   Request message for HealthCheck
- * @@
+ *
+ * .. cpp:var:: message HealthCheckRequest
+ *
+ *    Request message for HealthCheck
+ *
  *
  * @generated from message grpc.health.v1.HealthCheckRequest
  */
@@ -66,11 +66,11 @@ export const HealthCheckRequestSchema: GenMessage<HealthCheckRequest> =
     messageDesc(file_health, 0)
 
 /**
- * @@
- * @@.. cpp:var:: message HealthCheckResponse
- * @@
- * @@   Response message for HealthCheck
- * @@
+ *
+ * .. cpp:var:: message HealthCheckResponse
+ *
+ *    Response message for HealthCheck
+ *
  *
  * @generated from message grpc.health.v1.HealthCheckResponse
  */
@@ -90,11 +90,11 @@ export const HealthCheckResponseSchema: GenMessage<HealthCheckResponse> =
     messageDesc(file_health, 1)
 
 /**
- * @@
- * @@.. cpp:enum:: ServingStatus
- * @@
- * @@   Statuses supported by GRPC's health check.
- * @@
+ *
+ * .. cpp:enum:: ServingStatus
+ *
+ *    Statuses supported by GRPC's health check.
+ *
  *
  * @generated from enum grpc.health.v1.HealthCheckResponse.ServingStatus
  */
@@ -128,21 +128,21 @@ export const HealthCheckResponse_ServingStatusSchema: GenEnum<HealthCheckRespons
     enumDesc(file_health, 1, 0)
 
 /**
- * @@
- * @@.. cpp:var:: service Health
- * @@
- * @@   Health service for GRPC endpoints.
- * @@
+ *
+ * .. cpp:var:: service Health
+ *
+ *    Health service for GRPC endpoints.
+ *
  *
  * @generated from service grpc.health.v1.Health
  */
 export const Health: GenService<{
     /**
-     * @@  .. cpp:var:: rpc Check(HealthCheckRequest) returns
-     * @@       (HealthCheckResponse)
-     * @@
-     * @@     Get serving status of the inference server.
-     * @@
+     *   .. cpp:var:: rpc Check(HealthCheckRequest) returns
+     *        (HealthCheckResponse)
+     *
+     *      Get serving status of the inference server.
+     *
      *
      * @generated from rpc grpc.health.v1.Health.Check
      */

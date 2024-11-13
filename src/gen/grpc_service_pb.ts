@@ -45,11 +45,11 @@ export const file_grpc_service: GenFile =
     )
 
 /**
- * @@
- * @@.. cpp:var:: message ServerLiveRequest
- * @@
- * @@   Request message for ServerLive.
- * @@
+ *
+ * .. cpp:var:: message ServerLiveRequest
+ *
+ *    Request message for ServerLive.
+ *
  *
  * @generated from message inference.ServerLiveRequest
  */
@@ -64,21 +64,21 @@ export const ServerLiveRequestSchema: GenMessage<ServerLiveRequest> =
     messageDesc(file_grpc_service, 0)
 
 /**
- * @@
- * @@.. cpp:var:: message ServerLiveResponse
- * @@
- * @@   Response message for ServerLive.
- * @@
+ *
+ * .. cpp:var:: message ServerLiveResponse
+ *
+ *    Response message for ServerLive.
+ *
  *
  * @generated from message inference.ServerLiveResponse
  */
 export type ServerLiveResponse = Message<'inference.ServerLiveResponse'> & {
     /**
-     * @@
-     * @@  .. cpp:var:: bool live
-     * @@
-     * @@     True if the inference server is live, false it not live.
-     * @@
+     *
+     *   .. cpp:var:: bool live
+     *
+     *      True if the inference server is live, false it not live.
+     *
      *
      * @generated from field: bool live = 1;
      */
@@ -94,11 +94,11 @@ export const ServerLiveResponseSchema: GenMessage<ServerLiveResponse> =
     messageDesc(file_grpc_service, 1)
 
 /**
- * @@
- * @@.. cpp:var:: message ServerReadyRequest
- * @@
- * @@   Request message for ServerReady.
- * @@
+ *
+ * .. cpp:var:: message ServerReadyRequest
+ *
+ *    Request message for ServerReady.
+ *
  *
  * @generated from message inference.ServerReadyRequest
  */
@@ -113,21 +113,21 @@ export const ServerReadyRequestSchema: GenMessage<ServerReadyRequest> =
     messageDesc(file_grpc_service, 2)
 
 /**
- * @@
- * @@.. cpp:var:: message ServerReadyResponse
- * @@
- * @@   Response message for ServerReady.
- * @@
+ *
+ * .. cpp:var:: message ServerReadyResponse
+ *
+ *    Response message for ServerReady.
+ *
  *
  * @generated from message inference.ServerReadyResponse
  */
 export type ServerReadyResponse = Message<'inference.ServerReadyResponse'> & {
     /**
-     * @@
-     * @@  .. cpp:var:: bool ready
-     * @@
-     * @@     True if the inference server is ready, false it not ready.
-     * @@
+     *
+     *   .. cpp:var:: bool ready
+     *
+     *      True if the inference server is ready, false it not ready.
+     *
      *
      * @generated from field: bool ready = 1;
      */
@@ -143,32 +143,32 @@ export const ServerReadyResponseSchema: GenMessage<ServerReadyResponse> =
     messageDesc(file_grpc_service, 3)
 
 /**
- * @@
- * @@.. cpp:var:: message ModelReadyRequest
- * @@
- * @@   Request message for ModelReady.
- * @@
+ *
+ * .. cpp:var:: message ModelReadyRequest
+ *
+ *    Request message for ModelReady.
+ *
  *
  * @generated from message inference.ModelReadyRequest
  */
 export type ModelReadyRequest = Message<'inference.ModelReadyRequest'> & {
     /**
-     * @@
-     * @@  .. cpp:var:: string name
-     * @@
-     * @@     The name of the model to check for readiness.
-     * @@
+     *
+     *   .. cpp:var:: string name
+     *
+     *      The name of the model to check for readiness.
+     *
      *
      * @generated from field: string name = 1;
      */
     name: string
 
     /**
-     * @@  .. cpp:var:: string version
-     * @@
-     * @@     The version of the model to check for readiness. If not given the
-     * @@     server will choose a version based on the model and internal policy.
-     * @@
+     *   .. cpp:var:: string version
+     *
+     *      The version of the model to check for readiness. If not given the
+     *      server will choose a version based on the model and internal policy.
+     *
      *
      * @generated from field: string version = 2;
      */
@@ -184,21 +184,21 @@ export const ModelReadyRequestSchema: GenMessage<ModelReadyRequest> =
     messageDesc(file_grpc_service, 4)
 
 /**
- * @@
- * @@.. cpp:var:: message ModelReadyResponse
- * @@
- * @@   Response message for ModelReady.
- * @@
+ *
+ * .. cpp:var:: message ModelReadyResponse
+ *
+ *    Response message for ModelReady.
+ *
  *
  * @generated from message inference.ModelReadyResponse
  */
 export type ModelReadyResponse = Message<'inference.ModelReadyResponse'> & {
     /**
-     * @@
-     * @@  .. cpp:var:: bool ready
-     * @@
-     * @@     True if the model is ready, false it not ready.
-     * @@
+     *
+     *   .. cpp:var:: bool ready
+     *
+     *      True if the model is ready, false it not ready.
+     *
      *
      * @generated from field: bool ready = 1;
      */
@@ -214,11 +214,11 @@ export const ModelReadyResponseSchema: GenMessage<ModelReadyResponse> =
     messageDesc(file_grpc_service, 5)
 
 /**
- * @@
- * @@.. cpp:var:: message ServerMetadataRequest
- * @@
- * @@   Request message for ServerMetadata.
- * @@
+ *
+ * .. cpp:var:: message ServerMetadataRequest
+ *
+ *    Request message for ServerMetadata.
+ *
  *
  * @generated from message inference.ServerMetadataRequest
  */
@@ -233,43 +233,43 @@ export const ServerMetadataRequestSchema: GenMessage<ServerMetadataRequest> =
     messageDesc(file_grpc_service, 6)
 
 /**
- * @@
- * @@.. cpp:var:: message ServerMetadataResponse
- * @@
- * @@   Response message for ServerMetadata.
- * @@
+ *
+ * .. cpp:var:: message ServerMetadataResponse
+ *
+ *    Response message for ServerMetadata.
+ *
  *
  * @generated from message inference.ServerMetadataResponse
  */
 export type ServerMetadataResponse = Message<'inference.ServerMetadataResponse'> & {
     /**
-     * @@
-     * @@  .. cpp:var:: string name
-     * @@
-     * @@     The server name.
-     * @@
+     *
+     *   .. cpp:var:: string name
+     *
+     *      The server name.
+     *
      *
      * @generated from field: string name = 1;
      */
     name: string
 
     /**
-     * @@
-     * @@  .. cpp:var:: string version
-     * @@
-     * @@     The server version.
-     * @@
+     *
+     *   .. cpp:var:: string version
+     *
+     *      The server version.
+     *
      *
      * @generated from field: string version = 2;
      */
     version: string
 
     /**
-     * @@
-     * @@  .. cpp:var:: string extensions (repeated)
-     * @@
-     * @@     The extensions supported by the server.
-     * @@
+     *
+     *   .. cpp:var:: string extensions (repeated)
+     *
+     *      The extensions supported by the server.
+     *
      *
      * @generated from field: repeated string extensions = 3;
      */
@@ -285,33 +285,33 @@ export const ServerMetadataResponseSchema: GenMessage<ServerMetadataResponse> =
     messageDesc(file_grpc_service, 7)
 
 /**
- * @@
- * @@.. cpp:var:: message ModelMetadataRequest
- * @@
- * @@   Request message for ModelMetadata.
- * @@
+ *
+ * .. cpp:var:: message ModelMetadataRequest
+ *
+ *    Request message for ModelMetadata.
+ *
  *
  * @generated from message inference.ModelMetadataRequest
  */
 export type ModelMetadataRequest = Message<'inference.ModelMetadataRequest'> & {
     /**
-     * @@
-     * @@  .. cpp:var:: string name
-     * @@
-     * @@     The name of the model.
-     * @@
+     *
+     *   .. cpp:var:: string name
+     *
+     *      The name of the model.
+     *
      *
      * @generated from field: string name = 1;
      */
     name: string
 
     /**
-     * @@  .. cpp:var:: string version
-     * @@
-     * @@     The version of the model to check for readiness. If not
-     * @@     given the server will choose a version based on the
-     * @@     model and internal policy.
-     * @@
+     *   .. cpp:var:: string version
+     *
+     *      The version of the model to check for readiness. If not
+     *      given the server will choose a version based on the
+     *      model and internal policy.
+     *
      *
      * @generated from field: string version = 2;
      */
@@ -327,65 +327,65 @@ export const ModelMetadataRequestSchema: GenMessage<ModelMetadataRequest> =
     messageDesc(file_grpc_service, 8)
 
 /**
- * @@
- * @@.. cpp:var:: message ModelMetadataResponse
- * @@
- * @@   Response message for ModelMetadata.
- * @@
+ *
+ * .. cpp:var:: message ModelMetadataResponse
+ *
+ *    Response message for ModelMetadata.
+ *
  *
  * @generated from message inference.ModelMetadataResponse
  */
 export type ModelMetadataResponse = Message<'inference.ModelMetadataResponse'> & {
     /**
-     * @@
-     * @@  .. cpp:var:: string name
-     * @@
-     * @@     The model name.
-     * @@
+     *
+     *   .. cpp:var:: string name
+     *
+     *      The model name.
+     *
      *
      * @generated from field: string name = 1;
      */
     name: string
 
     /**
-     * @@
-     * @@  .. cpp:var:: string versions (repeated)
-     * @@
-     * @@     The versions of the model.
-     * @@
+     *
+     *   .. cpp:var:: string versions (repeated)
+     *
+     *      The versions of the model.
+     *
      *
      * @generated from field: repeated string versions = 2;
      */
     versions: string[]
 
     /**
-     * @@
-     * @@  .. cpp:var:: string platform
-     * @@
-     * @@     The model's platform.
-     * @@
+     *
+     *   .. cpp:var:: string platform
+     *
+     *      The model's platform.
+     *
      *
      * @generated from field: string platform = 3;
      */
     platform: string
 
     /**
-     * @@
-     * @@  .. cpp:var:: TensorMetadata inputs (repeated)
-     * @@
-     * @@     The model's inputs.
-     * @@
+     *
+     *   .. cpp:var:: TensorMetadata inputs (repeated)
+     *
+     *      The model's inputs.
+     *
      *
      * @generated from field: repeated inference.ModelMetadataResponse.TensorMetadata inputs = 4;
      */
     inputs: ModelMetadataResponse_TensorMetadata[]
 
     /**
-     * @@
-     * @@  .. cpp:var:: TensorMetadata outputs (repeated)
-     * @@
-     * @@     The model's outputs.
-     * @@
+     *
+     *   .. cpp:var:: TensorMetadata outputs (repeated)
+     *
+     *      The model's outputs.
+     *
      *
      * @generated from field: repeated inference.ModelMetadataResponse.TensorMetadata outputs = 5;
      */
@@ -401,45 +401,45 @@ export const ModelMetadataResponseSchema: GenMessage<ModelMetadataResponse> =
     messageDesc(file_grpc_service, 9)
 
 /**
- * @@
- * @@  .. cpp:var:: message TensorMetadata
- * @@
- * @@     Metadata for a tensor.
- * @@
+ *
+ *   .. cpp:var:: message TensorMetadata
+ *
+ *      Metadata for a tensor.
+ *
  *
  * @generated from message inference.ModelMetadataResponse.TensorMetadata
  */
 export type ModelMetadataResponse_TensorMetadata =
     Message<'inference.ModelMetadataResponse.TensorMetadata'> & {
         /**
-         * @@
-         * @@    .. cpp:var:: string name
-         * @@
-         * @@       The tensor name.
-         * @@
+         *
+         *     .. cpp:var:: string name
+         *
+         *        The tensor name.
+         *
          *
          * @generated from field: string name = 1;
          */
         name: string
 
         /**
-         * @@
-         * @@    .. cpp:var:: string datatype
-         * @@
-         * @@       The tensor data type.
-         * @@
+         *
+         *     .. cpp:var:: string datatype
+         *
+         *        The tensor data type.
+         *
          *
          * @generated from field: string datatype = 2;
          */
         datatype: string
 
         /**
-         * @@
-         * @@    .. cpp:var:: int64 shape (repeated)
-         * @@
-         * @@       The tensor shape. A variable-size dimension is represented
-         * @@       by a -1 value.
-         * @@
+         *
+         *     .. cpp:var:: int64 shape (repeated)
+         *
+         *        The tensor shape. A variable-size dimension is represented
+         *        by a -1 value.
+         *
          *
          * @generated from field: repeated int64 shape = 3;
          */
@@ -455,35 +455,35 @@ export const ModelMetadataResponse_TensorMetadataSchema: GenMessage<ModelMetadat
     messageDesc(file_grpc_service, 9, 0)
 
 /**
- * @@
- * @@.. cpp:var:: message InferParameter
- * @@
- * @@   An inference parameter value.
- * @@
+ *
+ * .. cpp:var:: message InferParameter
+ *
+ *    An inference parameter value.
+ *
  *
  * @generated from message inference.InferParameter
  */
 export type InferParameter = Message<'inference.InferParameter'> & {
     /**
-     * @@  .. cpp:var:: oneof parameter_choice
-     * @@
-     * @@     The parameter value can be a string, an int64,
-     * @@     an uint64, a double, or a boolean
-     * @@
-     * @@     Note: double and uint64 are currently
-     * @@           placeholders for future use and
-     * @@           are not supported for custom parameters
-     * @@
+     *   .. cpp:var:: oneof parameter_choice
+     *
+     *      The parameter value can be a string, an int64,
+     *      an uint64, a double, or a boolean
+     *
+     *      Note: double and uint64 are currently
+     *            placeholders for future use and
+     *            are not supported for custom parameters
+     *
      *
      * @generated from oneof inference.InferParameter.parameter_choice
      */
     parameterChoice:
         | {
               /**
-               * @@    .. cpp:var:: bool bool_param
-               * @@
-               * @@       A boolean parameter value.
-               * @@
+               *     .. cpp:var:: bool bool_param
+               *
+               *        A boolean parameter value.
+               *
                *
                * @generated from field: bool bool_param = 1;
                */
@@ -492,10 +492,10 @@ export type InferParameter = Message<'inference.InferParameter'> & {
           }
         | {
               /**
-               * @@    .. cpp:var:: int64 int64_param
-               * @@
-               * @@       An int64 parameter value.
-               * @@
+               *     .. cpp:var:: int64 int64_param
+               *
+               *        An int64 parameter value.
+               *
                *
                * @generated from field: int64 int64_param = 2;
                */
@@ -504,10 +504,10 @@ export type InferParameter = Message<'inference.InferParameter'> & {
           }
         | {
               /**
-               * @@    .. cpp:var:: string string_param
-               * @@
-               * @@       A string parameter value.
-               * @@
+               *     .. cpp:var:: string string_param
+               *
+               *        A string parameter value.
+               *
                *
                * @generated from field: string string_param = 3;
                */
@@ -516,10 +516,10 @@ export type InferParameter = Message<'inference.InferParameter'> & {
           }
         | {
               /**
-               * @@    .. cpp:var:: double double_param
-               * @@
-               * @@       A double parameter value.
-               * @@
+               *     .. cpp:var:: double double_param
+               *
+               *        A double parameter value.
+               *
                *
                * @generated from field: double double_param = 4;
                */
@@ -528,12 +528,12 @@ export type InferParameter = Message<'inference.InferParameter'> & {
           }
         | {
               /**
-               * @@    .. cpp:var:: uint64 uint64_param
-               * @@
-               * @@       A uint64 parameter value.
-               * @@
-               * @@       Not supported for custom parameters
-               * @@
+               *     .. cpp:var:: uint64 uint64_param
+               *
+               *        A uint64 parameter value.
+               *
+               *        Not supported for custom parameters
+               *
                *
                * @generated from field: uint64 uint64_param = 5;
                */
@@ -552,118 +552,118 @@ export const InferParameterSchema: GenMessage<InferParameter> =
     messageDesc(file_grpc_service, 10)
 
 /**
- * @@
- * @@.. cpp:var:: message InferTensorContents
- * @@
- * @@   The data contained in a tensor represented by the repeated type
- * @@   that matches the tensor's data type. Protobuf oneof is not used
- * @@   because oneofs cannot contain repeated fields.
- * @@
+ *
+ * .. cpp:var:: message InferTensorContents
+ *
+ *    The data contained in a tensor represented by the repeated type
+ *    that matches the tensor's data type. Protobuf oneof is not used
+ *    because oneofs cannot contain repeated fields.
+ *
  *
  * @generated from message inference.InferTensorContents
  */
 export type InferTensorContents = Message<'inference.InferTensorContents'> & {
     /**
-     * @@
-     * @@  .. cpp:var:: bool bool_contents (repeated)
-     * @@
-     * @@     Representation for BOOL data type. The size must match what is
-     * @@     expected by the tensor's shape. The contents must be the flattened,
-     * @@     one-dimensional, row-major order of the tensor elements.
-     * @@
+     *
+     *   .. cpp:var:: bool bool_contents (repeated)
+     *
+     *      Representation for BOOL data type. The size must match what is
+     *      expected by the tensor's shape. The contents must be the flattened,
+     *      one-dimensional, row-major order of the tensor elements.
+     *
      *
      * @generated from field: repeated bool bool_contents = 1;
      */
     boolContents: boolean[]
 
     /**
-     * @@
-     * @@  .. cpp:var:: int32 int_contents (repeated)
-     * @@
-     * @@     Representation for INT8, INT16, and INT32 data types. The size
-     * @@     must match what is expected by the tensor's shape. The contents
-     * @@     must be the flattened, one-dimensional, row-major order of the
-     * @@     tensor elements.
-     * @@
+     *
+     *   .. cpp:var:: int32 int_contents (repeated)
+     *
+     *      Representation for INT8, INT16, and INT32 data types. The size
+     *      must match what is expected by the tensor's shape. The contents
+     *      must be the flattened, one-dimensional, row-major order of the
+     *      tensor elements.
+     *
      *
      * @generated from field: repeated int32 int_contents = 2;
      */
     intContents: number[]
 
     /**
-     * @@
-     * @@  .. cpp:var:: int64 int64_contents (repeated)
-     * @@
-     * @@     Representation for INT64 data types. The size must match what
-     * @@     is expected by the tensor's shape. The contents must be the
-     * @@     flattened, one-dimensional, row-major order of the tensor elements.
-     * @@
+     *
+     *   .. cpp:var:: int64 int64_contents (repeated)
+     *
+     *      Representation for INT64 data types. The size must match what
+     *      is expected by the tensor's shape. The contents must be the
+     *      flattened, one-dimensional, row-major order of the tensor elements.
+     *
      *
      * @generated from field: repeated int64 int64_contents = 3;
      */
     int64Contents: bigint[]
 
     /**
-     * @@
-     * @@  .. cpp:var:: uint32 uint_contents (repeated)
-     * @@
-     * @@     Representation for UINT8, UINT16, and UINT32 data types. The size
-     * @@     must match what is expected by the tensor's shape. The contents
-     * @@     must be the flattened, one-dimensional, row-major order of the
-     * @@     tensor elements.
-     * @@
+     *
+     *   .. cpp:var:: uint32 uint_contents (repeated)
+     *
+     *      Representation for UINT8, UINT16, and UINT32 data types. The size
+     *      must match what is expected by the tensor's shape. The contents
+     *      must be the flattened, one-dimensional, row-major order of the
+     *      tensor elements.
+     *
      *
      * @generated from field: repeated uint32 uint_contents = 4;
      */
     uintContents: number[]
 
     /**
-     * @@
-     * @@  .. cpp:var:: uint64 uint64_contents (repeated)
-     * @@
-     * @@     Representation for UINT64 data types. The size must match what
-     * @@     is expected by the tensor's shape. The contents must be the
-     * @@     flattened, one-dimensional, row-major order of the tensor elements.
-     * @@
+     *
+     *   .. cpp:var:: uint64 uint64_contents (repeated)
+     *
+     *      Representation for UINT64 data types. The size must match what
+     *      is expected by the tensor's shape. The contents must be the
+     *      flattened, one-dimensional, row-major order of the tensor elements.
+     *
      *
      * @generated from field: repeated uint64 uint64_contents = 5;
      */
     uint64Contents: bigint[]
 
     /**
-     * @@
-     * @@  .. cpp:var:: float fp32_contents (repeated)
-     * @@
-     * @@     Representation for FP32 data type. The size must match what is
-     * @@     expected by the tensor's shape. The contents must be the flattened,
-     * @@     one-dimensional, row-major order of the tensor elements.
-     * @@
+     *
+     *   .. cpp:var:: float fp32_contents (repeated)
+     *
+     *      Representation for FP32 data type. The size must match what is
+     *      expected by the tensor's shape. The contents must be the flattened,
+     *      one-dimensional, row-major order of the tensor elements.
+     *
      *
      * @generated from field: repeated float fp32_contents = 6;
      */
     fp32Contents: number[]
 
     /**
-     * @@
-     * @@  .. cpp:var:: double fp64_contents (repeated)
-     * @@
-     * @@     Representation for FP64 data type. The size must match what is
-     * @@     expected by the tensor's shape. The contents must be the flattened,
-     * @@     one-dimensional, row-major order of the tensor elements.
-     * @@
+     *
+     *   .. cpp:var:: double fp64_contents (repeated)
+     *
+     *      Representation for FP64 data type. The size must match what is
+     *      expected by the tensor's shape. The contents must be the flattened,
+     *      one-dimensional, row-major order of the tensor elements.
+     *
      *
      * @generated from field: repeated double fp64_contents = 7;
      */
     fp64Contents: number[]
 
     /**
-     * @@
-     * @@  .. cpp:var:: bytes bytes_contents (repeated)
-     * @@
-     * @@     Representation for BYTES data type. The size must match what is
-     * @@     expected by the tensor's shape. The contents must be the flattened,
-     * @@     one-dimensional, row-major order of the tensor elements.
-     * @@
+     *
+     *   .. cpp:var:: bytes bytes_contents (repeated)
+     *
+     *      Representation for BYTES data type. The size must match what is
+     *      expected by the tensor's shape. The contents must be the flattened,
+     *      one-dimensional, row-major order of the tensor elements.
+     *
      *
      * @generated from field: repeated bytes bytes_contents = 8;
      */
@@ -679,105 +679,105 @@ export const InferTensorContentsSchema: GenMessage<InferTensorContents> =
     messageDesc(file_grpc_service, 11)
 
 /**
- * @@
- * @@.. cpp:var:: message ModelInferRequest
- * @@
- * @@   Request message for ModelInfer.
- * @@
+ *
+ * .. cpp:var:: message ModelInferRequest
+ *
+ *    Request message for ModelInfer.
+ *
  *
  * @generated from message inference.ModelInferRequest
  */
 export type ModelInferRequest = Message<'inference.ModelInferRequest'> & {
     /**
-     * @@  .. cpp:var:: string model_name
-     * @@
-     * @@     The name of the model to use for inferencing.
-     * @@
+     *   .. cpp:var:: string model_name
+     *
+     *      The name of the model to use for inferencing.
+     *
      *
      * @generated from field: string model_name = 1;
      */
     modelName: string
 
     /**
-     * @@  .. cpp:var:: string model_version
-     * @@
-     * @@     The version of the model to use for inference. If not
-     * @@     given the latest/most-recent version of the model is used.
-     * @@
+     *   .. cpp:var:: string model_version
+     *
+     *      The version of the model to use for inference. If not
+     *      given the latest/most-recent version of the model is used.
+     *
      *
      * @generated from field: string model_version = 2;
      */
     modelVersion: string
 
     /**
-     * @@  .. cpp:var:: string id
-     * @@
-     * @@     Optional identifier for the request. If specified will be
-     * @@     returned in the response.
-     * @@
+     *   .. cpp:var:: string id
+     *
+     *      Optional identifier for the request. If specified will be
+     *      returned in the response.
+     *
      *
      * @generated from field: string id = 3;
      */
     id: string
 
     /**
-     * @@  .. cpp:var:: map<string,InferParameter> parameters
-     * @@
-     * @@     Optional inference parameters.
-     * @@
+     *   .. cpp:var:: map<string,InferParameter> parameters
+     *
+     *      Optional inference parameters.
+     *
      *
      * @generated from field: map<string, inference.InferParameter> parameters = 4;
      */
     parameters: { [key: string]: InferParameter }
 
     /**
-     * @@
-     * @@  .. cpp:var:: InferInputTensor inputs (repeated)
-     * @@
-     * @@     The input tensors for the inference.
-     * @@
+     *
+     *   .. cpp:var:: InferInputTensor inputs (repeated)
+     *
+     *      The input tensors for the inference.
+     *
      *
      * @generated from field: repeated inference.ModelInferRequest.InferInputTensor inputs = 5;
      */
     inputs: ModelInferRequest_InferInputTensor[]
 
     /**
-     * @@
-     * @@  .. cpp:var:: InferRequestedOutputTensor outputs (repeated)
-     * @@
-     * @@     The requested output tensors for the inference. Optional, if not
-     * @@     specified all outputs specified in the model config will be
-     * @@     returned.
-     * @@
+     *
+     *   .. cpp:var:: InferRequestedOutputTensor outputs (repeated)
+     *
+     *      The requested output tensors for the inference. Optional, if not
+     *      specified all outputs specified in the model config will be
+     *      returned.
+     *
      *
      * @generated from field: repeated inference.ModelInferRequest.InferRequestedOutputTensor outputs = 6;
      */
     outputs: ModelInferRequest_InferRequestedOutputTensor[]
 
     /**
-     * @@
-     * @@  .. cpp:var:: bytes raw_input_contents
-     * @@
-     * @@     The data contained in an input tensor can be represented in
-     * @@     "raw" bytes form or in the repeated type that matches the
-     * @@     tensor's data type. Using the "raw" bytes form will
-     * @@     typically allow higher performance due to the way protobuf
-     * @@     allocation and reuse interacts with GRPC. For example, see
-     * @@     https://github.com/grpc/grpc/issues/23231.
-     * @@
-     * @@     To use the raw representation 'raw_input_contents' must be
-     * @@     initialized with data for each tensor in the same order as
-     * @@     'inputs'. For each tensor, the size of this content must
-     * @@     match what is expected by the tensor's shape and data
-     * @@     type. The raw data must be the flattened, one-dimensional,
-     * @@     row-major order of the tensor elements without any stride
-     * @@     or padding between the elements. Note that the FP16 and BF16 data
-     * @@     types must be represented as raw content as there is no
-     * @@     specific data type for a 16-bit float type.
-     * @@
-     * @@     If this field is specified then InferInputTensor::contents
-     * @@     must not be specified for any input tensor.
-     * @@
+     *
+     *   .. cpp:var:: bytes raw_input_contents
+     *
+     *      The data contained in an input tensor can be represented in
+     *      "raw" bytes form or in the repeated type that matches the
+     *      tensor's data type. Using the "raw" bytes form will
+     *      typically allow higher performance due to the way protobuf
+     *      allocation and reuse interacts with GRPC. For example, see
+     *      https://github.com/grpc/grpc/issues/23231.
+     *
+     *      To use the raw representation 'raw_input_contents' must be
+     *      initialized with data for each tensor in the same order as
+     *      'inputs'. For each tensor, the size of this content must
+     *      match what is expected by the tensor's shape and data
+     *      type. The raw data must be the flattened, one-dimensional,
+     *      row-major order of the tensor elements without any stride
+     *      or padding between the elements. Note that the FP16 and BF16 data
+     *      types must be represented as raw content as there is no
+     *      specific data type for a 16-bit float type.
+     *
+     *      If this field is specified then InferInputTensor::contents
+     *      must not be specified for any input tensor.
+     *
      *
      * @generated from field: repeated bytes raw_input_contents = 7;
      */
@@ -793,66 +793,66 @@ export const ModelInferRequestSchema: GenMessage<ModelInferRequest> =
     messageDesc(file_grpc_service, 12)
 
 /**
- * @@
- * @@  .. cpp:var:: message InferInputTensor
- * @@
- * @@     An input tensor for an inference request.
- * @@
+ *
+ *   .. cpp:var:: message InferInputTensor
+ *
+ *      An input tensor for an inference request.
+ *
  *
  * @generated from message inference.ModelInferRequest.InferInputTensor
  */
 export type ModelInferRequest_InferInputTensor =
     Message<'inference.ModelInferRequest.InferInputTensor'> & {
         /**
-         * @@
-         * @@    .. cpp:var:: string name
-         * @@
-         * @@       The tensor name.
-         * @@
+         *
+         *     .. cpp:var:: string name
+         *
+         *        The tensor name.
+         *
          *
          * @generated from field: string name = 1;
          */
         name: string
 
         /**
-         * @@
-         * @@    .. cpp:var:: string datatype
-         * @@
-         * @@       The tensor data type.
-         * @@
+         *
+         *     .. cpp:var:: string datatype
+         *
+         *        The tensor data type.
+         *
          *
          * @generated from field: string datatype = 2;
          */
         datatype: string
 
         /**
-         * @@
-         * @@    .. cpp:var:: int64 shape (repeated)
-         * @@
-         * @@       The tensor shape.
-         * @@
+         *
+         *     .. cpp:var:: int64 shape (repeated)
+         *
+         *        The tensor shape.
+         *
          *
          * @generated from field: repeated int64 shape = 3;
          */
         shape: bigint[]
 
         /**
-         * @@    .. cpp:var:: map<string,InferParameter> parameters
-         * @@
-         * @@       Optional inference input tensor parameters.
-         * @@
+         *     .. cpp:var:: map<string,InferParameter> parameters
+         *
+         *        Optional inference input tensor parameters.
+         *
          *
          * @generated from field: map<string, inference.InferParameter> parameters = 4;
          */
         parameters: { [key: string]: InferParameter }
 
         /**
-         * @@    .. cpp:var:: InferTensorContents contents
-         * @@
-         * @@       The tensor contents using a data-type format. This field
-         * @@       must not be specified if tensor contents are being specified
-         * @@       in ModelInferRequest.raw_input_contents.
-         * @@
+         *     .. cpp:var:: InferTensorContents contents
+         *
+         *        The tensor contents using a data-type format. This field
+         *        must not be specified if tensor contents are being specified
+         *        in ModelInferRequest.raw_input_contents.
+         *
          *
          * @generated from field: inference.InferTensorContents contents = 5;
          */
@@ -868,32 +868,32 @@ export const ModelInferRequest_InferInputTensorSchema: GenMessage<ModelInferRequ
     messageDesc(file_grpc_service, 12, 0)
 
 /**
- * @@
- * @@  .. cpp:var:: message InferRequestedOutputTensor
- * @@
- * @@     An output tensor requested for an inference request.
- * @@
+ *
+ *   .. cpp:var:: message InferRequestedOutputTensor
+ *
+ *      An output tensor requested for an inference request.
+ *
  *
  * @generated from message inference.ModelInferRequest.InferRequestedOutputTensor
  */
 export type ModelInferRequest_InferRequestedOutputTensor =
     Message<'inference.ModelInferRequest.InferRequestedOutputTensor'> & {
         /**
-         * @@
-         * @@    .. cpp:var:: string name
-         * @@
-         * @@       The tensor name.
-         * @@
+         *
+         *     .. cpp:var:: string name
+         *
+         *        The tensor name.
+         *
          *
          * @generated from field: string name = 1;
          */
         name: string
 
         /**
-         * @@    .. cpp:var:: map<string,InferParameter> parameters
-         * @@
-         * @@       Optional requested output tensor parameters.
-         * @@
+         *     .. cpp:var:: map<string,InferParameter> parameters
+         *
+         *        Optional requested output tensor parameters.
+         *
          *
          * @generated from field: map<string, inference.InferParameter> parameters = 2;
          */
@@ -909,90 +909,90 @@ export const ModelInferRequest_InferRequestedOutputTensorSchema: GenMessage<Mode
     messageDesc(file_grpc_service, 12, 1)
 
 /**
- * @@
- * @@.. cpp:var:: message ModelInferResponse
- * @@
- * @@   Response message for ModelInfer.
- * @@
+ *
+ * .. cpp:var:: message ModelInferResponse
+ *
+ *    Response message for ModelInfer.
+ *
  *
  * @generated from message inference.ModelInferResponse
  */
 export type ModelInferResponse = Message<'inference.ModelInferResponse'> & {
     /**
-     * @@  .. cpp:var:: string model_name
-     * @@
-     * @@     The name of the model used for inference.
-     * @@
+     *   .. cpp:var:: string model_name
+     *
+     *      The name of the model used for inference.
+     *
      *
      * @generated from field: string model_name = 1;
      */
     modelName: string
 
     /**
-     * @@  .. cpp:var:: string model_version
-     * @@
-     * @@     The version of the model used for inference.
-     * @@
+     *   .. cpp:var:: string model_version
+     *
+     *      The version of the model used for inference.
+     *
      *
      * @generated from field: string model_version = 2;
      */
     modelVersion: string
 
     /**
-     * @@  .. cpp:var:: string id
-     * @@
-     * @@     The id of the inference request if one was specified.
-     * @@
+     *   .. cpp:var:: string id
+     *
+     *      The id of the inference request if one was specified.
+     *
      *
      * @generated from field: string id = 3;
      */
     id: string
 
     /**
-     * @@  .. cpp:var:: map<string,InferParameter> parameters
-     * @@
-     * @@     Optional inference response parameters.
-     * @@
+     *   .. cpp:var:: map<string,InferParameter> parameters
+     *
+     *      Optional inference response parameters.
+     *
      *
      * @generated from field: map<string, inference.InferParameter> parameters = 4;
      */
     parameters: { [key: string]: InferParameter }
 
     /**
-     * @@
-     * @@  .. cpp:var:: InferOutputTensor outputs (repeated)
-     * @@
-     * @@     The output tensors holding inference results.
-     * @@
+     *
+     *   .. cpp:var:: InferOutputTensor outputs (repeated)
+     *
+     *      The output tensors holding inference results.
+     *
      *
      * @generated from field: repeated inference.ModelInferResponse.InferOutputTensor outputs = 5;
      */
     outputs: ModelInferResponse_InferOutputTensor[]
 
     /**
-     * @@
-     * @@  .. cpp:var:: bytes raw_output_contents
-     * @@
-     * @@     The data contained in an output tensor can be represented in
-     * @@     "raw" bytes form or in the repeated type that matches the
-     * @@     tensor's data type. Using the "raw" bytes form will
-     * @@     typically allow higher performance due to the way protobuf
-     * @@     allocation and reuse interacts with GRPC. For example, see
-     * @@     https://github.com/grpc/grpc/issues/23231.
-     * @@
-     * @@     To use the raw representation 'raw_output_contents' must be
-     * @@     initialized with data for each tensor in the same order as
-     * @@     'outputs'. For each tensor, the size of this content must
-     * @@     match what is expected by the tensor's shape and data
-     * @@     type. The raw data must be the flattened, one-dimensional,
-     * @@     row-major order of the tensor elements without any stride
-     * @@     or padding between the elements. Note that the FP16 and BF16 data
-     * @@     types must be represented as raw content as there is no
-     * @@     specific data type for a 16-bit float type.
-     * @@
-     * @@     If this field is specified then InferOutputTensor::contents
-     * @@     must not be specified for any output tensor.
-     * @@
+     *
+     *   .. cpp:var:: bytes raw_output_contents
+     *
+     *      The data contained in an output tensor can be represented in
+     *      "raw" bytes form or in the repeated type that matches the
+     *      tensor's data type. Using the "raw" bytes form will
+     *      typically allow higher performance due to the way protobuf
+     *      allocation and reuse interacts with GRPC. For example, see
+     *      https://github.com/grpc/grpc/issues/23231.
+     *
+     *      To use the raw representation 'raw_output_contents' must be
+     *      initialized with data for each tensor in the same order as
+     *      'outputs'. For each tensor, the size of this content must
+     *      match what is expected by the tensor's shape and data
+     *      type. The raw data must be the flattened, one-dimensional,
+     *      row-major order of the tensor elements without any stride
+     *      or padding between the elements. Note that the FP16 and BF16 data
+     *      types must be represented as raw content as there is no
+     *      specific data type for a 16-bit float type.
+     *
+     *      If this field is specified then InferOutputTensor::contents
+     *      must not be specified for any output tensor.
+     *
      *
      * @generated from field: repeated bytes raw_output_contents = 6;
      */
@@ -1008,66 +1008,66 @@ export const ModelInferResponseSchema: GenMessage<ModelInferResponse> =
     messageDesc(file_grpc_service, 13)
 
 /**
- * @@
- * @@  .. cpp:var:: message InferOutputTensor
- * @@
- * @@     An output tensor returned for an inference request.
- * @@
+ *
+ *   .. cpp:var:: message InferOutputTensor
+ *
+ *      An output tensor returned for an inference request.
+ *
  *
  * @generated from message inference.ModelInferResponse.InferOutputTensor
  */
 export type ModelInferResponse_InferOutputTensor =
     Message<'inference.ModelInferResponse.InferOutputTensor'> & {
         /**
-         * @@
-         * @@    .. cpp:var:: string name
-         * @@
-         * @@       The tensor name.
-         * @@
+         *
+         *     .. cpp:var:: string name
+         *
+         *        The tensor name.
+         *
          *
          * @generated from field: string name = 1;
          */
         name: string
 
         /**
-         * @@
-         * @@    .. cpp:var:: string datatype
-         * @@
-         * @@       The tensor data type.
-         * @@
+         *
+         *     .. cpp:var:: string datatype
+         *
+         *        The tensor data type.
+         *
          *
          * @generated from field: string datatype = 2;
          */
         datatype: string
 
         /**
-         * @@
-         * @@    .. cpp:var:: int64 shape (repeated)
-         * @@
-         * @@       The tensor shape.
-         * @@
+         *
+         *     .. cpp:var:: int64 shape (repeated)
+         *
+         *        The tensor shape.
+         *
          *
          * @generated from field: repeated int64 shape = 3;
          */
         shape: bigint[]
 
         /**
-         * @@    .. cpp:var:: map<string,InferParameter> parameters
-         * @@
-         * @@       Optional output tensor parameters.
-         * @@
+         *     .. cpp:var:: map<string,InferParameter> parameters
+         *
+         *        Optional output tensor parameters.
+         *
          *
          * @generated from field: map<string, inference.InferParameter> parameters = 4;
          */
         parameters: { [key: string]: InferParameter }
 
         /**
-         * @@    .. cpp:var:: InferTensorContents contents
-         * @@
-         * @@       The tensor contents using a data-type format. This field
-         * @@       must not be specified if tensor contents are being specified
-         * @@       in ModelInferResponse.raw_output_contents.
-         * @@
+         *     .. cpp:var:: InferTensorContents contents
+         *
+         *        The tensor contents using a data-type format. This field
+         *        must not be specified if tensor contents are being specified
+         *        in ModelInferResponse.raw_output_contents.
+         *
          *
          * @generated from field: inference.InferTensorContents contents = 5;
          */
@@ -1083,33 +1083,33 @@ export const ModelInferResponse_InferOutputTensorSchema: GenMessage<ModelInferRe
     messageDesc(file_grpc_service, 13, 0)
 
 /**
- * @@
- * @@.. cpp:var:: message ModelStreamInferResponse
- * @@
- * @@   Response message for ModelStreamInfer.
- * @@
+ *
+ * .. cpp:var:: message ModelStreamInferResponse
+ *
+ *    Response message for ModelStreamInfer.
+ *
  *
  * @generated from message inference.ModelStreamInferResponse
  */
 export type ModelStreamInferResponse = Message<'inference.ModelStreamInferResponse'> & {
     /**
-     * @@
-     * @@  .. cpp:var:: string error_message
-     * @@
-     * @@     The message describing the error. The empty message
-     * @@     indicates the inference was successful without errors.
-     * @@
+     *
+     *   .. cpp:var:: string error_message
+     *
+     *      The message describing the error. The empty message
+     *      indicates the inference was successful without errors.
+     *
      *
      * @generated from field: string error_message = 1;
      */
     errorMessage: string
 
     /**
-     * @@
-     * @@  .. cpp:var:: ModelInferResponse infer_response
-     * @@
-     * @@     Holds the results of the request.
-     * @@
+     *
+     *   .. cpp:var:: ModelInferResponse infer_response
+     *
+     *      Holds the results of the request.
+     *
      *
      * @generated from field: inference.ModelInferResponse infer_response = 2;
      */
@@ -1125,32 +1125,32 @@ export const ModelStreamInferResponseSchema: GenMessage<ModelStreamInferResponse
     messageDesc(file_grpc_service, 14)
 
 /**
- * @@
- * @@.. cpp:var:: message ModelConfigRequest
- * @@
- * @@   Request message for ModelConfig.
- * @@
+ *
+ * .. cpp:var:: message ModelConfigRequest
+ *
+ *    Request message for ModelConfig.
+ *
  *
  * @generated from message inference.ModelConfigRequest
  */
 export type ModelConfigRequest = Message<'inference.ModelConfigRequest'> & {
     /**
-     * @@
-     * @@  .. cpp:var:: string name
-     * @@
-     * @@     The name of the model.
-     * @@
+     *
+     *   .. cpp:var:: string name
+     *
+     *      The name of the model.
+     *
      *
      * @generated from field: string name = 1;
      */
     name: string
 
     /**
-     * @@  .. cpp:var:: string version
-     * @@
-     * @@     The version of the model. If not given the model version
-     * @@     is selected automatically based on the version policy.
-     * @@
+     *   .. cpp:var:: string version
+     *
+     *      The version of the model. If not given the model version
+     *      is selected automatically based on the version policy.
+     *
      *
      * @generated from field: string version = 2;
      */
@@ -1166,21 +1166,21 @@ export const ModelConfigRequestSchema: GenMessage<ModelConfigRequest> =
     messageDesc(file_grpc_service, 15)
 
 /**
- * @@
- * @@.. cpp:var:: message ModelConfigResponse
- * @@
- * @@   Response message for ModelConfig.
- * @@
+ *
+ * .. cpp:var:: message ModelConfigResponse
+ *
+ *    Response message for ModelConfig.
+ *
  *
  * @generated from message inference.ModelConfigResponse
  */
 export type ModelConfigResponse = Message<'inference.ModelConfigResponse'> & {
     /**
-     * @@
-     * @@  .. cpp:var:: ModelConfig config
-     * @@
-     * @@     The model configuration.
-     * @@
+     *
+     *   .. cpp:var:: ModelConfig config
+     *
+     *      The model configuration.
+     *
      *
      * @generated from field: inference.ModelConfig config = 1;
      */
@@ -1196,32 +1196,32 @@ export const ModelConfigResponseSchema: GenMessage<ModelConfigResponse> =
     messageDesc(file_grpc_service, 16)
 
 /**
- * @@
- * @@.. cpp:var:: message ModelStatisticsRequest
- * @@
- * @@   Request message for ModelStatistics.
- * @@
+ *
+ * .. cpp:var:: message ModelStatisticsRequest
+ *
+ *    Request message for ModelStatistics.
+ *
  *
  * @generated from message inference.ModelStatisticsRequest
  */
 export type ModelStatisticsRequest = Message<'inference.ModelStatisticsRequest'> & {
     /**
-     * @@  .. cpp:var:: string name
-     * @@
-     * @@     The name of the model. If not given returns statistics for
-     * @@     all models.
-     * @@
+     *   .. cpp:var:: string name
+     *
+     *      The name of the model. If not given returns statistics for
+     *      all models.
+     *
      *
      * @generated from field: string name = 1;
      */
     name: string
 
     /**
-     * @@  .. cpp:var:: string version
-     * @@
-     * @@     The version of the model. If not given returns statistics for
-     * @@     all model versions.
-     * @@
+     *   .. cpp:var:: string version
+     *
+     *      The version of the model. If not given returns statistics for
+     *      all model versions.
+     *
      *
      * @generated from field: string version = 2;
      */
@@ -1237,30 +1237,30 @@ export const ModelStatisticsRequestSchema: GenMessage<ModelStatisticsRequest> =
     messageDesc(file_grpc_service, 17)
 
 /**
- * @@
- * @@.. cpp:var:: message StatisticDuration
- * @@
- * @@   Statistic recording a cumulative duration metric.
- * @@
+ *
+ * .. cpp:var:: message StatisticDuration
+ *
+ *    Statistic recording a cumulative duration metric.
+ *
  *
  * @generated from message inference.StatisticDuration
  */
 export type StatisticDuration = Message<'inference.StatisticDuration'> & {
     /**
-     * @@  .. cpp:var:: uint64 count
-     * @@
-     * @@     Cumulative number of times this metric occurred.
-     * @@
+     *   .. cpp:var:: uint64 count
+     *
+     *      Cumulative number of times this metric occurred.
+     *
      *
      * @generated from field: uint64 count = 1;
      */
     count: bigint
 
     /**
-     * @@  .. cpp:var:: uint64 total_time_ns
-     * @@
-     * @@     Total collected duration of this metric in nanoseconds.
-     * @@
+     *   .. cpp:var:: uint64 total_time_ns
+     *
+     *      Total collected duration of this metric in nanoseconds.
+     *
      *
      * @generated from field: uint64 ns = 2;
      */
@@ -1276,131 +1276,131 @@ export const StatisticDurationSchema: GenMessage<StatisticDuration> =
     messageDesc(file_grpc_service, 18)
 
 /**
- * @@
- * @@.. cpp:var:: message InferStatistics
- * @@
- * @@   Inference statistics.
- * @@
+ *
+ * .. cpp:var:: message InferStatistics
+ *
+ *    Inference statistics.
+ *
  *
  * @generated from message inference.InferStatistics
  */
 export type InferStatistics = Message<'inference.InferStatistics'> & {
     /**
-     * @@  .. cpp:var:: StatisticDuration success
-     * @@
-     * @@     Cumulative count and duration for successful inference
-     * @@     request. The "success" count and cumulative duration includes
-     * @@     cache hits.
-     * @@
+     *   .. cpp:var:: StatisticDuration success
+     *
+     *      Cumulative count and duration for successful inference
+     *      request. The "success" count and cumulative duration includes
+     *      cache hits.
+     *
      *
      * @generated from field: inference.StatisticDuration success = 1;
      */
     success?: StatisticDuration
 
     /**
-     * @@  .. cpp:var:: StatisticDuration fail
-     * @@
-     * @@     Cumulative count and duration for failed inference
-     * @@     request.
-     * @@
+     *   .. cpp:var:: StatisticDuration fail
+     *
+     *      Cumulative count and duration for failed inference
+     *      request.
+     *
      *
      * @generated from field: inference.StatisticDuration fail = 2;
      */
     fail?: StatisticDuration
 
     /**
-     * @@  .. cpp:var:: StatisticDuration queue
-     * @@
-     * @@     The count and cumulative duration that inference requests wait in
-     * @@     scheduling or other queues. The "queue" count and cumulative
-     * @@     duration includes cache hits.
-     * @@
+     *   .. cpp:var:: StatisticDuration queue
+     *
+     *      The count and cumulative duration that inference requests wait in
+     *      scheduling or other queues. The "queue" count and cumulative
+     *      duration includes cache hits.
+     *
      *
      * @generated from field: inference.StatisticDuration queue = 3;
      */
     queue?: StatisticDuration
 
     /**
-     * @@  .. cpp:var:: StatisticDuration compute_input
-     * @@
-     * @@     The count and cumulative duration to prepare input tensor data as
-     * @@     required by the model framework / backend. For example, this duration
-     * @@     should include the time to copy input tensor data to the GPU.
-     * @@     The "compute_input" count and cumulative duration do not account for
-     * @@     requests that were a cache hit. See the "cache_hit" field for more
-     * @@     info.
-     * @@
+     *   .. cpp:var:: StatisticDuration compute_input
+     *
+     *      The count and cumulative duration to prepare input tensor data as
+     *      required by the model framework / backend. For example, this duration
+     *      should include the time to copy input tensor data to the GPU.
+     *      The "compute_input" count and cumulative duration do not account for
+     *      requests that were a cache hit. See the "cache_hit" field for more
+     *      info.
+     *
      *
      * @generated from field: inference.StatisticDuration compute_input = 4;
      */
     computeInput?: StatisticDuration
 
     /**
-     * @@  .. cpp:var:: StatisticDuration compute_infer
-     * @@
-     * @@     The count and cumulative duration to execute the model.
-     * @@     The "compute_infer" count and cumulative duration do not account for
-     * @@     requests that were a cache hit. See the "cache_hit" field for more
-     * @@     info.
-     * @@
+     *   .. cpp:var:: StatisticDuration compute_infer
+     *
+     *      The count and cumulative duration to execute the model.
+     *      The "compute_infer" count and cumulative duration do not account for
+     *      requests that were a cache hit. See the "cache_hit" field for more
+     *      info.
+     *
      *
      * @generated from field: inference.StatisticDuration compute_infer = 5;
      */
     computeInfer?: StatisticDuration
 
     /**
-     * @@  .. cpp:var:: StatisticDuration compute_output
-     * @@
-     * @@     The count and cumulative duration to extract output tensor data
-     * @@     produced by the model framework / backend. For example, this duration
-     * @@     should include the time to copy output tensor data from the GPU.
-     * @@     The "compute_output" count and cumulative duration do not account for
-     * @@     requests that were a cache hit. See the "cache_hit" field for more
-     * @@     info.
-     * @@
+     *   .. cpp:var:: StatisticDuration compute_output
+     *
+     *      The count and cumulative duration to extract output tensor data
+     *      produced by the model framework / backend. For example, this duration
+     *      should include the time to copy output tensor data from the GPU.
+     *      The "compute_output" count and cumulative duration do not account for
+     *      requests that were a cache hit. See the "cache_hit" field for more
+     *      info.
+     *
      *
      * @generated from field: inference.StatisticDuration compute_output = 6;
      */
     computeOutput?: StatisticDuration
 
     /**
-     * @@  .. cpp:var:: StatisticDuration cache_hit
-     * @@
-     * @@     The count of response cache hits and cumulative duration to lookup
-     * @@     and extract output tensor data from the Response Cache on a cache
-     * @@     hit. For example, this duration should include the time to copy
-     * @@     output tensor data from the Response Cache to the response object.
-     * @@     On cache hits, triton does not need to go to the model/backend
-     * @@     for the output tensor data, so the "compute_input", "compute_infer",
-     * @@     and "compute_output" fields are not updated. Assuming the response
-     * @@     cache is enabled for a given model, a cache hit occurs for a
-     * @@     request to that model when the request metadata (model name,
-     * @@     model version, model inputs) hashes to an existing entry in the
-     * @@     cache. On a cache miss, the request hash and response output tensor
-     * @@     data is added to the cache. See response cache docs for more info:
-     * @@
+     *   .. cpp:var:: StatisticDuration cache_hit
+     *
+     *      The count of response cache hits and cumulative duration to lookup
+     *      and extract output tensor data from the Response Cache on a cache
+     *      hit. For example, this duration should include the time to copy
+     *      output tensor data from the Response Cache to the response object.
+     *      On cache hits, triton does not need to go to the model/backend
+     *      for the output tensor data, so the "compute_input", "compute_infer",
+     *      and "compute_output" fields are not updated. Assuming the response
+     *      cache is enabled for a given model, a cache hit occurs for a
+     *      request to that model when the request metadata (model name,
+     *      model version, model inputs) hashes to an existing entry in the
+     *      cache. On a cache miss, the request hash and response output tensor
+     *      data is added to the cache. See response cache docs for more info:
+     *
      * https://github.com/triton-inference-server/server/blob/main/docs/response_cache.md
-     * @@
+     *
      *
      * @generated from field: inference.StatisticDuration cache_hit = 7;
      */
     cacheHit?: StatisticDuration
 
     /**
-     * @@  .. cpp:var:: StatisticDuration cache_miss
-     * @@
-     * @@     The count of response cache misses and cumulative duration to lookup
-     * @@     and insert output tensor data from the computed response to the
+     *   .. cpp:var:: StatisticDuration cache_miss
+     *
+     *      The count of response cache misses and cumulative duration to lookup
+     *      and insert output tensor data from the computed response to the
      * cache.
-     * @@     For example, this duration should include the time to copy
-     * @@     output tensor data from the response object to the Response Cache.
-     * @@     Assuming the response cache is enabled for a given model, a cache
-     * @@     miss occurs for a request to that model when the request metadata
-     * @@     does NOT hash to an existing entry in the cache. See the response
-     * @@     cache docs for more info:
-     * @@
+     *      For example, this duration should include the time to copy
+     *      output tensor data from the response object to the Response Cache.
+     *      Assuming the response cache is enabled for a given model, a cache
+     *      miss occurs for a request to that model when the request metadata
+     *      does NOT hash to an existing entry in the cache. See the response
+     *      cache docs for more info:
+     *
      * https://github.com/triton-inference-server/server/blob/main/docs/response_cache.md
-     * @@
+     *
      *
      * @generated from field: inference.StatisticDuration cache_miss = 8;
      */
@@ -1416,72 +1416,72 @@ export const InferStatisticsSchema: GenMessage<InferStatistics> =
     messageDesc(file_grpc_service, 19)
 
 /**
- * @@
- * @@.. cpp:var:: message InferResponseStatistics
- * @@
- * @@   Statistics per response.
- * @@
+ *
+ * .. cpp:var:: message InferResponseStatistics
+ *
+ *    Statistics per response.
+ *
  *
  * @generated from message inference.InferResponseStatistics
  */
 export type InferResponseStatistics = Message<'inference.InferResponseStatistics'> & {
     /**
-     * @@  .. cpp:var:: StatisticDuration compute_infer
-     * @@
-     * @@     The count and cumulative duration to compute a response.
-     * @@
+     *   .. cpp:var:: StatisticDuration compute_infer
+     *
+     *      The count and cumulative duration to compute a response.
+     *
      *
      * @generated from field: inference.StatisticDuration compute_infer = 1;
      */
     computeInfer?: StatisticDuration
 
     /**
-     * @@  .. cpp:var:: StatisticDuration compute_output
-     * @@
-     * @@     The count and cumulative duration to extract the output tensors of a
-     * @@     response.
-     * @@
+     *   .. cpp:var:: StatisticDuration compute_output
+     *
+     *      The count and cumulative duration to extract the output tensors of a
+     *      response.
+     *
      *
      * @generated from field: inference.StatisticDuration compute_output = 2;
      */
     computeOutput?: StatisticDuration
 
     /**
-     * @@  .. cpp:var:: StatisticDuration success
-     * @@
-     * @@     The count and cumulative duration for successful responses.
-     * @@
+     *   .. cpp:var:: StatisticDuration success
+     *
+     *      The count and cumulative duration for successful responses.
+     *
      *
      * @generated from field: inference.StatisticDuration success = 3;
      */
     success?: StatisticDuration
 
     /**
-     * @@  .. cpp:var:: StatisticDuration fail
-     * @@
-     * @@     The count and cumulative duration for failed responses.
-     * @@
+     *   .. cpp:var:: StatisticDuration fail
+     *
+     *      The count and cumulative duration for failed responses.
+     *
      *
      * @generated from field: inference.StatisticDuration fail = 4;
      */
     fail?: StatisticDuration
 
     /**
-     * @@  .. cpp:var:: StatisticDuration empty_response
-     * @@
-     * @@     The count and cumulative duration for empty responses.
-     * @@
+     *   .. cpp:var:: StatisticDuration empty_response
+     *
+     *      The count and cumulative duration for empty responses.
+     *
      *
      * @generated from field: inference.StatisticDuration empty_response = 5;
      */
     emptyResponse?: StatisticDuration
 
     /**
-     * @@  .. cpp:var:: StatisticDuration cancel
-     * @@
-     * @@     The count and cumulative duration, for cleaning up resources held by
-     * @@     a cancelled request, for cancelled responses.
-     * @@
+     *   .. cpp:var:: StatisticDuration cancel
+     *
+     *      The count and cumulative duration, for cleaning up resources held by
+     *      a cancelled request, for cancelled responses.
+     *
      *
      * @generated from field: inference.StatisticDuration cancel = 6;
      */
@@ -1497,57 +1497,57 @@ export const InferResponseStatisticsSchema: GenMessage<InferResponseStatistics> 
     messageDesc(file_grpc_service, 20)
 
 /**
- * @@
- * @@.. cpp:var:: message InferBatchStatistics
- * @@
- * @@   Inference batch statistics.
- * @@
+ *
+ * .. cpp:var:: message InferBatchStatistics
+ *
+ *    Inference batch statistics.
+ *
  *
  * @generated from message inference.InferBatchStatistics
  */
 export type InferBatchStatistics = Message<'inference.InferBatchStatistics'> & {
     /**
-     * @@  .. cpp:var:: uint64 batch_size
-     * @@
-     * @@     The size of the batch.
-     * @@
+     *   .. cpp:var:: uint64 batch_size
+     *
+     *      The size of the batch.
+     *
      *
      * @generated from field: uint64 batch_size = 1;
      */
     batchSize: bigint
 
     /**
-     * @@  .. cpp:var:: StatisticDuration compute_input
-     * @@
-     * @@     The count and cumulative duration to prepare input tensor data as
-     * @@     required by the model framework / backend with the given batch size.
-     * @@     For example, this duration should include the time to copy input
-     * @@     tensor data to the GPU.
-     * @@
+     *   .. cpp:var:: StatisticDuration compute_input
+     *
+     *      The count and cumulative duration to prepare input tensor data as
+     *      required by the model framework / backend with the given batch size.
+     *      For example, this duration should include the time to copy input
+     *      tensor data to the GPU.
+     *
      *
      * @generated from field: inference.StatisticDuration compute_input = 2;
      */
     computeInput?: StatisticDuration
 
     /**
-     * @@  .. cpp:var:: StatisticDuration compute_infer
-     * @@
-     * @@     The count and cumulative duration to execute the model with the given
-     * @@     batch size.
-     * @@
+     *   .. cpp:var:: StatisticDuration compute_infer
+     *
+     *      The count and cumulative duration to execute the model with the given
+     *      batch size.
+     *
      *
      * @generated from field: inference.StatisticDuration compute_infer = 3;
      */
     computeInfer?: StatisticDuration
 
     /**
-     * @@  .. cpp:var:: StatisticDuration compute_output
-     * @@
-     * @@     The count and cumulative duration to extract output tensor data
-     * @@     produced by the model framework / backend with the given batch size.
-     * @@     For example, this duration should include the time to copy output
-     * @@     tensor data from the GPU.
-     * @@
+     *   .. cpp:var:: StatisticDuration compute_output
+     *
+     *      The count and cumulative duration to extract output tensor data
+     *      produced by the model framework / backend with the given batch size.
+     *      For example, this duration should include the time to copy output
+     *      tensor data from the GPU.
+     *
      *
      * @generated from field: inference.StatisticDuration compute_output = 4;
      */
@@ -1563,41 +1563,41 @@ export const InferBatchStatisticsSchema: GenMessage<InferBatchStatistics> =
     messageDesc(file_grpc_service, 21)
 
 /**
- * @@
- * @@.. cpp:var:: message MemoryUsage
- * @@
- * @@   Memory usage.
- * @@
+ *
+ * .. cpp:var:: message MemoryUsage
+ *
+ *    Memory usage.
+ *
  *
  * @generated from message inference.MemoryUsage
  */
 export type MemoryUsage = Message<'inference.MemoryUsage'> & {
     /**
-     * @@  .. cpp:var:: string type
-     * @@
-     * @@     The type of memory, the value can be "CPU", "CPU_PINNED", "GPU".
-     * @@
+     *   .. cpp:var:: string type
+     *
+     *      The type of memory, the value can be "CPU", "CPU_PINNED", "GPU".
+     *
      *
      * @generated from field: string type = 1;
      */
     type: string
 
     /**
-     * @@  .. cpp:var:: int64 id
-     * @@
-     * @@     The id of the memory, typically used with "type" to identify
-     * @@     a device that hosts the memory.
-     * @@
+     *   .. cpp:var:: int64 id
+     *
+     *      The id of the memory, typically used with "type" to identify
+     *      a device that hosts the memory.
+     *
      *
      * @generated from field: int64 id = 2;
      */
     id: bigint
 
     /**
-     * @@  .. cpp:var:: uint64 byte_size
-     * @@
-     * @@     The byte size of the memory.
-     * @@
+     *   .. cpp:var:: uint64 byte_size
+     *
+     *      The byte size of the memory.
+     *
      *
      * @generated from field: uint64 byte_size = 3;
      */
@@ -1613,131 +1613,131 @@ export const MemoryUsageSchema: GenMessage<MemoryUsage> =
     messageDesc(file_grpc_service, 22)
 
 /**
- * @@
- * @@.. cpp:var:: message ModelStatistics
- * @@
- * @@   Statistics for a specific model and version.
- * @@
+ *
+ * .. cpp:var:: message ModelStatistics
+ *
+ *    Statistics for a specific model and version.
+ *
  *
  * @generated from message inference.ModelStatistics
  */
 export type ModelStatistics = Message<'inference.ModelStatistics'> & {
     /**
-     * @@  .. cpp:var:: string name
-     * @@
-     * @@     The name of the model. If not given returns statistics for all
-     * @@
+     *   .. cpp:var:: string name
+     *
+     *      The name of the model. If not given returns statistics for all
+     *
      *
      * @generated from field: string name = 1;
      */
     name: string
 
     /**
-     * @@  .. cpp:var:: string version
-     * @@
-     * @@     The version of the model.
-     * @@
+     *   .. cpp:var:: string version
+     *
+     *      The version of the model.
+     *
      *
      * @generated from field: string version = 2;
      */
     version: string
 
     /**
-     * @@  .. cpp:var:: uint64 last_inference
-     * @@
-     * @@     The timestamp of the last inference request made for this model,
-     * @@     as milliseconds since the epoch.
-     * @@
+     *   .. cpp:var:: uint64 last_inference
+     *
+     *      The timestamp of the last inference request made for this model,
+     *      as milliseconds since the epoch.
+     *
      *
      * @generated from field: uint64 last_inference = 3;
      */
     lastInference: bigint
 
     /**
-     * @@  .. cpp:var:: uint64 last_inference
-     * @@
-     * @@     The cumulative count of successful inference requests made for this
-     * @@     model. Each inference in a batched request is counted as an
-     * @@     individual inference. For example, if a client sends a single
-     * @@     inference request with batch size 64, "inference_count" will be
-     * @@     incremented by 64. Similarly, if a clients sends 64 individual
-     * @@     requests each with batch size 1, "inference_count" will be
-     * @@     incremented by 64. The "inference_count" value DOES NOT include
-     * @@     cache hits.
-     * @@
+     *   .. cpp:var:: uint64 last_inference
+     *
+     *      The cumulative count of successful inference requests made for this
+     *      model. Each inference in a batched request is counted as an
+     *      individual inference. For example, if a client sends a single
+     *      inference request with batch size 64, "inference_count" will be
+     *      incremented by 64. Similarly, if a clients sends 64 individual
+     *      requests each with batch size 1, "inference_count" will be
+     *      incremented by 64. The "inference_count" value DOES NOT include
+     *      cache hits.
+     *
      *
      * @generated from field: uint64 inference_count = 4;
      */
     inferenceCount: bigint
 
     /**
-     * @@  .. cpp:var:: uint64 last_inference
-     * @@
-     * @@     The cumulative count of the number of successful inference executions
-     * @@     performed for the model. When dynamic batching is enabled, a single
-     * @@     model execution can perform inferencing for more than one inference
-     * @@     request. For example, if a clients sends 64 individual requests each
-     * @@     with batch size 1 and the dynamic batcher batches them into a single
-     * @@     large batch for model execution then "execution_count" will be
-     * @@     incremented by 1. If, on the other hand, the dynamic batcher is not
-     * @@     enabled for that each of the 64 individual requests is executed
-     * @@     independently, then "execution_count" will be incremented by 64.
-     * @@     The "execution_count" value DOES NOT include cache hits.
-     * @@
+     *   .. cpp:var:: uint64 last_inference
+     *
+     *      The cumulative count of the number of successful inference executions
+     *      performed for the model. When dynamic batching is enabled, a single
+     *      model execution can perform inferencing for more than one inference
+     *      request. For example, if a clients sends 64 individual requests each
+     *      with batch size 1 and the dynamic batcher batches them into a single
+     *      large batch for model execution then "execution_count" will be
+     *      incremented by 1. If, on the other hand, the dynamic batcher is not
+     *      enabled for that each of the 64 individual requests is executed
+     *      independently, then "execution_count" will be incremented by 64.
+     *      The "execution_count" value DOES NOT include cache hits.
+     *
      *
      * @generated from field: uint64 execution_count = 5;
      */
     executionCount: bigint
 
     /**
-     * @@  .. cpp:var:: InferStatistics inference_stats
-     * @@
-     * @@     The aggregate statistics for the model/version.
-     * @@
+     *   .. cpp:var:: InferStatistics inference_stats
+     *
+     *      The aggregate statistics for the model/version.
+     *
      *
      * @generated from field: inference.InferStatistics inference_stats = 6;
      */
     inferenceStats?: InferStatistics
 
     /**
-     * @@  .. cpp:var:: InferBatchStatistics batch_stats (repeated)
-     * @@
-     * @@     The aggregate statistics for each different batch size that is
-     * @@     executed in the model. The batch statistics indicate how many actual
-     * @@     model executions were performed and show differences due to different
-     * @@     batch size (for example, larger batches typically take longer to
-     * @@     compute).
-     * @@
+     *   .. cpp:var:: InferBatchStatistics batch_stats (repeated)
+     *
+     *      The aggregate statistics for each different batch size that is
+     *      executed in the model. The batch statistics indicate how many actual
+     *      model executions were performed and show differences due to different
+     *      batch size (for example, larger batches typically take longer to
+     *      compute).
+     *
      *
      * @generated from field: repeated inference.InferBatchStatistics batch_stats = 7;
      */
     batchStats: InferBatchStatistics[]
 
     /**
-     * @@  .. cpp:var:: MemoryUsage memory_usage (repeated)
-     * @@
-     * @@     The memory usage detected during model loading, which may be used to
-     * @@     estimate the memory to be released once the model is unloaded. Note
-     * @@     that the estimation is inferenced by the profiling tools and
-     * @@     framework's memory schema, therefore it is advised to perform
-     * @@     experiments to understand the scenario that the reported memory usage
-     * @@     can be relied on. As a starting point, the GPU memory usage for
-     * @@     models in ONNX Runtime backend and TensorRT backend is usually
-     * @@     aligned.
-     * @@
+     *   .. cpp:var:: MemoryUsage memory_usage (repeated)
+     *
+     *      The memory usage detected during model loading, which may be used to
+     *      estimate the memory to be released once the model is unloaded. Note
+     *      that the estimation is inferenced by the profiling tools and
+     *      framework's memory schema, therefore it is advised to perform
+     *      experiments to understand the scenario that the reported memory usage
+     *      can be relied on. As a starting point, the GPU memory usage for
+     *      models in ONNX Runtime backend and TensorRT backend is usually
+     *      aligned.
+     *
      *
      * @generated from field: repeated inference.MemoryUsage memory_usage = 8;
      */
     memoryUsage: MemoryUsage[]
 
     /**
-     * @@  .. cpp:var:: map<string, InferResponseStatistics> response_stats
-     * @@
-     * @@     The key and value pairs for all responses statistics. The key is a
-     * @@     string identifying a set of response statistics aggregated together
-     * @@     (i.e. index of the response sent). The value is the aggregated
-     * @@     response statistics.
-     * @@
+     *   .. cpp:var:: map<string, InferResponseStatistics> response_stats
+     *
+     *      The key and value pairs for all responses statistics. The key is a
+     *      string identifying a set of response statistics aggregated together
+     *      (i.e. index of the response sent). The value is the aggregated
+     *      response statistics.
+     *
      *
      * @generated from field: map<string, inference.InferResponseStatistics> response_stats = 9;
      */
@@ -1753,20 +1753,20 @@ export const ModelStatisticsSchema: GenMessage<ModelStatistics> =
     messageDesc(file_grpc_service, 23)
 
 /**
- * @@
- * @@.. cpp:var:: message ModelStatisticsResponse
- * @@
- * @@   Response message for ModelStatistics.
- * @@
+ *
+ * .. cpp:var:: message ModelStatisticsResponse
+ *
+ *    Response message for ModelStatistics.
+ *
  *
  * @generated from message inference.ModelStatisticsResponse
  */
 export type ModelStatisticsResponse = Message<'inference.ModelStatisticsResponse'> & {
     /**
-     * @@  .. cpp:var:: ModelStatistics model_stats (repeated)
-     * @@
-     * @@     Statistics for each requested model.
-     * @@
+     *   .. cpp:var:: ModelStatistics model_stats (repeated)
+     *
+     *      Statistics for each requested model.
+     *
      *
      * @generated from field: repeated inference.ModelStatistics model_stats = 1;
      */
@@ -1782,31 +1782,31 @@ export const ModelStatisticsResponseSchema: GenMessage<ModelStatisticsResponse> 
     messageDesc(file_grpc_service, 24)
 
 /**
- * @@
- * @@.. cpp:var:: message ModelRepositoryParameter
- * @@
- * @@   An model repository parameter value.
- * @@
+ *
+ * .. cpp:var:: message ModelRepositoryParameter
+ *
+ *    An model repository parameter value.
+ *
  *
  * @generated from message inference.ModelRepositoryParameter
  */
 export type ModelRepositoryParameter = Message<'inference.ModelRepositoryParameter'> & {
     /**
-     * @@  .. cpp:var:: oneof parameter_choice
-     * @@
-     * @@     The parameter value can be a string, an int64 or
-     * @@     a boolean
-     * @@
+     *   .. cpp:var:: oneof parameter_choice
+     *
+     *      The parameter value can be a string, an int64 or
+     *      a boolean
+     *
      *
      * @generated from oneof inference.ModelRepositoryParameter.parameter_choice
      */
     parameterChoice:
         | {
               /**
-               * @@    .. cpp:var:: bool bool_param
-               * @@
-               * @@       A boolean parameter value.
-               * @@
+               *     .. cpp:var:: bool bool_param
+               *
+               *        A boolean parameter value.
+               *
                *
                * @generated from field: bool bool_param = 1;
                */
@@ -1815,10 +1815,10 @@ export type ModelRepositoryParameter = Message<'inference.ModelRepositoryParamet
           }
         | {
               /**
-               * @@    .. cpp:var:: int64 int64_param
-               * @@
-               * @@       An int64 parameter value.
-               * @@
+               *     .. cpp:var:: int64 int64_param
+               *
+               *        An int64 parameter value.
+               *
                *
                * @generated from field: int64 int64_param = 2;
                */
@@ -1827,10 +1827,10 @@ export type ModelRepositoryParameter = Message<'inference.ModelRepositoryParamet
           }
         | {
               /**
-               * @@    .. cpp:var:: string string_param
-               * @@
-               * @@       A string parameter value.
-               * @@
+               *     .. cpp:var:: string string_param
+               *
+               *        A string parameter value.
+               *
                *
                * @generated from field: string string_param = 3;
                */
@@ -1839,10 +1839,10 @@ export type ModelRepositoryParameter = Message<'inference.ModelRepositoryParamet
           }
         | {
               /**
-               * @@    .. cpp:var:: bytes bytes_param
-               * @@
-               * @@       A bytes parameter value.
-               * @@
+               *     .. cpp:var:: bytes bytes_param
+               *
+               *        A bytes parameter value.
+               *
                *
                * @generated from field: bytes bytes_param = 4;
                */
@@ -1861,31 +1861,31 @@ export const ModelRepositoryParameterSchema: GenMessage<ModelRepositoryParameter
     messageDesc(file_grpc_service, 25)
 
 /**
- * @@
- * @@.. cpp:var:: message RepositoryIndexRequest
- * @@
- * @@   Request message for RepositoryIndex.
- * @@
+ *
+ * .. cpp:var:: message RepositoryIndexRequest
+ *
+ *    Request message for RepositoryIndex.
+ *
  *
  * @generated from message inference.RepositoryIndexRequest
  */
 export type RepositoryIndexRequest = Message<'inference.RepositoryIndexRequest'> & {
     /**
-     * @@  .. cpp:var:: string repository_name
-     * @@
-     * @@     The name of the repository. If empty the index is returned
-     * @@     for all repositories.
-     * @@
+     *   .. cpp:var:: string repository_name
+     *
+     *      The name of the repository. If empty the index is returned
+     *      for all repositories.
+     *
      *
      * @generated from field: string repository_name = 1;
      */
     repositoryName: string
 
     /**
-     * @@  .. cpp:var:: bool ready
-     * @@
-     * @@     If true returned only models currently ready for inferencing.
-     * @@
+     *   .. cpp:var:: bool ready
+     *
+     *      If true returned only models currently ready for inferencing.
+     *
      *
      * @generated from field: bool ready = 2;
      */
@@ -1901,21 +1901,21 @@ export const RepositoryIndexRequestSchema: GenMessage<RepositoryIndexRequest> =
     messageDesc(file_grpc_service, 26)
 
 /**
- * @@
- * @@.. cpp:var:: message RepositoryIndexResponse
- * @@
- * @@   Response message for RepositoryIndex.
- * @@
+ *
+ * .. cpp:var:: message RepositoryIndexResponse
+ *
+ *    Response message for RepositoryIndex.
+ *
  *
  * @generated from message inference.RepositoryIndexResponse
  */
 export type RepositoryIndexResponse = Message<'inference.RepositoryIndexResponse'> & {
     /**
-     * @@
-     * @@  .. cpp:var:: ModelIndex models (repeated)
-     * @@
-     * @@     An index entry for each model.
-     * @@
+     *
+     *   .. cpp:var:: ModelIndex models (repeated)
+     *
+     *      An index entry for each model.
+     *
      *
      * @generated from field: repeated inference.RepositoryIndexResponse.ModelIndex models = 1;
      */
@@ -1931,54 +1931,54 @@ export const RepositoryIndexResponseSchema: GenMessage<RepositoryIndexResponse> 
     messageDesc(file_grpc_service, 27)
 
 /**
- * @@
- * @@  .. cpp:var:: message ModelIndex
- * @@
- * @@     Index entry for a model.
- * @@
+ *
+ *   .. cpp:var:: message ModelIndex
+ *
+ *      Index entry for a model.
+ *
  *
  * @generated from message inference.RepositoryIndexResponse.ModelIndex
  */
 export type RepositoryIndexResponse_ModelIndex =
     Message<'inference.RepositoryIndexResponse.ModelIndex'> & {
         /**
-         * @@
-         * @@    .. cpp:var:: string name
-         * @@
-         * @@       The name of the model.
-         * @@
+         *
+         *     .. cpp:var:: string name
+         *
+         *        The name of the model.
+         *
          *
          * @generated from field: string name = 1;
          */
         name: string
 
         /**
-         * @@    .. cpp:var:: string version
-         * @@
-         * @@       The version of the model.
-         * @@
+         *     .. cpp:var:: string version
+         *
+         *        The version of the model.
+         *
          *
          * @generated from field: string version = 2;
          */
         version: string
 
         /**
-         * @@
-         * @@    .. cpp:var:: string state
-         * @@
-         * @@       The state of the model.
-         * @@
+         *
+         *     .. cpp:var:: string state
+         *
+         *        The state of the model.
+         *
          *
          * @generated from field: string state = 3;
          */
         state: string
 
         /**
-         * @@
-         * @@    .. cpp:var:: string reason
-         * @@
-         * @@       The reason, if any, that the model is in the given state.
-         * @@
+         *
+         *     .. cpp:var:: string reason
+         *
+         *        The reason, if any, that the model is in the given state.
+         *
          *
          * @generated from field: string reason = 4;
          */
@@ -1994,41 +1994,41 @@ export const RepositoryIndexResponse_ModelIndexSchema: GenMessage<RepositoryInde
     messageDesc(file_grpc_service, 27, 0)
 
 /**
- * @@
- * @@.. cpp:var:: message RepositoryModelLoadRequest
- * @@
- * @@   Request message for RepositoryModelLoad.
- * @@
+ *
+ * .. cpp:var:: message RepositoryModelLoadRequest
+ *
+ *    Request message for RepositoryModelLoad.
+ *
  *
  * @generated from message inference.RepositoryModelLoadRequest
  */
 export type RepositoryModelLoadRequest = Message<'inference.RepositoryModelLoadRequest'> & {
     /**
-     * @@  .. cpp:var:: string repository_name
-     * @@
-     * @@     The name of the repository to load from. If empty the model
-     * @@     is loaded from any repository.
-     * @@
+     *   .. cpp:var:: string repository_name
+     *
+     *      The name of the repository to load from. If empty the model
+     *      is loaded from any repository.
+     *
      *
      * @generated from field: string repository_name = 1;
      */
     repositoryName: string
 
     /**
-     * @@  .. cpp:var:: string repository_name
-     * @@
-     * @@     The name of the model to load, or reload.
-     * @@
+     *   .. cpp:var:: string repository_name
+     *
+     *      The name of the model to load, or reload.
+     *
      *
      * @generated from field: string model_name = 2;
      */
     modelName: string
 
     /**
-     * @@  .. cpp:var:: map<string,ModelRepositoryParameter> parameters
-     * @@
-     * @@     Optional model repository request parameters.
-     * @@
+     *   .. cpp:var:: map<string,ModelRepositoryParameter> parameters
+     *
+     *      Optional model repository request parameters.
+     *
      *
      * @generated from field: map<string, inference.ModelRepositoryParameter> parameters = 3;
      */
@@ -2044,11 +2044,11 @@ export const RepositoryModelLoadRequestSchema: GenMessage<RepositoryModelLoadReq
     messageDesc(file_grpc_service, 28)
 
 /**
- * @@
- * @@.. cpp:var:: message RepositoryModelLoadResponse
- * @@
- * @@   Response message for RepositoryModelLoad.
- * @@
+ *
+ * .. cpp:var:: message RepositoryModelLoadResponse
+ *
+ *    Response message for RepositoryModelLoad.
+ *
  *
  * @generated from message inference.RepositoryModelLoadResponse
  */
@@ -2063,41 +2063,41 @@ export const RepositoryModelLoadResponseSchema: GenMessage<RepositoryModelLoadRe
     messageDesc(file_grpc_service, 29)
 
 /**
- * @@
- * @@.. cpp:var:: message RepositoryModelUnloadRequest
- * @@
- * @@   Request message for RepositoryModelUnload.
- * @@
+ *
+ * .. cpp:var:: message RepositoryModelUnloadRequest
+ *
+ *    Request message for RepositoryModelUnload.
+ *
  *
  * @generated from message inference.RepositoryModelUnloadRequest
  */
 export type RepositoryModelUnloadRequest = Message<'inference.RepositoryModelUnloadRequest'> & {
     /**
-     * @@  .. cpp:var:: string repository_name
-     * @@
-     * @@     The name of the repository from which the model was originally
-     * @@     loaded. If empty the repository is not considered.
-     * @@
+     *   .. cpp:var:: string repository_name
+     *
+     *      The name of the repository from which the model was originally
+     *      loaded. If empty the repository is not considered.
+     *
      *
      * @generated from field: string repository_name = 1;
      */
     repositoryName: string
 
     /**
-     * @@  .. cpp:var:: string repository_name
-     * @@
-     * @@     The name of the model to unload.
-     * @@
+     *   .. cpp:var:: string repository_name
+     *
+     *      The name of the model to unload.
+     *
      *
      * @generated from field: string model_name = 2;
      */
     modelName: string
 
     /**
-     * @@  .. cpp:var:: map<string,ModelRepositoryParameter> parameters
-     * @@
-     * @@     Optional model repository request parameters.
-     * @@
+     *   .. cpp:var:: map<string,ModelRepositoryParameter> parameters
+     *
+     *      Optional model repository request parameters.
+     *
      *
      * @generated from field: map<string, inference.ModelRepositoryParameter> parameters = 3;
      */
@@ -2113,11 +2113,11 @@ export const RepositoryModelUnloadRequestSchema: GenMessage<RepositoryModelUnloa
     messageDesc(file_grpc_service, 30)
 
 /**
- * @@
- * @@.. cpp:var:: message RepositoryModelUnloadResponse
- * @@
- * @@   Response message for RepositoryModelUnload.
- * @@
+ *
+ * .. cpp:var:: message RepositoryModelUnloadResponse
+ *
+ *    Response message for RepositoryModelUnload.
+ *
  *
  * @generated from message inference.RepositoryModelUnloadResponse
  */
@@ -2132,23 +2132,23 @@ export const RepositoryModelUnloadResponseSchema: GenMessage<RepositoryModelUnlo
     messageDesc(file_grpc_service, 31)
 
 /**
- * @@
- * @@.. cpp:var:: message SystemSharedMemoryStatusRequest
- * @@
- * @@   Request message for SystemSharedMemoryStatus.
- * @@
+ *
+ * .. cpp:var:: message SystemSharedMemoryStatusRequest
+ *
+ *    Request message for SystemSharedMemoryStatus.
+ *
  *
  * @generated from message inference.SystemSharedMemoryStatusRequest
  */
 export type SystemSharedMemoryStatusRequest =
     Message<'inference.SystemSharedMemoryStatusRequest'> & {
         /**
-         * @@
-         * @@  .. cpp:var:: string name
-         * @@
-         * @@     The name of the region to get status for. If empty the
-         * @@     status is returned for all registered regions.
-         * @@
+         *
+         *   .. cpp:var:: string name
+         *
+         *      The name of the region to get status for. If empty the
+         *      status is returned for all registered regions.
+         *
          *
          * @generated from field: string name = 1;
          */
@@ -2164,23 +2164,23 @@ export const SystemSharedMemoryStatusRequestSchema: GenMessage<SystemSharedMemor
     messageDesc(file_grpc_service, 32)
 
 /**
- * @@
- * @@.. cpp:var:: message SystemSharedMemoryStatusResponse
- * @@
- * @@   Response message for SystemSharedMemoryStatus.
- * @@
+ *
+ * .. cpp:var:: message SystemSharedMemoryStatusResponse
+ *
+ *    Response message for SystemSharedMemoryStatus.
+ *
  *
  * @generated from message inference.SystemSharedMemoryStatusResponse
  */
 export type SystemSharedMemoryStatusResponse =
     Message<'inference.SystemSharedMemoryStatusResponse'> & {
         /**
-         * @@
-         * @@  .. cpp:var:: map<string,RegionStatus> regions
-         * @@
-         * @@     Status for each of the registered regions, indexed by
-         * @@     region name.
-         * @@
+         *
+         *   .. cpp:var:: map<string,RegionStatus> regions
+         *
+         *      Status for each of the registered regions, indexed by
+         *      region name.
+         *
          *
          * @generated from field: map<string, inference.SystemSharedMemoryStatusResponse.RegionStatus> regions = 1;
          */
@@ -2196,54 +2196,54 @@ export const SystemSharedMemoryStatusResponseSchema: GenMessage<SystemSharedMemo
     messageDesc(file_grpc_service, 33)
 
 /**
- * @@
- * @@  .. cpp:var:: message RegionStatus
- * @@
- * @@     Status for a shared memory region.
- * @@
+ *
+ *   .. cpp:var:: message RegionStatus
+ *
+ *      Status for a shared memory region.
+ *
  *
  * @generated from message inference.SystemSharedMemoryStatusResponse.RegionStatus
  */
 export type SystemSharedMemoryStatusResponse_RegionStatus =
     Message<'inference.SystemSharedMemoryStatusResponse.RegionStatus'> & {
         /**
-         * @@
-         * @@    .. cpp:var:: string name
-         * @@
-         * @@       The name for the shared memory region.
-         * @@
+         *
+         *     .. cpp:var:: string name
+         *
+         *        The name for the shared memory region.
+         *
          *
          * @generated from field: string name = 1;
          */
         name: string
 
         /**
-         * @@    .. cpp:var:: string shared_memory_key
-         * @@
-         * @@       The key of the underlying memory object that contains the
-         * @@       shared memory region.
-         * @@
+         *     .. cpp:var:: string shared_memory_key
+         *
+         *        The key of the underlying memory object that contains the
+         *        shared memory region.
+         *
          *
          * @generated from field: string key = 2;
          */
         key: string
 
         /**
-         * @@    .. cpp:var:: uint64 offset
-         * @@
-         * @@       Offset, in bytes, within the underlying memory object to
-         * @@       the start of the shared memory region.
-         * @@
+         *     .. cpp:var:: uint64 offset
+         *
+         *        Offset, in bytes, within the underlying memory object to
+         *        the start of the shared memory region.
+         *
          *
          * @generated from field: uint64 offset = 3;
          */
         offset: bigint
 
         /**
-         * @@    .. cpp:var:: uint64 byte_size
-         * @@
-         * @@       Size of the shared memory region, in bytes.
-         * @@
+         *     .. cpp:var:: uint64 byte_size
+         *
+         *        Size of the shared memory region, in bytes.
+         *
          *
          * @generated from field: uint64 byte_size = 4;
          */
@@ -2259,54 +2259,54 @@ export const SystemSharedMemoryStatusResponse_RegionStatusSchema: GenMessage<Sys
     messageDesc(file_grpc_service, 33, 0)
 
 /**
- * @@
- * @@.. cpp:var:: message SystemSharedMemoryRegisterRequest
- * @@
- * @@   Request message for SystemSharedMemoryRegister.
- * @@
+ *
+ * .. cpp:var:: message SystemSharedMemoryRegisterRequest
+ *
+ *    Request message for SystemSharedMemoryRegister.
+ *
  *
  * @generated from message inference.SystemSharedMemoryRegisterRequest
  */
 export type SystemSharedMemoryRegisterRequest =
     Message<'inference.SystemSharedMemoryRegisterRequest'> & {
         /**
-         * @@
-         * @@  .. cpp:var:: string name
-         * @@
-         * @@     The name of the region to register.
-         * @@
+         *
+         *   .. cpp:var:: string name
+         *
+         *      The name of the region to register.
+         *
          *
          * @generated from field: string name = 1;
          */
         name: string
 
         /**
-         * @@  .. cpp:var:: string shared_memory_key
-         * @@
-         * @@     The key of the underlying memory object that contains the
-         * @@     shared memory region.
-         * @@
+         *   .. cpp:var:: string shared_memory_key
+         *
+         *      The key of the underlying memory object that contains the
+         *      shared memory region.
+         *
          *
          * @generated from field: string key = 2;
          */
         key: string
 
         /**
-         * @@  .. cpp:var:: uint64 offset
-         * @@
-         * @@     Offset, in bytes, within the underlying memory object to
-         * @@     the start of the shared memory region.
-         * @@
+         *   .. cpp:var:: uint64 offset
+         *
+         *      Offset, in bytes, within the underlying memory object to
+         *      the start of the shared memory region.
+         *
          *
          * @generated from field: uint64 offset = 3;
          */
         offset: bigint
 
         /**
-         * @@  .. cpp:var:: uint64 byte_size
-         * @@
-         * @@     Size of the shared memory region, in bytes.
-         * @@
+         *   .. cpp:var:: uint64 byte_size
+         *
+         *      Size of the shared memory region, in bytes.
+         *
          *
          * @generated from field: uint64 byte_size = 4;
          */
@@ -2322,11 +2322,11 @@ export const SystemSharedMemoryRegisterRequestSchema: GenMessage<SystemSharedMem
     messageDesc(file_grpc_service, 34)
 
 /**
- * @@
- * @@.. cpp:var:: message SystemSharedMemoryRegisterResponse
- * @@
- * @@   Response message for SystemSharedMemoryRegister.
- * @@
+ *
+ * .. cpp:var:: message SystemSharedMemoryRegisterResponse
+ *
+ *    Response message for SystemSharedMemoryRegister.
+ *
  *
  * @generated from message inference.SystemSharedMemoryRegisterResponse
  */
@@ -2342,23 +2342,23 @@ export const SystemSharedMemoryRegisterResponseSchema: GenMessage<SystemSharedMe
     messageDesc(file_grpc_service, 35)
 
 /**
- * @@
- * @@.. cpp:var:: message SystemSharedMemoryUnregisterRequest
- * @@
- * @@   Request message for SystemSharedMemoryUnregister.
- * @@
+ *
+ * .. cpp:var:: message SystemSharedMemoryUnregisterRequest
+ *
+ *    Request message for SystemSharedMemoryUnregister.
+ *
  *
  * @generated from message inference.SystemSharedMemoryUnregisterRequest
  */
 export type SystemSharedMemoryUnregisterRequest =
     Message<'inference.SystemSharedMemoryUnregisterRequest'> & {
         /**
-         * @@
-         * @@  .. cpp:var:: string name
-         * @@
-         * @@     The name of the system region to unregister. If empty
-         * @@     all system shared-memory regions are unregistered.
-         * @@
+         *
+         *   .. cpp:var:: string name
+         *
+         *      The name of the system region to unregister. If empty
+         *      all system shared-memory regions are unregistered.
+         *
          *
          * @generated from field: string name = 1;
          */
@@ -2374,11 +2374,11 @@ export const SystemSharedMemoryUnregisterRequestSchema: GenMessage<SystemSharedM
     messageDesc(file_grpc_service, 36)
 
 /**
- * @@
- * @@.. cpp:var:: message SystemSharedMemoryUnregisterResponse
- * @@
- * @@   Response message for SystemSharedMemoryUnregister.
- * @@
+ *
+ * .. cpp:var:: message SystemSharedMemoryUnregisterResponse
+ *
+ *    Response message for SystemSharedMemoryUnregister.
+ *
  *
  * @generated from message inference.SystemSharedMemoryUnregisterResponse
  */
@@ -2394,22 +2394,22 @@ export const SystemSharedMemoryUnregisterResponseSchema: GenMessage<SystemShared
     messageDesc(file_grpc_service, 37)
 
 /**
- * @@
- * @@.. cpp:var:: message CudaSharedMemoryStatusRequest
- * @@
- * @@   Request message for CudaSharedMemoryStatus.
- * @@
+ *
+ * .. cpp:var:: message CudaSharedMemoryStatusRequest
+ *
+ *    Request message for CudaSharedMemoryStatus.
+ *
  *
  * @generated from message inference.CudaSharedMemoryStatusRequest
  */
 export type CudaSharedMemoryStatusRequest = Message<'inference.CudaSharedMemoryStatusRequest'> & {
     /**
-     * @@
-     * @@  .. cpp:var:: string name
-     * @@
-     * @@     The name of the region to get status for. If empty the
-     * @@     status is returned for all registered regions.
-     * @@
+     *
+     *   .. cpp:var:: string name
+     *
+     *      The name of the region to get status for. If empty the
+     *      status is returned for all registered regions.
+     *
      *
      * @generated from field: string name = 1;
      */
@@ -2425,22 +2425,22 @@ export const CudaSharedMemoryStatusRequestSchema: GenMessage<CudaSharedMemorySta
     messageDesc(file_grpc_service, 38)
 
 /**
- * @@
- * @@.. cpp:var:: message CudaSharedMemoryStatusResponse
- * @@
- * @@   Response message for CudaSharedMemoryStatus.
- * @@
+ *
+ * .. cpp:var:: message CudaSharedMemoryStatusResponse
+ *
+ *    Response message for CudaSharedMemoryStatus.
+ *
  *
  * @generated from message inference.CudaSharedMemoryStatusResponse
  */
 export type CudaSharedMemoryStatusResponse = Message<'inference.CudaSharedMemoryStatusResponse'> & {
     /**
-     * @@
-     * @@  .. cpp:var:: map<string,RegionStatus> regions
-     * @@
-     * @@     Status for each of the registered regions, indexed by
-     * @@     region name.
-     * @@
+     *
+     *   .. cpp:var:: map<string,RegionStatus> regions
+     *
+     *      Status for each of the registered regions, indexed by
+     *      region name.
+     *
      *
      * @generated from field: map<string, inference.CudaSharedMemoryStatusResponse.RegionStatus> regions = 1;
      */
@@ -2456,42 +2456,42 @@ export const CudaSharedMemoryStatusResponseSchema: GenMessage<CudaSharedMemorySt
     messageDesc(file_grpc_service, 39)
 
 /**
- * @@
- * @@  .. cpp:var:: message RegionStatus
- * @@
- * @@     Status for a shared memory region.
- * @@
+ *
+ *   .. cpp:var:: message RegionStatus
+ *
+ *      Status for a shared memory region.
+ *
  *
  * @generated from message inference.CudaSharedMemoryStatusResponse.RegionStatus
  */
 export type CudaSharedMemoryStatusResponse_RegionStatus =
     Message<'inference.CudaSharedMemoryStatusResponse.RegionStatus'> & {
         /**
-         * @@
-         * @@    .. cpp:var:: string name
-         * @@
-         * @@       The name for the shared memory region.
-         * @@
+         *
+         *     .. cpp:var:: string name
+         *
+         *        The name for the shared memory region.
+         *
          *
          * @generated from field: string name = 1;
          */
         name: string
 
         /**
-         * @@    .. cpp:var:: uin64 device_id
-         * @@
-         * @@       The GPU device ID where the cudaIPC handle was created.
-         * @@
+         *     .. cpp:var:: uin64 device_id
+         *
+         *        The GPU device ID where the cudaIPC handle was created.
+         *
          *
          * @generated from field: uint64 device_id = 2;
          */
         deviceId: bigint
 
         /**
-         * @@    .. cpp:var:: uint64 byte_size
-         * @@
-         * @@       Size of the shared memory region, in bytes.
-         * @@
+         *     .. cpp:var:: uint64 byte_size
+         *
+         *        Size of the shared memory region, in bytes.
+         *
          *
          * @generated from field: uint64 byte_size = 3;
          */
@@ -2507,52 +2507,52 @@ export const CudaSharedMemoryStatusResponse_RegionStatusSchema: GenMessage<CudaS
     messageDesc(file_grpc_service, 39, 0)
 
 /**
- * @@
- * @@.. cpp:var:: message CudaSharedMemoryRegisterRequest
- * @@
- * @@   Request message for CudaSharedMemoryRegister.
- * @@
+ *
+ * .. cpp:var:: message CudaSharedMemoryRegisterRequest
+ *
+ *    Request message for CudaSharedMemoryRegister.
+ *
  *
  * @generated from message inference.CudaSharedMemoryRegisterRequest
  */
 export type CudaSharedMemoryRegisterRequest =
     Message<'inference.CudaSharedMemoryRegisterRequest'> & {
         /**
-         * @@
-         * @@  .. cpp:var:: string name
-         * @@
-         * @@     The name of the region to register.
-         * @@
+         *
+         *   .. cpp:var:: string name
+         *
+         *      The name of the region to register.
+         *
          *
          * @generated from field: string name = 1;
          */
         name: string
 
         /**
-         * @@  .. cpp:var:: bytes raw_handle
-         * @@
-         * @@     The raw serialized cudaIPC handle.
-         * @@
+         *   .. cpp:var:: bytes raw_handle
+         *
+         *      The raw serialized cudaIPC handle.
+         *
          *
          * @generated from field: bytes raw_handle = 2;
          */
         rawHandle: Uint8Array
 
         /**
-         * @@  .. cpp:var:: int64 device_id
-         * @@
-         * @@     The GPU device ID on which the cudaIPC handle was created.
-         * @@
+         *   .. cpp:var:: int64 device_id
+         *
+         *      The GPU device ID on which the cudaIPC handle was created.
+         *
          *
          * @generated from field: int64 device_id = 3;
          */
         deviceId: bigint
 
         /**
-         * @@  .. cpp:var:: uint64 byte_size
-         * @@
-         * @@     Size of the shared memory block, in bytes.
-         * @@
+         *   .. cpp:var:: uint64 byte_size
+         *
+         *      Size of the shared memory block, in bytes.
+         *
          *
          * @generated from field: uint64 byte_size = 4;
          */
@@ -2568,11 +2568,11 @@ export const CudaSharedMemoryRegisterRequestSchema: GenMessage<CudaSharedMemoryR
     messageDesc(file_grpc_service, 40)
 
 /**
- * @@
- * @@.. cpp:var:: message CudaSharedMemoryRegisterResponse
- * @@
- * @@   Response message for CudaSharedMemoryRegister.
- * @@
+ *
+ * .. cpp:var:: message CudaSharedMemoryRegisterResponse
+ *
+ *    Response message for CudaSharedMemoryRegister.
+ *
  *
  * @generated from message inference.CudaSharedMemoryRegisterResponse
  */
@@ -2588,23 +2588,23 @@ export const CudaSharedMemoryRegisterResponseSchema: GenMessage<CudaSharedMemory
     messageDesc(file_grpc_service, 41)
 
 /**
- * @@
- * @@.. cpp:var:: message CudaSharedMemoryUnregisterRequest
- * @@
- * @@   Request message for CudaSharedMemoryUnregister.
- * @@
+ *
+ * .. cpp:var:: message CudaSharedMemoryUnregisterRequest
+ *
+ *    Request message for CudaSharedMemoryUnregister.
+ *
  *
  * @generated from message inference.CudaSharedMemoryUnregisterRequest
  */
 export type CudaSharedMemoryUnregisterRequest =
     Message<'inference.CudaSharedMemoryUnregisterRequest'> & {
         /**
-         * @@
-         * @@  .. cpp:var:: string name
-         * @@
-         * @@     The name of the cuda region to unregister. If empty
-         * @@     all cuda shared-memory regions are unregistered.
-         * @@
+         *
+         *   .. cpp:var:: string name
+         *
+         *      The name of the cuda region to unregister. If empty
+         *      all cuda shared-memory regions are unregistered.
+         *
          *
          * @generated from field: string name = 1;
          */
@@ -2620,11 +2620,11 @@ export const CudaSharedMemoryUnregisterRequestSchema: GenMessage<CudaSharedMemor
     messageDesc(file_grpc_service, 42)
 
 /**
- * @@
- * @@.. cpp:var:: message CudaSharedMemoryUnregisterResponse
- * @@
- * @@   Response message for CudaSharedMemoryUnregister.
- * @@
+ *
+ * .. cpp:var:: message CudaSharedMemoryUnregisterResponse
+ *
+ *    Response message for CudaSharedMemoryUnregister.
+ *
  *
  * @generated from message inference.CudaSharedMemoryUnregisterResponse
  */
@@ -2640,33 +2640,33 @@ export const CudaSharedMemoryUnregisterResponseSchema: GenMessage<CudaSharedMemo
     messageDesc(file_grpc_service, 43)
 
 /**
- * @@
- * @@.. cpp:var:: message TraceSettingRequest
- * @@
- * @@   Request message for TraceSetting.
- * @@
+ *
+ * .. cpp:var:: message TraceSettingRequest
+ *
+ *    Request message for TraceSetting.
+ *
  *
  * @generated from message inference.TraceSettingRequest
  */
 export type TraceSettingRequest = Message<'inference.TraceSettingRequest'> & {
     /**
-     * @@  .. cpp:var:: map<string,SettingValue> settings
-     * @@
-     * @@     The new setting values to be updated,
-     * @@     settings that are not specified will remain unchanged.
-     * @@
+     *   .. cpp:var:: map<string,SettingValue> settings
+     *
+     *      The new setting values to be updated,
+     *      settings that are not specified will remain unchanged.
+     *
      *
      * @generated from field: map<string, inference.TraceSettingRequest.SettingValue> settings = 1;
      */
     settings: { [key: string]: TraceSettingRequest_SettingValue }
 
     /**
-     * @@
-     * @@  .. cpp:var:: string model_name
-     * @@
-     * @@     The name of the model to apply the new trace settings.
-     * @@     If not given, the new settings will be applied globally.
-     * @@
+     *
+     *   .. cpp:var:: string model_name
+     *
+     *      The name of the model to apply the new trace settings.
+     *      If not given, the new settings will be applied globally.
+     *
      *
      * @generated from field: string model_name = 2;
      */
@@ -2682,24 +2682,24 @@ export const TraceSettingRequestSchema: GenMessage<TraceSettingRequest> =
     messageDesc(file_grpc_service, 44)
 
 /**
- * @@
- * @@  .. cpp:var:: message SettingValue
- * @@
- * @@     The values to be associated with a trace setting.
- * @@     If no value is provided, the setting will be clear and
- * @@     the global setting value will be used.
- * @@
+ *
+ *   .. cpp:var:: message SettingValue
+ *
+ *      The values to be associated with a trace setting.
+ *      If no value is provided, the setting will be clear and
+ *      the global setting value will be used.
+ *
  *
  * @generated from message inference.TraceSettingRequest.SettingValue
  */
 export type TraceSettingRequest_SettingValue =
     Message<'inference.TraceSettingRequest.SettingValue'> & {
         /**
-         * @@
-         * @@    .. cpp:var:: string value (repeated)
-         * @@
-         * @@       The value.
-         * @@
+         *
+         *     .. cpp:var:: string value (repeated)
+         *
+         *        The value.
+         *
          *
          * @generated from field: repeated string value = 1;
          */
@@ -2715,21 +2715,21 @@ export const TraceSettingRequest_SettingValueSchema: GenMessage<TraceSettingRequ
     messageDesc(file_grpc_service, 44, 0)
 
 /**
- * @@
- * @@.. cpp:var:: message TraceSettingResponse
- * @@
- * @@   Response message for TraceSetting.
- * @@
+ *
+ * .. cpp:var:: message TraceSettingResponse
+ *
+ *    Response message for TraceSetting.
+ *
  *
  * @generated from message inference.TraceSettingResponse
  */
 export type TraceSettingResponse = Message<'inference.TraceSettingResponse'> & {
     /**
-     * @@  .. cpp:var:: map<string,SettingValue> settings
-     * @@
-     * @@     The current trace settings, including any changes specified
-     * @@     by TraceSettingRequest.
-     * @@
+     *   .. cpp:var:: map<string,SettingValue> settings
+     *
+     *      The current trace settings, including any changes specified
+     *      by TraceSettingRequest.
+     *
      *
      * @generated from field: map<string, inference.TraceSettingResponse.SettingValue> settings = 1;
      */
@@ -2745,22 +2745,22 @@ export const TraceSettingResponseSchema: GenMessage<TraceSettingResponse> =
     messageDesc(file_grpc_service, 45)
 
 /**
- * @@
- * @@  .. cpp:var:: message SettingValue
- * @@
- * @@     The values to be associated with a trace setting.
- * @@
+ *
+ *   .. cpp:var:: message SettingValue
+ *
+ *      The values to be associated with a trace setting.
+ *
  *
  * @generated from message inference.TraceSettingResponse.SettingValue
  */
 export type TraceSettingResponse_SettingValue =
     Message<'inference.TraceSettingResponse.SettingValue'> & {
         /**
-         * @@
-         * @@    .. cpp:var:: string value (repeated)
-         * @@
-         * @@       The value.
-         * @@
+         *
+         *     .. cpp:var:: string value (repeated)
+         *
+         *        The value.
+         *
          *
          * @generated from field: repeated string value = 1;
          */
@@ -2776,20 +2776,20 @@ export const TraceSettingResponse_SettingValueSchema: GenMessage<TraceSettingRes
     messageDesc(file_grpc_service, 45, 0)
 
 /**
- * @@
- * @@.. cpp:var:: message LogSettingsRequest
- * @@
- * @@   Request message for LogSettings.
- * @@
+ *
+ * .. cpp:var:: message LogSettingsRequest
+ *
+ *    Request message for LogSettings.
+ *
  *
  * @generated from message inference.LogSettingsRequest
  */
 export type LogSettingsRequest = Message<'inference.LogSettingsRequest'> & {
     /**
-     * @@  .. cpp:var:: map<string,SettingValue> settings
-     * @@
-     * @@     The current log settings.
-     * @@
+     *   .. cpp:var:: map<string,SettingValue> settings
+     *
+     *      The current log settings.
+     *
      *
      * @generated from field: map<string, inference.LogSettingsRequest.SettingValue> settings = 1;
      */
@@ -2815,10 +2815,10 @@ export type LogSettingsRequest_SettingValue =
         parameterChoice:
             | {
                   /**
-                   * @@    .. cpp:var:: bool bool_param
-                   * @@
-                   * @@       A boolean parameter value.
-                   * @@
+                   *     .. cpp:var:: bool bool_param
+                   *
+                   *        A boolean parameter value.
+                   *
                    *
                    * @generated from field: bool bool_param = 1;
                    */
@@ -2827,10 +2827,10 @@ export type LogSettingsRequest_SettingValue =
               }
             | {
                   /**
-                   * @@    .. cpp:var:: uint32 uint32_param
-                   * @@
-                   * @@       An uint32 parameter value.
-                   * @@
+                   *     .. cpp:var:: uint32 uint32_param
+                   *
+                   *        An uint32 parameter value.
+                   *
                    *
                    * @generated from field: uint32 uint32_param = 2;
                    */
@@ -2839,10 +2839,10 @@ export type LogSettingsRequest_SettingValue =
               }
             | {
                   /**
-                   * @@    .. cpp:var:: string string_param
-                   * @@
-                   * @@       A string parameter value.
-                   * @@
+                   *     .. cpp:var:: string string_param
+                   *
+                   *        A string parameter value.
+                   *
                    *
                    * @generated from field: string string_param = 3;
                    */
@@ -2861,20 +2861,20 @@ export const LogSettingsRequest_SettingValueSchema: GenMessage<LogSettingsReques
     messageDesc(file_grpc_service, 46, 0)
 
 /**
- * @@
- * @@.. cpp:var:: message LogSettingsResponse
- * @@
- * @@   Response message for LogSettings.
- * @@
+ *
+ * .. cpp:var:: message LogSettingsResponse
+ *
+ *    Response message for LogSettings.
+ *
  *
  * @generated from message inference.LogSettingsResponse
  */
 export type LogSettingsResponse = Message<'inference.LogSettingsResponse'> & {
     /**
-     * @@  .. cpp:var:: map<string,SettingValue> settings
-     * @@
-     * @@     The current log settings.
-     * @@
+     *   .. cpp:var:: map<string,SettingValue> settings
+     *
+     *      The current log settings.
+     *
      *
      * @generated from field: map<string, inference.LogSettingsResponse.SettingValue> settings = 1;
      */
@@ -2900,10 +2900,10 @@ export type LogSettingsResponse_SettingValue =
         parameterChoice:
             | {
                   /**
-                   * @@    .. cpp:var:: bool bool_param
-                   * @@
-                   * @@       A boolean parameter value.
-                   * @@
+                   *     .. cpp:var:: bool bool_param
+                   *
+                   *        A boolean parameter value.
+                   *
                    *
                    * @generated from field: bool bool_param = 1;
                    */
@@ -2912,10 +2912,10 @@ export type LogSettingsResponse_SettingValue =
               }
             | {
                   /**
-                   * @@    .. cpp:var:: uint32 uint32_param
-                   * @@
-                   * @@       An int32 parameter value.
-                   * @@
+                   *     .. cpp:var:: uint32 uint32_param
+                   *
+                   *        An int32 parameter value.
+                   *
                    *
                    * @generated from field: uint32 uint32_param = 2;
                    */
@@ -2924,10 +2924,10 @@ export type LogSettingsResponse_SettingValue =
               }
             | {
                   /**
-                   * @@    .. cpp:var:: string string_param
-                   * @@
-                   * @@       A string parameter value.
-                   * @@
+                   *     .. cpp:var:: string string_param
+                   *
+                   *        A string parameter value.
+                   *
                    *
                    * @generated from field: string string_param = 3;
                    */
@@ -2946,21 +2946,21 @@ export const LogSettingsResponse_SettingValueSchema: GenMessage<LogSettingsRespo
     messageDesc(file_grpc_service, 47, 0)
 
 /**
- * @@
- * @@.. cpp:var:: service InferenceService
- * @@
- * @@   Inference Server GRPC endpoints.
- * @@
+ *
+ * .. cpp:var:: service InferenceService
+ *
+ *    Inference Server GRPC endpoints.
+ *
  *
  * @generated from service inference.GRPCInferenceService
  */
 export const GRPCInferenceService: GenService<{
     /**
-     * @@  .. cpp:var:: rpc ServerLive(ServerLiveRequest) returns
-     * @@       (ServerLiveResponse)
-     * @@
-     * @@     Check liveness of the inference server.
-     * @@
+     *   .. cpp:var:: rpc ServerLive(ServerLiveRequest) returns
+     *        (ServerLiveResponse)
+     *
+     *      Check liveness of the inference server.
+     *
      *
      * @generated from rpc inference.GRPCInferenceService.ServerLive
      */
@@ -2970,11 +2970,11 @@ export const GRPCInferenceService: GenService<{
         output: typeof ServerLiveResponseSchema
     }
     /**
-     * @@  .. cpp:var:: rpc ServerReady(ServerReadyRequest) returns
-     * @@       (ServerReadyResponse)
-     * @@
-     * @@     Check readiness of the inference server.
-     * @@
+     *   .. cpp:var:: rpc ServerReady(ServerReadyRequest) returns
+     *        (ServerReadyResponse)
+     *
+     *      Check readiness of the inference server.
+     *
      *
      * @generated from rpc inference.GRPCInferenceService.ServerReady
      */
@@ -2984,11 +2984,11 @@ export const GRPCInferenceService: GenService<{
         output: typeof ServerReadyResponseSchema
     }
     /**
-     * @@  .. cpp:var:: rpc ModelReady(ModelReadyRequest) returns
-     * @@       (ModelReadyResponse)
-     * @@
-     * @@     Check readiness of a model in the inference server.
-     * @@
+     *   .. cpp:var:: rpc ModelReady(ModelReadyRequest) returns
+     *        (ModelReadyResponse)
+     *
+     *      Check readiness of a model in the inference server.
+     *
      *
      * @generated from rpc inference.GRPCInferenceService.ModelReady
      */
@@ -2998,11 +2998,11 @@ export const GRPCInferenceService: GenService<{
         output: typeof ModelReadyResponseSchema
     }
     /**
-     * @@  .. cpp:var:: rpc ServerMetadata(ServerMetadataRequest) returns
-     * @@       (ServerMetadataResponse)
-     * @@
-     * @@     Get server metadata.
-     * @@
+     *   .. cpp:var:: rpc ServerMetadata(ServerMetadataRequest) returns
+     *        (ServerMetadataResponse)
+     *
+     *      Get server metadata.
+     *
      *
      * @generated from rpc inference.GRPCInferenceService.ServerMetadata
      */
@@ -3012,11 +3012,11 @@ export const GRPCInferenceService: GenService<{
         output: typeof ServerMetadataResponseSchema
     }
     /**
-     * @@  .. cpp:var:: rpc ModelMetadata(ModelMetadataRequest) returns
-     * @@       (ModelMetadataResponse)
-     * @@
-     * @@     Get model metadata.
-     * @@
+     *   .. cpp:var:: rpc ModelMetadata(ModelMetadataRequest) returns
+     *        (ModelMetadataResponse)
+     *
+     *      Get model metadata.
+     *
      *
      * @generated from rpc inference.GRPCInferenceService.ModelMetadata
      */
@@ -3026,11 +3026,11 @@ export const GRPCInferenceService: GenService<{
         output: typeof ModelMetadataResponseSchema
     }
     /**
-     * @@  .. cpp:var:: rpc ModelInfer(ModelInferRequest) returns
-     * @@       (ModelInferResponse)
-     * @@
-     * @@     Perform inference using a specific model.
-     * @@
+     *   .. cpp:var:: rpc ModelInfer(ModelInferRequest) returns
+     *        (ModelInferResponse)
+     *
+     *      Perform inference using a specific model.
+     *
      *
      * @generated from rpc inference.GRPCInferenceService.ModelInfer
      */
@@ -3040,11 +3040,11 @@ export const GRPCInferenceService: GenService<{
         output: typeof ModelInferResponseSchema
     }
     /**
-     * @@  .. cpp:var:: rpc ModelStreamInfer(stream ModelInferRequest) returns
-     * @@       (stream ModelStreamInferResponse)
-     * @@
-     * @@     Perform streaming inference.
-     * @@
+     *   .. cpp:var:: rpc ModelStreamInfer(stream ModelInferRequest) returns
+     *        (stream ModelStreamInferResponse)
+     *
+     *      Perform streaming inference.
+     *
      *
      * @generated from rpc inference.GRPCInferenceService.ModelStreamInfer
      */
@@ -3054,11 +3054,11 @@ export const GRPCInferenceService: GenService<{
         output: typeof ModelStreamInferResponseSchema
     }
     /**
-     * @@  .. cpp:var:: rpc ModelConfig(ModelConfigRequest) returns
-     * @@       (ModelConfigResponse)
-     * @@
-     * @@     Get model configuration.
-     * @@
+     *   .. cpp:var:: rpc ModelConfig(ModelConfigRequest) returns
+     *        (ModelConfigResponse)
+     *
+     *      Get model configuration.
+     *
      *
      * @generated from rpc inference.GRPCInferenceService.ModelConfig
      */
@@ -3068,12 +3068,12 @@ export const GRPCInferenceService: GenService<{
         output: typeof ModelConfigResponseSchema
     }
     /**
-     * @@  .. cpp:var:: rpc ModelStatistics(
-     * @@                     ModelStatisticsRequest)
-     * @@                   returns (ModelStatisticsResponse)
-     * @@
-     * @@     Get the cumulative inference statistics for a model.
-     * @@
+     *   .. cpp:var:: rpc ModelStatistics(
+     *                      ModelStatisticsRequest)
+     *                    returns (ModelStatisticsResponse)
+     *
+     *      Get the cumulative inference statistics for a model.
+     *
      *
      * @generated from rpc inference.GRPCInferenceService.ModelStatistics
      */
@@ -3083,11 +3083,11 @@ export const GRPCInferenceService: GenService<{
         output: typeof ModelStatisticsResponseSchema
     }
     /**
-     * @@  .. cpp:var:: rpc RepositoryIndex(RepositoryIndexRequest) returns
-     * @@       (RepositoryIndexResponse)
-     * @@
-     * @@     Get the index of model repository contents.
-     * @@
+     *   .. cpp:var:: rpc RepositoryIndex(RepositoryIndexRequest) returns
+     *        (RepositoryIndexResponse)
+     *
+     *      Get the index of model repository contents.
+     *
      *
      * @generated from rpc inference.GRPCInferenceService.RepositoryIndex
      */
@@ -3097,11 +3097,11 @@ export const GRPCInferenceService: GenService<{
         output: typeof RepositoryIndexResponseSchema
     }
     /**
-     * @@  .. cpp:var:: rpc RepositoryModelLoad(RepositoryModelLoadRequest) returns
-     * @@       (RepositoryModelLoadResponse)
-     * @@
-     * @@     Load or reload a model from a repository.
-     * @@
+     *   .. cpp:var:: rpc RepositoryModelLoad(RepositoryModelLoadRequest) returns
+     *        (RepositoryModelLoadResponse)
+     *
+     *      Load or reload a model from a repository.
+     *
      *
      * @generated from rpc inference.GRPCInferenceService.RepositoryModelLoad
      */
@@ -3111,11 +3111,11 @@ export const GRPCInferenceService: GenService<{
         output: typeof RepositoryModelLoadResponseSchema
     }
     /**
-     * @@  .. cpp:var:: rpc RepositoryModelUnload(RepositoryModelUnloadRequest)
-     * @@       returns (RepositoryModelUnloadResponse)
-     * @@
-     * @@     Unload a model.
-     * @@
+     *   .. cpp:var:: rpc RepositoryModelUnload(RepositoryModelUnloadRequest)
+     *        returns (RepositoryModelUnloadResponse)
+     *
+     *      Unload a model.
+     *
      *
      * @generated from rpc inference.GRPCInferenceService.RepositoryModelUnload
      */
@@ -3125,12 +3125,12 @@ export const GRPCInferenceService: GenService<{
         output: typeof RepositoryModelUnloadResponseSchema
     }
     /**
-     * @@  .. cpp:var:: rpc SystemSharedMemoryStatus(
-     * @@                     SystemSharedMemoryStatusRequest)
-     * @@                   returns (SystemSharedMemoryStatusRespose)
-     * @@
-     * @@     Get the status of all registered system-shared-memory regions.
-     * @@
+     *   .. cpp:var:: rpc SystemSharedMemoryStatus(
+     *                      SystemSharedMemoryStatusRequest)
+     *                    returns (SystemSharedMemoryStatusRespose)
+     *
+     *      Get the status of all registered system-shared-memory regions.
+     *
      *
      * @generated from rpc inference.GRPCInferenceService.SystemSharedMemoryStatus
      */
@@ -3140,12 +3140,12 @@ export const GRPCInferenceService: GenService<{
         output: typeof SystemSharedMemoryStatusResponseSchema
     }
     /**
-     * @@  .. cpp:var:: rpc SystemSharedMemoryRegister(
-     * @@                     SystemSharedMemoryRegisterRequest)
-     * @@                   returns (SystemSharedMemoryRegisterResponse)
-     * @@
-     * @@     Register a system-shared-memory region.
-     * @@
+     *   .. cpp:var:: rpc SystemSharedMemoryRegister(
+     *                      SystemSharedMemoryRegisterRequest)
+     *                    returns (SystemSharedMemoryRegisterResponse)
+     *
+     *      Register a system-shared-memory region.
+     *
      *
      * @generated from rpc inference.GRPCInferenceService.SystemSharedMemoryRegister
      */
@@ -3155,12 +3155,12 @@ export const GRPCInferenceService: GenService<{
         output: typeof SystemSharedMemoryRegisterResponseSchema
     }
     /**
-     * @@  .. cpp:var:: rpc SystemSharedMemoryUnregister(
-     * @@                     SystemSharedMemoryUnregisterRequest)
-     * @@                   returns (SystemSharedMemoryUnregisterResponse)
-     * @@
-     * @@     Unregister a system-shared-memory region.
-     * @@
+     *   .. cpp:var:: rpc SystemSharedMemoryUnregister(
+     *                      SystemSharedMemoryUnregisterRequest)
+     *                    returns (SystemSharedMemoryUnregisterResponse)
+     *
+     *      Unregister a system-shared-memory region.
+     *
      *
      * @generated from rpc inference.GRPCInferenceService.SystemSharedMemoryUnregister
      */
@@ -3170,12 +3170,12 @@ export const GRPCInferenceService: GenService<{
         output: typeof SystemSharedMemoryUnregisterResponseSchema
     }
     /**
-     * @@  .. cpp:var:: rpc CudaSharedMemoryStatus(
-     * @@                     CudaSharedMemoryStatusRequest)
-     * @@                   returns (CudaSharedMemoryStatusRespose)
-     * @@
-     * @@     Get the status of all registered CUDA-shared-memory regions.
-     * @@
+     *   .. cpp:var:: rpc CudaSharedMemoryStatus(
+     *                      CudaSharedMemoryStatusRequest)
+     *                    returns (CudaSharedMemoryStatusRespose)
+     *
+     *      Get the status of all registered CUDA-shared-memory regions.
+     *
      *
      * @generated from rpc inference.GRPCInferenceService.CudaSharedMemoryStatus
      */
@@ -3185,12 +3185,12 @@ export const GRPCInferenceService: GenService<{
         output: typeof CudaSharedMemoryStatusResponseSchema
     }
     /**
-     * @@  .. cpp:var:: rpc CudaSharedMemoryRegister(
-     * @@                     CudaSharedMemoryRegisterRequest)
-     * @@                   returns (CudaSharedMemoryRegisterResponse)
-     * @@
-     * @@     Register a CUDA-shared-memory region.
-     * @@
+     *   .. cpp:var:: rpc CudaSharedMemoryRegister(
+     *                      CudaSharedMemoryRegisterRequest)
+     *                    returns (CudaSharedMemoryRegisterResponse)
+     *
+     *      Register a CUDA-shared-memory region.
+     *
      *
      * @generated from rpc inference.GRPCInferenceService.CudaSharedMemoryRegister
      */
@@ -3200,12 +3200,12 @@ export const GRPCInferenceService: GenService<{
         output: typeof CudaSharedMemoryRegisterResponseSchema
     }
     /**
-     * @@  .. cpp:var:: rpc CudaSharedMemoryUnregister(
-     * @@                     CudaSharedMemoryUnregisterRequest)
-     * @@                   returns (CudaSharedMemoryUnregisterResponse)
-     * @@
-     * @@     Unregister a CUDA-shared-memory region.
-     * @@
+     *   .. cpp:var:: rpc CudaSharedMemoryUnregister(
+     *                      CudaSharedMemoryUnregisterRequest)
+     *                    returns (CudaSharedMemoryUnregisterResponse)
+     *
+     *      Unregister a CUDA-shared-memory region.
+     *
      *
      * @generated from rpc inference.GRPCInferenceService.CudaSharedMemoryUnregister
      */
@@ -3215,11 +3215,11 @@ export const GRPCInferenceService: GenService<{
         output: typeof CudaSharedMemoryUnregisterResponseSchema
     }
     /**
-     * @@  .. cpp:var:: rpc TraceSetting(TraceSettingRequest)
-     * @@                   returns (TraceSettingResponse)
-     * @@
-     * @@     Update and get the trace setting of the Triton server.
-     * @@
+     *   .. cpp:var:: rpc TraceSetting(TraceSettingRequest)
+     *                    returns (TraceSettingResponse)
+     *
+     *      Update and get the trace setting of the Triton server.
+     *
      *
      * @generated from rpc inference.GRPCInferenceService.TraceSetting
      */
@@ -3229,11 +3229,11 @@ export const GRPCInferenceService: GenService<{
         output: typeof TraceSettingResponseSchema
     }
     /**
-     * @@  .. cpp:var:: rpc LogSettings(LogSettingsRequest)
-     * @@                   returns (LogSettingsResponse)
-     * @@
-     * @@     Update and get the log settings of the Triton server.
-     * @@
+     *   .. cpp:var:: rpc LogSettings(LogSettingsRequest)
+     *                    returns (LogSettingsResponse)
+     *
+     *      Update and get the log settings of the Triton server.
+     *
      *
      * @generated from rpc inference.GRPCInferenceService.LogSettings
      */
