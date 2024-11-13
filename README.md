@@ -1,5 +1,7 @@
 # triton-ts
 
+[![npm](https://badgen.net/npm/v/triton-ts)](https://www.npmjs.com/package/triton-ts)
+
 [Nvidia Triton](https://docs.nvidia.com/deeplearning/triton-inference-server/user-guide/docs/index.html) server [gRPC client](https://github.com/triton-inference-server/common/tree/main/protobuf) for Node    
 
 <p align="center">
