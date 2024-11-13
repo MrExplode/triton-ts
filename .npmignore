@@ -1,0 +1,16 @@
+.github
+.vscode
+.tsup
+.pnpm-store
+node_modules
+docs
+proto
+src
+.prettierignore
+.prettierrc
+buf.gen.yaml
+eslint.config.js
+pnpm-lock.yaml
+renovate.json
+tsconfig.json
+tsup.config.ts
