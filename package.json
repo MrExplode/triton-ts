@@ -1,6 +1,6 @@
 {
     "name": "triton-ts",
-    "version": "0.0.1",
+    "version": "1.0.0",
     "type": "module",
     "license": "MIT",
     "description": "Nvidia Triton server gRPC client for TypeScript",
