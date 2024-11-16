@@ -4,3 +4,4 @@ dist/
 .github/
 buf.gen.yaml
 README.md
+.tsup
