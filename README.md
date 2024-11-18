@@ -1,6 +1,7 @@
 # triton-ts
 
 [![npm](https://badgen.net/npm/v/triton-ts)](https://www.npmjs.com/package/triton-ts)
+[![Build Status](https://github.com/MrExplode/triton-ts/actions/workflows/build.yml/badge.svg)](https://github.com/MrExplode/triton-ts/actions)
 
 [Nvidia Triton](https://docs.nvidia.com/deeplearning/triton-inference-server/user-guide/docs/index.html) server [gRPC client](https://github.com/triton-inference-server/common/tree/main/protobuf) for Node    
 
