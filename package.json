@@ -47,6 +47,6 @@
         "@bufbuild/protobuf": "^2.2.2"
     },
     "engines": {
-        "node": ">= 20.18.1"
+        "node": ">= 22.11.0"
     }
 }
