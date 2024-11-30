@@ -30,7 +30,7 @@
         "format": "prettier --write ."
     },
     "devDependencies": {
-        "@bufbuild/buf": "^1.46.0",
+        "@bufbuild/buf": "^1.47.2",
         "@bufbuild/protoc-gen-es": "^2.2.2",
         "@eslint/js": "^9.14.0",
         "@types/node": "^22.9.0",
