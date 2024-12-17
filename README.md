@@ -19,16 +19,12 @@ npm install triton-ts
 This library uses the [buf.build library](https://github.com/bufbuild/protobuf-es) for well typed, modern protobuf handling & code generation.  
 Only the generated proto code included, you decide what to do with them. For example, use the [`@connectrpc/connect`](https://github.com/connectrpc/connect-es) library to create a gRPC client.
 
-> [!IMPORTANT]   
-> `@connectrpc/connect` version `1.x` does not support `@bufbuild/protobuf` version `2.x`.  
-> `@connectrpc/connect 2.0` is currently in release candidate with support for it, hence the `@rc` tag below.   
-
 ```bash
-npm install @connectrpc/connect@rc
+npm install @connectrpc/connect
 ```
 Choose a [Connect adapter](https://github.com/connectrpc/connect-es?tab=readme-ov-file#packages) for your target environment, e.g. node:
 ```bash
-npm install @connectrpc/connect-node@rc
+npm install @connectrpc/connect-node
 ```
 
 ----
