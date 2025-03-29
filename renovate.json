@@ -1,8 +1,8 @@
 {
     "$schema": "https://docs.renovatebot.com/renovate-schema.json",
     "extends": ["config:recommended"],
-    "schedule": ["every weekend"],
-	"automergeSchedule": ["at any time"],
+    "schedule": ["* * 1,15 * *"],
+    "automergeSchedule": ["at any time"],
     "rangeStrategy": "bump",
     "packageRules": [
         {
