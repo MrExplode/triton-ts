@@ -32,16 +32,16 @@
     "devDependencies": {
         "@bufbuild/buf": "^1.57.2",
         "@bufbuild/protoc-gen-es": "^2.9.0",
-        "@eslint/js": "^9.35.0",
-        "@types/node": "^22.18.4",
-        "eslint": "^9.35.0",
+        "@eslint/js": "^9.36.0",
+        "@types/node": "^22.18.8",
+        "eslint": "^9.36.0",
         "eslint-config-prettier": "^10.1.8",
         "eslint-plugin-prettier": "^5.5.4",
         "globals": "^16.4.0",
         "prettier": "^3.6.2",
         "tsup": "^8.5.0",
-        "typescript": "~5.9.2",
-        "typescript-eslint": "^8.44.0"
+        "typescript": "~5.9.3",
+        "typescript-eslint": "^8.45.0"
     },
     "dependencies": {
         "@bufbuild/protobuf": "^2.9.0"
