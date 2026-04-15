@@ -48,7 +48,7 @@ jobs:
         run: git diff --quiet || echo "changes=true" >> $GITHUB_ENV
 
       - name: Cancel with no changes
-        uses: actions/github-script@v8
+        uses: actions/github-script@v9
         if: ${{ env.changes != 'true' }}
         with:
           script: |
